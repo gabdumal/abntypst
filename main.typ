@@ -4,7 +4,7 @@
 #show: page_template
 
 // Glossary
-#import "/information/glossary.typ": glossary_entries
+#import "/data/glossary.typ": glossary_entries
 #show: init-glossary.with(glossary_entries)
 
 #include "/content/main.typ"
