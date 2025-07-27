@@ -1,5 +1,9 @@
-#bibliography(
-  "/data/bibliography.bib",
-  style: "associacao-brasileira-de-normas-tecnicas",
-  title: "Referências",
-)
+#let set_bibliography(
+  sources,
+) = {
+  bibliography(
+    sources,
+    style: "associacao-brasileira-de-normas-tecnicas",
+    title: "Referências",
+  )
+}

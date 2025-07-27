@@ -1,19 +1,19 @@
-#import "style.typ": font_size_for_abstract
+#import "style.typ": font_size_for_common_text
 
-#let define_abstract(
+#let include_abstract(
   title: str,
   content,
 ) = {
-  place(top + center, scope: "parent", float: true, block(pad(
+  pad(
     x: 0.8cm,
   )[
     #align(left)[
       #set text(
         style: "italic",
-        size: font_size_for_abstract,
+        size: font_size_for_common_text,
       )
       #text(weight: "bold")[#title.]
       #content
     ]
-  ]))
+  ]
 }

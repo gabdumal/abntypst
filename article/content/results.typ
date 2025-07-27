@@ -9,7 +9,7 @@ O ingrediente que menos impacta nos lucros é a manteiga sem sal, representada c
 Já o leite condensado, representado como #emph[Sweetened condensed milk], impacta fortemente o lucro, levando-o a R#sym.dollar 1,75, R#sym.dollar 1,45 e R#sym.dollar 1,16 com os aumentos de 5%, 10% e 15%, respectivamente.
 
 #figure(
-  image("/assets/images/brigadeiro_ingredient_sensitivity_gross_profit.png", width: 100%),
+  image("../assets/images/brigadeiro_ingredient_sensitivity_gross_profit.png", width: 100%),
   caption: [Gráfico de linhas mostrando a sensibilidade do lucro bruto da receita de brigadeiro em relação ao aumento de custo dos insumos. Fonte: Elaborado pelos autores (2025).
   ],
 )<brigadeiro_ingredient_sensitivity_gross_profit>
@@ -24,7 +24,7 @@ Nesse mapa, percebe-se que a célula mais intensamente afetada é a de uso de le
 Em seguida, a lata de milho verde na receita de bolo de milho verde reduz a margem de lucro de 23,08% em 4,32 pontos percentuais, e o leite de coco a reduz em 3,3 pontos percentuais.
 
 #figure(
-  image("/assets/images/ingredient_impact_matrix_15pct_margin.png", width: 100%),
+  image("../assets/images/ingredient_impact_matrix_15pct_margin.png", width: 100%),
   caption: [Mapa de calor mostrando a perda de pontos percentuais da margem de lucro de cada receita com o aumento de 15% de custo dos insumos. Fonte: Elaborado pelos autores (2025).
   ],
 )<ingredient_impact_matrix_15pct_margin>

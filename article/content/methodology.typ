@@ -13,7 +13,7 @@ Este modelo, apresentado na @class_diagram, define as entidades a seguir.
 (4) #emph[Usage]: relaciona um insumo a uma receita, especificando a quantidade necessária em gramas.
 
 #figure(
-  image("/assets/images/class_diagram.png", width: 100%),
+  image("../assets/images/class_diagram.png", width: 100%),
   caption: [Diagrama de classes UML representando a estrutura de dados do sistema de confeitaria. Fonte: Elaborado pelos autores (2025).
   ],
 )<class_diagram>

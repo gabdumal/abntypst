@@ -2,7 +2,6 @@
   font_size_for_authors, font_size_for_emails, font_size_for_institutions, font_size_for_title, mono_font_family,
   spacing_after_header_elements,
 )
-#import "/information/data.typ": authors, custom_emails, institutions, title
 
 #let define_header(
   title: str,
@@ -70,10 +69,3 @@
 
   ]))
 }
-
-#define_header(
-  title: title,
-  authors: authors,
-  institutions: institutions,
-  custom_emails: custom_emails,
-)
