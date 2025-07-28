@@ -2,7 +2,8 @@
 
 // Data
 #import "data/main.typ": (
-  authors, course, department, institution, location, organization, subtitle, title, volume_number, year,
+  advisors, area_of_concentration, authors, custom_nature, degree, degree_topic, department, institution, location,
+  organization, program, subtitle, title, type_of_work, volume_number, year,
 )
 
 // Style
@@ -19,13 +20,30 @@
   authors: authors,
   title: title,
   subtitle: subtitle,
-  organization: organization,
-  institution: institution,
-  department: department,
-  course: course,
   location: location,
   year: year,
   volume_number: volume_number,
+)
+
+// Title page
+#import "/template/academic_work/title_page.typ": set_title_page
+#set_title_page(
+  area_of_concentration: area_of_concentration,
+  degree: degree,
+  organization: organization,
+  institution: institution,
+  department: department,
+  type_of_work: type_of_work,
+  authors: authors,
+  title: title,
+  subtitle: subtitle,
+  volume_number: volume_number,
+  location: location,
+  year: year,
+  degree_topic: degree_topic,
+  program: program,
+  advisors: advisors,
+  custom_nature: custom_nature,
 )
 
 // Content

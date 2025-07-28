@@ -1,14 +1,13 @@
-#import "../style.typ": font_family_sans
+// # Capa
 
-#let font_size_for_primary_information = 18pt
+#import "../style.typ": font_family_sans
+#import "/template/academic_work/title.typ": print_title
+
+// Following ABNTEX2
+#let font_size_for_primary_information = 20pt
 #let font_size_for_secondary_information = 14pt
-#let font_size_for_tertiary_information = 12pt
 
 #let set_cover(
-  organization: str,
-  institution: none,
-  department: none,
-  course: none,
   authors: array,
   title: str,
   subtitle: none,
@@ -23,58 +22,31 @@
   )
 
   // Institutional information
-  place(center + top)[
-    #organization
-    #parbreak()
-    #if institution != none {
-      institution
-      parbreak()
-    }
-    #if department != none {
-      department
-      parbreak()
-    }
-  ]
+  authors.map(author => author.name).join(", ")
 
-  // Authors
-  place(
-    center + top,
-    dy: 29.7cm / 5,
-  )[
-    #text(weight: "bold")[
-      #authors.join(", ")
-    ]
-  ]
+  v(1fr)
 
   // Title
-  place(center + horizon)[
-    #text(
-      size: font_size_for_primary_information,
-      weight: "bold",
-    )[
-      #title#if subtitle != none [:
-        #text(
-          weight: "regular",
-        )[
-          #subtitle
-        ]
-      ]
-    ]
+  text(
+    size: font_size_for_primary_information,
+  )[
+    #print_title(
+      title: title,
+      subtitle: subtitle,
+      with_weight: true,
+    )
   ]
 
+  v(1fr)
+
   // Publishing information
-  place(center + bottom)[
-    #set text(
-      font_size_for_tertiary_information,
-    )
-    #if volume_number != none [
-      Volume #volume_number
-      #parbreak()
-    ]
-    #location
+  if volume_number != none [
+    Volume #volume_number
     #parbreak()
-    #year
   ]
+  location
+  parbreak()
+  year
 
   pagebreak()
 }
