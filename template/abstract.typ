@@ -5,7 +5,7 @@
   content,
 ) = {
   pad(
-    x: 0.8cm,
+    // x: 0.8cm,
   )[
     #set par(first-line-indent: 0em)
     #align(left)[

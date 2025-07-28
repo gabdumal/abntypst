@@ -8,6 +8,10 @@
 #let margin_start = 3.0cm
 #let margin_end = 2.0cm
 
+// ## Font family
+#let font_family_sans = "Liberation Sans"
+#let font_family_serif = "Liberation Serif"
+
 // ## Font size — NBR 14724:2024 5.1, NBR 6022:2018 6.1
 #let font_size_for_level_1_headings = 14pt
 #let font_size_for_level_2_headings = 13pt
@@ -41,7 +45,7 @@
 #let leading_for_smaller_text = font_size_for_smaller_text * leading_of_one
 #let leading_for_references = font_size_for_common_text * leading_of_one
 
-#let page_template(doc) = [
+#let style(doc) = [
   // ## Page
   #set page(paper: paper_size, margin: (
     top: margin_top,
@@ -54,7 +58,7 @@
   #set text(
     lang: "pt",
     region: "br",
-    font: "Liberation Serif",
+    font: font_family_serif,
     size: font_size_for_common_text,
     hyphenate: true,
   )
@@ -121,7 +125,7 @@
     #set align(alignment)
 
     #set text(
-      font: "Liberation Sans",
+      font: font_family_sans,
       size: font_size,
       weight: font_weight,
       style: text_style,
