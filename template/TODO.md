@@ -37,12 +37,12 @@
 
 ### 6. Regras gerais
 
-- [ ] 6.1. Formato
+- [X] 6.1. Formato
   - [X] Tamanho da fonte
-  - [ ] Espaçamento
-- [ ] 6.2. Seções — NBR 6024
+  - [X] Espaçamento
+- [X] 6.2. Seções — NBR 6024
 - [ ] 6.3. Citações e notas — NBR 10520
-- [ ] 6.4. Sigla
+- [X] 6.4. Sigla
 - [ ] 6.5. Equações e fórmulas
 - [ ] 6.6. Ilustrações
   - [ ] Numeração
@@ -68,12 +68,12 @@
 ### 4. Regras gerais
 
 - [ ] 4.1. Seções
-  - [ ] Algarismos
-  - [ ] Limite
-  - [ ] Alinhamento
-  - [ ] Títulos centralizados
-  - [ ] Títulos com mais de uma linha
-  - [ ] Destaques da hierarquia
+  - [X] Algarismos
+  - [X] Limite
+  - [X] Alinhamento
+  - [ ] Títulos não numerados
+  - [X] Títulos com mais de uma linha
+  - [X] Destaques da hierarquia
 - [ ] 4.2. Alínea
   - [ ] Pontuação
   - [ ] Numeração
