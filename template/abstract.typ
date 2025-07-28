@@ -7,6 +7,7 @@
   pad(
     x: 0.8cm,
   )[
+    #set par(first-line-indent: 0em)
     #align(left)[
       #set text(
         style: "italic",

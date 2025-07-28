@@ -11,28 +11,33 @@
 // ## Font size — NBR 14724:2024 5.1, NBR 6022:2018 6.1
 #let font_size_for_level_1_headings = 14pt
 #let font_size_for_level_2_headings = 13pt
-#let font_size_for_level_3_headings = 12pt
+#let font_size_for_level_3_and_beyond_headings = 12pt
 #let font_size_for_common_text = 12pt
 #let font_size_for_smaller_text = 10pt
 
 // ## Spacing — NBR 14724:2024 5.2, NBR 6022:2018 6.1
+
 // ### Multipliers
 #let spacing_of_one = 1.0
 #let spacing_of_one_and_a_half = 1.5
+
 // ### Headings
-#let spacing_before_level_1_headings = font_size_for_level_1_headings * spacing_of_one_and_a_half
-#let spacing_before_level_2_headings = font_size_for_level_2_headings * spacing_of_one_and_a_half
-#let spacing_before_level_3_headings = font_size_for_level_3_headings * spacing_of_one_and_a_half
+#let spacing_around_level_1_headings = font_size_for_level_1_headings * spacing_of_one_and_a_half
+#let spacing_around_level_2_headings = font_size_for_level_2_headings * spacing_of_one_and_a_half
+#let spacing_around_level_3_and_beyond_headings = font_size_for_level_3_and_beyond_headings * spacing_of_one_and_a_half
+
 // ### Common text
 #let spacing_between_common_text = font_size_for_common_text * spacing_of_one_and_a_half
 #let spacing_between_references = font_size_for_common_text * spacing_of_one
 
 // ## Leading — NBR 14724:2024 5.2
+
 // ### Multipliers
 #let leading_of_one = spacing_of_one / 2
 #let leading_of_one_and_a_half = spacing_of_one_and_a_half / 2
+
 // ### Text
-#let leading_for_text = font_size_for_common_text * leading_of_one_and_a_half
+#let leading_for_common_text = font_size_for_common_text * leading_of_one_and_a_half
 #let leading_for_smaller_text = font_size_for_smaller_text * leading_of_one
 #let leading_for_references = font_size_for_common_text * leading_of_one
 
@@ -55,11 +60,11 @@
   )
 
   // ## Paragraphs
-  #set par(
-    leading: leading_for_text,
-    justify: true,
-    // first-line-indent: 1.27cm,
-  )
+  #set par(leading: leading_for_common_text, justify: true, first-line-indent: (
+    // Following abnTEX2
+    amount: 1.3cm,
+    all: true,
+  ))
 
   // ## Headings
 
@@ -74,25 +79,25 @@
   #show heading: it => [
     // NBR 6024:2012 4.1
     // The format of headings should represent their hierarchical level
-    // As done by ABNTeX, we use different font sizes for different heading levels
+    // As done by abnTEX2, we use different font sizes for different heading levels
 
     #let font_size = font_size_for_common_text
-    #let spacing_above = spacing_between_common_text
+    #let spacing_around = spacing_around_level_3_and_beyond_headings
     #let font_weight = "bold"
     #let text_style = "normal"
 
     #if it.level == 1 {
+      font_size = font_size_for_level_1_headings
+      spacing_around = spacing_around_level_1_headings
+
       // Level 1 headings should start on a new page
       pagebreak(weak: true) // NBR 14724:2024 5.2.2
-      // TODO: Guarantee that section starts on odd page
-      font_size = font_size_for_level_1_headings
-      spacing_above = spacing_before_level_1_headings
+      // TODO: If considering odd/even pages, sections should start on odd pages
     } else if it.level == 2 {
       font_size = font_size_for_level_2_headings
-      spacing_above = spacing_before_level_2_headings
+      spacing_around = spacing_around_level_2_headings
     } else if it.level == 3 {
-      font_size = font_size_for_level_3_headings
-      spacing_above = spacing_before_level_3_headings
+      font_size = font_size_for_level_3_and_beyond_headings
     } else if it.level == 4 {
       font_weight = "regular"
     } else if it.level == 5 {
@@ -123,10 +128,10 @@
     )
 
     // NBR 14724:2024 5.2.2
-    // Headings should have 1,5x of spacing above and 1x of spacing below
+    // Headings should have 1,5x of spacing above and below
     #block(
-      above: spacing_above,
-      below: spacing_between_common_text,
+      above: spacing_around,
+      below: spacing_around,
     )[
       #text[
         // NBR 6024:2012 4.1

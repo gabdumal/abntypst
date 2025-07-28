@@ -160,13 +160,15 @@
   - [ ] Verso e anverso
   - [X] Tamanho da fonte
 - [ ] 5.2. Espaçamento
-  - [ ] Entre linhas
-    - [ ] Entre texto comum
+  - [X] Entre linhas
+    - [X] Entre texto comum
     - [ ] Entre texto menor
     - [ ] Entre referências
   - [ ] Natureza
   - [ ] 5.2.1. Notas de rodapé
   - [ ] 5.2.2. Indicativos de seção
+    - [X] Espaçamento
+    - [ ] Verso e anverso
   - [ ] 5.2.3. Títulos sem indicativo numérico
   - [ ] 5.2.4. Elementos sem título e sem indicativo numérico
 - [ ] 5.3. Paginação
