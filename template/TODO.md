@@ -98,12 +98,12 @@
 
 ## NBR 6028:2021 — Informação e documentação — Resumo, resenha e recensão — Apresentação — 2ª edição, 2021-05-18
 
-- [ ] 3. Regras gerais
+- [X] 3. Regras gerais
 - [ ] 4. Resumo, resenha e recensão
   - [ ] 4.1. Resumo
-    - [ ] Estrutura
-    - [ ] Referências
-    - [ ] Palavras-chave
+    - [X] Estrutura
+    - [X] Referências
+    - [X] Palavras-chave
   - [ ] 4.2. Resenha e recensão
 
 ## NBR 6029:2023 — Informação e documentação — Livros e folhetos — Apresentação — 3ª edição, 2023-03-22
@@ -127,18 +127,18 @@
 ### 4. Estrutura
 
 - [ ] 4.1. Parte externa
-  - [ ] 4.1.1. Capa (obrigatório)
+  - [X] 4.1.1. Capa (obrigatório)
   - [ ] 4.1.2. Lombada (opcional) — NBR 12225
 - [ ] 4.2. Parte interna
   - [ ] 4.2.1. Elementos pré-textuais
-    - [ ] 4.2.1.1. Folha de rosto (obrigatório)
+    - [X] 4.2.1.1. Folha de rosto (obrigatório)
     - [ ] 4.2.1.2. Errata (opcional)
     - [ ] 4.2.1.3. Folha de aprovação (obrigatório)
     - [ ] 4.2.1.4. Dedicatória (opcional)
     - [ ] 4.2.1.5. Agradecimentos (opcional)
     - [ ] 4.2.1.6. Epígrafe (opcional)
-    - [ ] 4.2.1.7. Resumo na língua vernácula (obrigatório) — NBR 6022
-    - [ ] 4.2.1.8. Resumo em língua estrangeira (obrigatório) — NBR 6022
+    - [X] 4.2.1.7. Resumo na língua vernácula (obrigatório) — NBR 6028
+    - [X] 4.2.1.8. Resumo em língua estrangeira (obrigatório) — NBR 6028
     - [ ] 4.2.1.9. Lista de ilustrações (opcional)
     - [ ] 4.2.1.10. Lista de tabelas (opcional)
     - [ ] 4.2.1.11. Lista de abreviaturas e siglas (opcional)
