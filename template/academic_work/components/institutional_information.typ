@@ -1,6 +1,8 @@
+// # Informações institucionais
+
 #let print_institutional_information(
   organization: (
-    name: str,
+    name: "Nome da organização",
   ),
   institution: none,
   department: none,

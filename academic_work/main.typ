@@ -8,14 +8,17 @@
 
 // Style
 #import "/template/style.typ": style
-#show: style
+#show: it => style(
+  it,
+  page_numbering: true,
+)
 
 // Glossary
 #import "data/glossary.typ": glossary_entries
 #show: init-glossary.with(glossary_entries)
 
 // Cover
-#import "/template/academic_work/cover.typ": set_cover
+#import "/template/academic_work/pages/cover.typ": set_cover
 #set_cover(
   authors: authors,
   title: title,
@@ -26,7 +29,7 @@
 )
 
 // Title page
-#import "/template/academic_work/title_page.typ": set_title_page
+#import "/template/academic_work/pages/title_page.typ": set_title_page
 #set_title_page(
   area_of_concentration: area_of_concentration,
   degree: degree,
@@ -44,6 +47,16 @@
   program: program,
   advisors: advisors,
   custom_nature: custom_nature,
+)
+
+// Cataloging data
+#import "/template/academic_work/pages/cataloging_data.typ": set_cataloging_data
+#set_cataloging_data(
+  authors: authors,
+  title: title,
+  subtitle: subtitle,
+  location: location,
+  year: year,
 )
 
 // Content

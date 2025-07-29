@@ -5,11 +5,15 @@
 // Authors — required.
 #let authors = (
   (
-    name: [Alice Almeida],
+    first_name: [Alice],
+    middle_name: [Medeiros de],
+    last_name: [Almeida],
     gender: "feminine",
   ),
   (
-    name: [Bruno Barbosa],
+    first_name: [Bruno],
+    middle_name: [da Silva],
+    last_name: [Barbosa],
     gender: "masculine",
   ),
 )
@@ -73,9 +77,18 @@
 // Type of work — semi-optional. The type of academic work, such as "trabalho de conclusão de curso", "dissertação", or "tese".
 // You can leave it empty if you define a custom nature of the work.
 #let type_of_work = {
-  "trabalho de conclusão de curso"
-  // "dissertação"
-  // "tese"
+  (
+    name: "trabalho de conclusão de curso",
+    gender: "masculine",
+  )
+  //   (
+  //     name: "dissertação",
+  //     gender: "feminine",
+  //   )
+  //   (
+  //     name: "tese",
+  //     gender: "feminine",
+  //   )
 }
 
 // Degree — semi-optional. The degree being pursued, such as "bacharelado", "especialização", etc.

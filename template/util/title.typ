@@ -1,5 +1,7 @@
+// # Título
+
 #let print_title(
-  title: str,
+  title: "Título do trabalho",
   subtitle: none,
   with_weight: true,
 ) = {

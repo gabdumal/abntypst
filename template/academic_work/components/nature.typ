@@ -1,30 +1,36 @@
-#import "../util/text.typ": capitalize_first_letter
-#import "../util/gender.typ": get_gender_ending
+// # Natureza do trabalho
+
+#import "../../util/gender.typ": get_gender_ending
+#import "../../util/text.typ": capitalize_first_letter
 
 #let print_nature(
   authors: (),
   organization: (
-    name: str,
-    gender: str,
+    name: "Nome da organização",
+    gender: "masculine",
   ),
   program: (
-    name: str,
-    gender: str,
+    name: "Nome do programa",
+    gender: "masculine",
   ),
-  type_of_work: str,
+  type_of_work: (
+    name: "trabalho de conclusão de curso",
+    gender: "masculine",
+  ),
   degree: (
-    name: str,
+    name: "bacharelado",
     title: (
-      masculine: str,
-      feminine: str,
+      masculine: "bacharel",
+      feminine: "bacharela",
     ),
   ),
-  degree_topic: str,
+  degree_topic: "Tema do trabalho",
   area_of_concentration: none,
 ) = {
-  let gender_ending_of_type_of_work = "a"
-  if type_of_work == "trabalho de conclusão de curso" {
-    gender_ending_of_type_of_work = "o"
+  let gender_ending_of_type_of_work = if type_of_work.gender == "masculine" {
+    "o"
+  } else {
+    "a"
   }
 
   let preposition_of_program = "à"
@@ -41,7 +47,7 @@
   }
 
   [
-    #capitalize_first_letter(type_of_work)
+    #capitalize_first_letter(type_of_work.name)
     apresentad#gender_ending_of_type_of_work
     #preposition_of_program
     #program.name

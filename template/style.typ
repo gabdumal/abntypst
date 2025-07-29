@@ -1,8 +1,11 @@
+#import "util/page.typ": page_counter, should_count_this_page, update_counted_page
+
 // ## Paper size — NBR 14724:2024 5.1
 #let paper_size = "a4"
 
 // ## Margins — NBR 14724:2024
 // TODO: Invert start and end margins for back and front pages
+// https://typst.app/docs/guides/page-setup-guide/
 #let margin_top = 3.0cm
 #let margin_bottom = 2.0cm
 #let margin_start = 3.0cm
@@ -45,14 +48,35 @@
 #let leading_for_smaller_text = font_size_for_smaller_text * leading_of_one
 #let leading_for_references = font_size_for_common_text * leading_of_one
 
-#let style(doc) = [
+#let style(
+  doc,
+  page_numbering: false,
+) = [
   // ## Page
-  #set page(paper: paper_size, margin: (
-    top: margin_top,
-    right: margin_end,
-    bottom: margin_bottom,
-    left: margin_start,
-  ))
+  #set page(
+    paper: paper_size,
+    margin: (
+      top: margin_top,
+      right: margin_end,
+      bottom: margin_bottom,
+      left: margin_start,
+    ),
+    header: context {
+      if page_numbering {
+        if should_count_this_page.get() {
+          align(end)[
+            #text(
+              font: font_family_serif,
+              size: font_size_for_smaller_text,
+            )[
+              #numbering("1", page_counter.get())
+            ]
+          ]
+        }
+      }
+      update_counted_page()
+    },
+  )
 
   // ## Text
   #set text(

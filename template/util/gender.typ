@@ -1,3 +1,5 @@
+// # Gênero
+
 #let get_gender_ending(
   gender,
   masculine_ends_with_vowel: true,
