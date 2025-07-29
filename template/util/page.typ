@@ -1,36 +1,20 @@
 // # Página
 
-#let page_counter = state("page_counter", 0)
 #let should_number_this_page = state("should_number_this_page", true)
-
-#let step_page_counter() = {
-  page_counter.update(n => n + 1)
-  // should_number_this_page.update(true)
-}
-
-#let not_number_next_page(
-  should_count: true,
-) = {
-  if should_count {} else {
-    page_counter.update(n => n - 1)
-  }
-  should_number_this_page.update(false)
-}
+#let should_count_this_page = state("should_count_this_page", true)
 
 #let not_number_page(
-  should_count: true,
   content,
 ) = {
-  if should_count {} else {
-    page_counter.update(n => n - 1)
-  }
   should_number_this_page.update(false)
-  [
-    #content
-  ]
+  content
+  should_number_this_page.update(true)
 }
 
-
-#let get_current_page_number() = {
-  page_counter.get() + 1
+#let not_count_page(
+  content,
+) = {
+  should_count_this_page.update(false)
+  content
+  should_count_this_page.update(true)
 }

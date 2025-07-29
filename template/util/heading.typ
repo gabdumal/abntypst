@@ -6,6 +6,8 @@
   spacing_for_level_3_and_beyond_headings,
 )
 
+#let should_start_on_new_page = state("should_start_on_new_page", true)
+
 #let get_styling_for_heading(it) = {
   let font_size = font_size_for_common_text
   let spacing_around = spacing_for_level_3_and_beyond_headings
@@ -28,4 +30,12 @@
   }
 
   return (font_size, spacing_around, font_weight, text_style)
+}
+
+#let not_start_on_new_page(
+  content,
+) = {
+  should_start_on_new_page.update(false)
+  content
+  should_start_on_new_page.update(true)
 }

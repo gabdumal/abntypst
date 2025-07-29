@@ -74,11 +74,15 @@
 #import "/template/academic_work/pages/errata.typ": include_errata
 #include_errata()
 
+// Abstract
+#include "content/abstract.typ"
+
 // Outline
 #import "/template/academic_work/pages/outline.typ": include_outline
 #include_outline()
 
 // Content
+#pagebreak(weak: true)
 #include "content/main.typ"
 
 // Bibliography

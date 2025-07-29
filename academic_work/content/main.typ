@@ -1,4 +1,3 @@
-#include "abstract.typ"
 #include "introduction.typ"
 #include "foundation.typ"
 #include "methodology.typ"

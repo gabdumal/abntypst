@@ -3,7 +3,8 @@
   margin_bottom, margin_end, margin_start, margin_top, paper_size, spacing_for_common_text,
 )
 #import "util/heading.typ": get_styling_for_heading
-#import "util/page.typ": get_current_page_number, page_counter, should_number_this_page, step_page_counter
+#import "util/heading.typ": should_start_on_new_page
+#import "util/page.typ": should_count_this_page, should_number_this_page
 
 #let template(
   doc,
@@ -20,19 +21,23 @@
     ),
     header: context {
       if page_numbering {
+        // Display page number in the header
         if should_number_this_page.get() {
           align(end)[
             #text(
               font: font_family_serif,
               size: font_size_for_smaller_text,
             )[
-              <counted_page>
-              #numbering("1", get_current_page_number())
+              #counter(page).display()
             ]
           ]
         }
+
+        // Regress page counter if this page should not be counted
+        if not should_count_this_page.get() {
+          counter(page).update(n => n - 1)
+        }
       }
-      step_page_counter()
     },
   )
 
@@ -67,6 +72,8 @@
   #set heading(numbering: "1.1")
 
   // ### Format
+
+
   #show heading: it => [
     // NBR 6024:2012 4.1
     // The format of headings should represent their hierarchical level
@@ -86,11 +93,13 @@
       style: text_style,
     )
 
-    // // Level 1 headings should start on a new page
-    // #if it.level == 1 {
-    //   pagebreak(weak: true) // NBR 14724:2024 5.2.2
-    //   // TODO: If considering odd/even pages, sections should start on odd pages
-    // }
+    // Level 1 headings should start on a new page
+    #if it.level == 1 {
+      if should_start_on_new_page.get() {
+        pagebreak(weak: true) // NBR 14724:2024 5.2.2
+        // TODO: If considering odd/even pages, sections should start on odd pages
+      }
+    }
 
     // Alignment and numbering
     #let alignment = start
@@ -107,7 +116,7 @@
     #set align(alignment)
 
     // NBR 14724:2024 5.2.2
-    // Headings should have 1,5x of spacing above and below
+    // Headings should have 1.5x of spacing above and below
     #block(
       above: spacing_around,
       below: spacing_around,
