@@ -8,8 +8,8 @@
 #import "data/abstract.typ": abstracts
 
 // Style
-#import "/template/style.typ": style
-#show: it => style(
+#import "/template/template.typ": template
+#show: it => template(
   it,
   page_numbering: true,
 )
@@ -19,8 +19,8 @@
 #show: init-glossary.with(glossary_entries)
 
 // Cover
-#import "/template/academic_work/pages/cover.typ": set_cover
-#set_cover(
+#import "/template/academic_work/pages/cover.typ": include_cover
+#include_cover(
   organization: organization,
   institution: institution,
   program: program,
@@ -33,8 +33,8 @@
 )
 
 // Title page
-#import "/template/academic_work/pages/title_page.typ": set_title_page
-#set_title_page(
+#import "/template/academic_work/pages/title_page.typ": include_title_page
+#include_title_page(
   area_of_concentration: area_of_concentration,
   degree: degree,
   organization: organization,
@@ -52,9 +52,9 @@
 )
 
 // Cataloging data
-#import "/template/academic_work/pages/cataloging_in_publication.typ": set_cataloging_in_publication
+#import "/template/academic_work/pages/cataloging_in_publication.typ": include_cataloging_in_publication
 #let keywords_in_main_language = abstracts.at(0).keywords
-#set_cataloging_in_publication(
+#include_cataloging_in_publication(
   authors: authors,
   title: title,
   subtitle: subtitle,
@@ -69,6 +69,14 @@
   program: program,
   keywords_in_main_language: keywords_in_main_language,
 )
+
+// Errata
+#import "/template/academic_work/pages/errata.typ": include_errata
+#include_errata()
+
+// Outline
+#import "/template/academic_work/pages/outline.typ": include_outline
+#include_outline()
 
 // Content
 #include "content/main.typ"

@@ -7,7 +7,7 @@
 #import "../../util/text.typ": capitalize_first_letter
 #import "../../components/title.typ": print_title
 
-#let set_cataloging_in_publication(
+#let include_cataloging_in_publication(
   authors: {
     (
       (

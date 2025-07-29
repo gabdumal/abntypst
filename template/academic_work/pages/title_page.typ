@@ -12,7 +12,7 @@
 #import "../components/institutional_information.typ": print_institutional_information
 #import "../components/nature.typ": print_nature
 
-#let set_title_page(
+#let include_title_page(
   authors: {
     (
       (

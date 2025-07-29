@@ -6,7 +6,7 @@
 #import "../../components/title.typ": print_title
 #import "../components/institutional_information.typ": print_institutional_information
 
-#let set_cover(
+#let include_cover(
   organization: {
     (
       name: "Nome da organização",

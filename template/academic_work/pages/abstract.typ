@@ -14,7 +14,10 @@
   content: { "Conteúdo do resumo." },
 ) = {
   not_number_next_page()
-  heading(numbering: none)[
+  heading(
+    numbering: none,
+    outlined: false,
+  )[
     #title
   ]
 
