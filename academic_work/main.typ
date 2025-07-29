@@ -2,8 +2,9 @@
 
 // Data
 #import "data/main.typ": (
-  advisors, area_of_concentration, authors, custom_nature, degree, degree_topic, department, institution, location,
-  organization, program, subtitle, title, type_of_work, volume_number, year,
+  advisors, approval_date, area_of_concentration, authors, custom_nature, degree, degree_topic, department,
+  examination_committee, institution, location, organization, program, subtitle, title, type_of_work, volume_number,
+  year,
 )
 #import "data/abstract.typ": abstracts
 
@@ -35,19 +36,19 @@
 // Title page
 #import "/template/academic_work/pages/title_page.typ": include_title_page
 #include_title_page(
-  area_of_concentration: area_of_concentration,
-  degree: degree,
-  organization: organization,
-  type_of_work: type_of_work,
   authors: authors,
   title: title,
   subtitle: subtitle,
   volume_number: volume_number,
+  organization: organization,
+  program: program,
+  type_of_work: type_of_work,
+  degree: degree,
+  degree_topic: degree_topic,
+  area_of_concentration: area_of_concentration,
+  advisors: advisors,
   location: location,
   year: year,
-  degree_topic: degree_topic,
-  program: program,
-  advisors: advisors,
   custom_nature: custom_nature,
 )
 
@@ -68,6 +69,27 @@
   institution: institution,
   program: program,
   keywords_in_main_language: keywords_in_main_language,
+)
+
+// Approval page
+#import "/template/academic_work/pages/approval_page.typ": include_approval_page
+#include_approval_page(
+  authors: authors,
+  title: title,
+  subtitle: subtitle,
+  volume_number: volume_number,
+  organization: organization,
+  program: program,
+  type_of_work: type_of_work,
+  degree: degree,
+  degree_topic: degree_topic,
+  area_of_concentration: area_of_concentration,
+  advisors: advisors,
+  examination_committee: examination_committee,
+  location: location,
+  year: year,
+  custom_nature: custom_nature,
+  approval_date: approval_date,
 )
 
 // Errata

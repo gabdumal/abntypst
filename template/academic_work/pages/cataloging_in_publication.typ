@@ -1,6 +1,6 @@
 // # Ficha catalográfica
 
-#import "../../components/advisors.typ": get_advisor_title
+#import "../../components/advisors.typ": get_advisor_role
 #import "../../components/people.typ": print_people, print_person
 #import "../../components/title.typ": print_title
 #import "../../style.typ": font_family_sans, font_size_for_smaller_text, leading_for_smaller_text
@@ -128,7 +128,7 @@
             #let is_first_advisor = true
             #for advisor in advisors {
               [
-                #capitalize_first_letter(get_advisor_title(gender: advisor.gender, is_co_advisor: not is_first_advisor)):
+                #capitalize_first_letter(get_advisor_role(gender: advisor.gender, is_co_advisor: not is_first_advisor)):
                 #print_person(person: advisor)
                 #parbreak()
               ]

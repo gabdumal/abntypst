@@ -87,14 +87,16 @@
 
 - [ ] 4. Localização
   - [ ] 4.1. Em monografias
+    - [ ] Verso e anverso
+    - [ ] Considerar toda a obra em volumes
   - [ ] 4.2. Em publicações periódicas
 - [ ] 5. Estrutura
-  - [ ] Numeração — NBR 6024
-  - [ ] Alinhamento
-  - [ ] Grafia
-  - [ ] Paginação
+  - [X] Numeração — NBR 6024
+  - [X] Alinhamento
+  - [X] Grafia
+  - [X] Paginação
   - [ ] Outros idiomas
-- [ ] 6. Regras gerais
+- [X] 6. Regras gerais
 
 ## NBR 6028:2021 — Informação e documentação — Resumo, resenha e recensão — Apresentação — 2ª edição, 2021-05-18
 
@@ -132,8 +134,8 @@
 - [ ] 4.2. Parte interna
   - [ ] 4.2.1. Elementos pré-textuais
     - [X] 4.2.1.1. Folha de rosto (obrigatório)
-    - [ ] 4.2.1.2. Errata (opcional)
-    - [ ] 4.2.1.3. Folha de aprovação (obrigatório)
+    - [X] 4.2.1.2. Errata (opcional)
+    - [X] 4.2.1.3. Folha de aprovação (obrigatório)
     - [ ] 4.2.1.4. Dedicatória (opcional)
     - [ ] 4.2.1.5. Agradecimentos (opcional)
     - [ ] 4.2.1.6. Epígrafe (opcional)

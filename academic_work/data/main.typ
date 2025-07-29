@@ -26,6 +26,10 @@
     last_name: [Medeiros],
     gender: "feminine",
     prefix: [Prof.ª Dr.ª],
+    organization: (
+      name: [Universidade Federal de Juiz de Fora],
+      gender: "feminine",
+    ),
   ),
   (
     first_name: [João],
@@ -33,6 +37,10 @@
     last_name: [Jimenez],
     gender: "masculine",
     prefix: [Prof. Dr.],
+    organization: (
+      name: [Universidade Federal de Juiz de Fora],
+      gender: "feminine",
+    ),
   ),
   (
     first_name: [Ana Paula],
@@ -40,6 +48,36 @@
     last_name: [Andrade],
     gender: "feminine",
     prefix: [Prof.ª Dr.ª],
+    organization: (
+      name: [Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de Minas Gerais],
+      gender: "masculine",
+    ),
+  ),
+)
+
+// Examination committee — required.
+#let examination_committee = (
+  (
+    first_name: [Luciano],
+    middle_name: [de],
+    last_name: [Lopes],
+    gender: "masculine",
+    prefix: [Prof. Dr.],
+    organization: (
+      name: [Universidade Federal de Minas Gerais],
+      gender: "feminine",
+    ),
+  ),
+  (
+    first_name: [Renata],
+    middle_name: none,
+    last_name: [Ribeiro],
+    gender: "feminine",
+    prefix: [Prof.ª Dr.ª],
+    organization: (
+      name: [Universidade Federal de Juiz de Fora],
+      gender: "feminine",
+    ),
   ),
 )
 
@@ -82,8 +120,7 @@
   )
 }
 
-// Type of work — semi-optional. The type of academic work, such as "trabalho de conclusão de curso", "dissertação", or "tese".
-// You can leave it empty if you define a custom nature of the work.
+// Type of work — required. The type of academic work, such as "trabalho de conclusão de curso", "dissertação", or "tese".
 #let type_of_work = {
   (
     name: "trabalho de conclusão de curso",
@@ -181,4 +218,13 @@
   // [
   //   Trabalho apresentado ao Bacharelado em Sistemas de Informação da Universidade Federal de Juiz de Fora como requisito parcial para a aprovação na disciplina de Sistemas de Apoio à Decisão.
   // ]
+}
+
+// Approval date — required.
+#let approval_date = {
+  (
+    day: [01],
+    month: [janeiro],
+    year: [2025],
+  )
 }
