@@ -25,19 +25,23 @@
     //   gender: "masculine",
     // )
   },
+  joiner: {
+    linebreak()
+  },
 ) = {
-  organization.name
-  parbreak()
-  if institution != none {
-    institution.name
-    parbreak()
-  }
-  if department != none {
-    department.name
-    parbreak()
-  }
-  if program != none {
-    program.name
-    parbreak()
-  }
+  [
+    #organization.name
+    #if institution != none [
+      #joiner
+      #institution.name
+    ]
+    #if department != none [
+      #joiner
+      #department.name
+    ]
+    #if program != none [
+      #joiner
+      #program.name
+    ]
+  ]
 }

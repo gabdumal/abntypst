@@ -21,6 +21,9 @@
 // Cover
 #import "/template/academic_work/pages/cover.typ": set_cover
 #set_cover(
+  organization: organization,
+  institution: institution,
+  program: program,
   authors: authors,
   title: title,
   subtitle: subtitle,
@@ -35,8 +38,6 @@
   area_of_concentration: area_of_concentration,
   degree: degree,
   organization: organization,
-  institution: institution,
-  department: department,
   type_of_work: type_of_work,
   authors: authors,
   title: title,
@@ -51,9 +52,9 @@
 )
 
 // Cataloging data
-#import "/template/academic_work/pages/cataloging_data.typ": set_cataloging_data
+#import "/template/academic_work/pages/cataloging_in_publication.typ": set_cataloging_in_publication
 #let keywords_in_main_language = abstracts.at(0).keywords
-#set_cataloging_data(
+#set_cataloging_in_publication(
   authors: authors,
   title: title,
   subtitle: subtitle,

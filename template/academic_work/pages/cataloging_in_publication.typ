@@ -7,7 +7,7 @@
 #import "../../util/text.typ": capitalize_first_letter
 #import "../../components/title.typ": print_title
 
-#let set_cataloging_data(
+#let set_cataloging_in_publication(
   authors: {
     (
       (
@@ -98,13 +98,13 @@
         thickness: auto,
       ),
       width: 13.5cm,
-      height: 8cm,
+      height: 10cm,
       inset: 0.5em,
     )[
       #set align(start + horizon)
 
-      #print_person(person: authors.at(0), last_name_first: true)
-      #parbreak()#linebreak()
+      #print_person(person: authors.at(0), last_name_first: true).
+      #parbreak()
 
       #print_title(
         title: title,
@@ -120,19 +120,18 @@
       #location,
       #year.
 
-      #context { page_counter.final() } p.
+      #context { page_counter.final() } f.
       #parbreak()#linebreak()
 
       #let is_first_advisor = true
       #for advisor in advisors {
-        text()[
+        [
           #capitalize_first_letter(get_advisor_title(gender: advisor.gender, is_co_advisor: not is_first_advisor)):
           #print_person(person: advisor)
           #parbreak()
         ]
         is_first_advisor = false
       }
-      #linebreak()
 
       #capitalize_first_letter(type_of_work.name)
       (#capitalize_first_letter(degree.name))

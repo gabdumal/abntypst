@@ -18,11 +18,7 @@
     #title
   ]
 
-  set par(first-line-indent: 0em)
   align(left)[
-    #set text(
-      size: font_size_for_common_text,
-    )
     #content
 
     // Following ABNTEX2
@@ -32,7 +28,11 @@
     // Keywords are preceded by a title and colon.
     // Keywords are separated by semicolons and end with a period.
     // Keywords are not capitalized.
-    #text(weight: "bold")[#keywords_title:]
-    #keywords.join("; ").
+    #par(
+      first-line-indent: 0em,
+    )[
+      #text(weight: "bold")[#keywords_title:]
+      #keywords.join("; ").
+    ]
   ]
 }
