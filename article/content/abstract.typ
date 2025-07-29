@@ -1,4 +1,4 @@
-#import "/template/abstract.typ": include_abstract
+#import "/template/abstract.typ": include_abstract, keywords_of_all_languages
 
 #include_abstract(
   title: "Resumo",

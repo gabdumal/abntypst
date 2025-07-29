@@ -70,6 +70,13 @@
     //   gender: "masculine",
     // )
   },
+  keywords_in_main_language: {
+    (
+      "primeira palavra-chave",
+      "segunda palavra-chave",
+      "terceira palavra-chave",
+    )
+  },
 ) = {
   not_number_next_page(
     should_count: false,
@@ -136,9 +143,29 @@
         "v. " + volume_number + sym.comma
       }
       #year.
+      #parbreak()#linebreak()
+
+      #let keywords_counter = 1
+      #for keyword in keywords_in_main_language {
+        numbering("1. ", keywords_counter)
+        [#capitalize_first_letter(keyword). ]
+        keywords_counter += 1
+      }
+      #let notes_counter = 1
+      #for advisor in advisors {
+        numbering("I. ", notes_counter)
+        [#print_person(person: advisor, last_name_first: true),
+          #if notes_counter > 1 { "co" }orient.
+        ]
+        notes_counter += 1
+      }
+      #if institution != none {
+        numbering("I. ", notes_counter)
+        [#institution.name.]
+        notes_counter += 1
+      }
+      #numbering("I. ", notes_counter)
+      Título.
     ]
-
-
-
   ]
 }

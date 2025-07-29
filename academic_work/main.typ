@@ -5,6 +5,7 @@
   advisors, area_of_concentration, authors, custom_nature, degree, degree_topic, department, institution, location,
   organization, program, subtitle, title, type_of_work, volume_number, year,
 )
+#import "data/abstract.typ": abstracts
 
 // Style
 #import "/template/style.typ": style
@@ -51,6 +52,7 @@
 
 // Cataloging data
 #import "/template/academic_work/pages/cataloging_data.typ": set_cataloging_data
+#let keywords_in_main_language = abstracts.at(0).keywords
 #set_cataloging_data(
   authors: authors,
   title: title,
@@ -64,6 +66,7 @@
   organization: organization,
   institution: institution,
   program: program,
+  keywords_in_main_language: keywords_in_main_language,
 )
 
 // Content
