@@ -21,17 +21,23 @@
 // Advisors — required.
 #let advisors = (
   (
-    name: [Maria de Souza],
+    first_name: [Maria],
+    middle_name: [de],
+    last_name: [Medeiros],
     gender: "feminine",
     prefix: [Prof.ª Dr.ª],
   ),
   (
-    name: [João da Silva],
+    first_name: [João],
+    middle_name: none,
+    last_name: [Jimenez],
     gender: "masculine",
     prefix: [Prof. Dr.],
   ),
   (
-    name: [Ana Paula],
+    first_name: [Ana Paula],
+    middle_name: none,
+    last_name: [Andrade],
     gender: "feminine",
     prefix: [Prof.ª Dr.ª],
   ),
@@ -54,14 +60,16 @@
 )
 
 // Institution — optional. Usually the name of the college or faculty.
-#let institution = {
-  [Instituto de Ciências Exatas]
-}
+#let institution = (
+  name: [Instituto de Ciências Exatas],
+  gender: "masculine",
+)
 
 // Department — optional. Usually the name of the department or school.
-#let department = {
-  [Departamento de Ciência da Computação]
-}
+#let department = (
+  name: [Departamento de Ciência da Computação],
+  gender: "masculine",
+)
 
 // Program — semi-optional. The name of the program or course.
 // It will be used in the nature of the work as follows: "apresentado ao Bacharelado em Sistemas de Informação".

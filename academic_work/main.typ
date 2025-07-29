@@ -55,8 +55,15 @@
   authors: authors,
   title: title,
   subtitle: subtitle,
+  volume_number: volume_number,
   location: location,
   year: year,
+  advisors: advisors,
+  type_of_work: type_of_work,
+  degree: degree,
+  organization: organization,
+  institution: institution,
+  program: program,
 )
 
 // Content

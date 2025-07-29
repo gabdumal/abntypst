@@ -4,28 +4,47 @@
 #import "../../util/text.typ": capitalize_first_letter
 
 #let print_nature(
-  authors: (),
-  organization: (
-    name: "Nome da organização",
-    gender: "masculine",
-  ),
-  program: (
-    name: "Nome do programa",
-    gender: "masculine",
-  ),
-  type_of_work: (
-    name: "trabalho de conclusão de curso",
-    gender: "masculine",
-  ),
-  degree: (
-    name: "bacharelado",
-    title: (
-      masculine: "bacharel",
-      feminine: "bacharela",
-    ),
-  ),
-  degree_topic: "Tema do trabalho",
-  area_of_concentration: none,
+  authors: {
+    (
+      (
+        first_name: "Fulano",
+        middle_name: none,
+        last_name: "Fonseca",
+        gender: "masculine",
+      ),
+    )
+  },
+  organization: {
+    (
+      name: "Nome da organização",
+      gender: "masculine",
+    )
+  },
+  program: {
+    (
+      name: "Nome do programa",
+      gender: "masculine",
+    )
+  },
+  type_of_work: {
+    (
+      name: "trabalho de conclusão de curso",
+      gender: "masculine",
+    )
+  },
+  degree: {
+    (
+      name: "bacharelado",
+      title: (
+        masculine: "bacharel",
+        feminine: "bacharela",
+      ),
+    )
+  },
+  degree_topic: { "Tema do trabalho" },
+  area_of_concentration: {
+    // "Área de concentração"
+  },
 ) = {
   let gender_ending_of_type_of_work = if type_of_work.gender == "masculine" {
     "o"

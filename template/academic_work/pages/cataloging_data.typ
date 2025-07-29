@@ -1,36 +1,79 @@
 // # Ficha catalográfica
 
-#import "../../style.typ": font_family_sans, font_size_for_smaller_text
-#import "../../util/authors.typ": print_author, print_authors
-#import "../../util/page.typ": not_count_next_page
-#import "../../util/title.typ": print_title
+#import "../../style.typ": font_family_sans, font_size_for_smaller_text, leading_for_smaller_text
+#import "../../components/advisors.typ": get_advisor_title
+#import "../../util/page.typ": not_number_next_page, page_counter
+#import "../../components/people.typ": print_people, print_person
+#import "../../util/text.typ": capitalize_first_letter
+#import "../../components/title.typ": print_title
 
 #let set_cataloging_data(
-  authors: (
+  authors: {
     (
-      first_name: "Fulano",
-      middle_name: none,
-      last_name: "Fonseca",
+      (
+        first_name: "Fulano",
+        middle_name: none,
+        last_name: "Fonseca",
+        gender: "masculine",
+      ),
+    )
+  },
+  title: { "Título do trabalho" },
+  subtitle: {
+    // "Subtítulo do trabalho"
+  },
+  volume_number: {
+    // "1"
+  },
+  location: { "Local" },
+  year: { "Ano" },
+  advisors: {
+    (
+      (
+        first_name: "Ciclana",
+        middle_name: "de",
+        last_name: "Castro",
+        gender: "feminine",
+      ),
+    )
+  },
+  type_of_work: {
+    (
+      name: "trabalho de conclusão de curso",
       gender: "masculine",
-    ),
-  ),
-  title: "Título do trabalho",
-  subtitle: none,
-  volume_number: none,
-  location: "Local",
-  year: "Ano",
-  // organization: str,
-  // program: none,
-  // institution: none,
-  // department: none,
-  // type_of_work: none,
-  // degree: none,
-  // degree_topic: none,
-  // area_of_concentration: none,
-  // advisors: (),
-  // custom_nature: none,
+    )
+  },
+  degree: {
+    (
+      name: "bacharelado",
+      title: (
+        masculine: "bacharel",
+        feminine: "bacharela",
+      ),
+    )
+  },
+  organization: {
+    (
+      name: "Nome da organização",
+      gender: "masculine",
+    )
+  },
+  institution: {
+    // (
+    //   name: "Nome da instituição",
+    //   gender: "masculine",
+    // )
+  },
+  program: {
+    // (
+    //   name: "Nome do programa",
+    //   gender: "masculine",
+    // )
+  },
 ) = {
-  not_count_next_page()
+  not_number_next_page(
+    should_count: false,
+  )
   page()[
     #set align(center + bottom)
     #set text(
@@ -39,6 +82,8 @@
     )
     #set par(
       first-line-indent: 0.5cm,
+      leading: leading_for_smaller_text,
+      spacing: leading_for_smaller_text,
     )
 
     #box(
@@ -51,7 +96,8 @@
     )[
       #set align(start + horizon)
 
-      #print_author(author: authors.at(0), last_name_first: true)
+      #print_person(person: authors.at(0), last_name_first: true)
+      #parbreak()#linebreak()
 
       #print_title(
         title: title,
@@ -59,13 +105,40 @@
         with_weight: false,
       )
       #sym.slash
-      #print_authors(authors: authors)
+      #print_people(people: authors)
       #sym.dash.en
       #if volume_number != none {
         "v. " + volume_number + sym.space + sym.dash.en
       }
       #location,
       #year.
+
+      #context { page_counter.final() } p.
+      #parbreak()#linebreak()
+
+      #let is_first_advisor = true
+      #for advisor in advisors {
+        text()[
+          #capitalize_first_letter(get_advisor_title(gender: advisor.gender, is_co_advisor: not is_first_advisor)):
+          #print_person(person: advisor)
+          #parbreak()
+        ]
+        is_first_advisor = false
+      }
+      #linebreak()
+
+      #capitalize_first_letter(type_of_work.name)
+      (#capitalize_first_letter(degree.name))
+      #sym.dash.en
+      #organization.name#if institution != none { [, #institution.name] }.
+      #if program != none { [#program.name,] }
+      #if volume_number != none {
+        "v. " + volume_number + sym.comma
+      }
+      #year.
     ]
+
+
+
   ]
 }

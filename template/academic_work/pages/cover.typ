@@ -1,23 +1,38 @@
 // # Capa
 
 #import "../../style.typ": font_family_sans
-#import "../../util/authors.typ": print_authors
-#import "../../util/page.typ": not_count_next_page
-#import "../../util/title.typ": print_title
+#import "../../util/page.typ": not_number_next_page
+#import "../../components/people.typ": print_people
+#import "../../components/title.typ": print_title
 
 // Following ABNTEX2
 #let font_size_for_primary_information = 20pt
 #let font_size_for_secondary_information = 14pt
 
 #let set_cover(
-  authors: (),
-  title: "Título do trabalho",
-  subtitle: "Subtítulo do trabalho",
-  volume_number: none,
-  location: "Local",
-  year: "Ano",
+  authors: {
+    (
+      (
+        first_name: "Fulano",
+        middle_name: none,
+        last_name: "Fonseca",
+        gender: "masculine",
+      ),
+    )
+  },
+  title: { "Título do trabalho" },
+  subtitle: {
+    // "Subtítulo do trabalho"
+  },
+  volume_number: {
+    // "1"
+  },
+  location: { "Local" },
+  year: { "Ano" },
 ) = {
-  not_count_next_page()
+  not_number_next_page(
+    should_count: false,
+  )
   page()[
     #set align(center)
     #set text(
@@ -26,8 +41,8 @@
     )
 
     // Institutional information
-    #print_authors(
-      authors: authors,
+    #print_people(
+      people: authors,
     )
 
     #v(1fr)

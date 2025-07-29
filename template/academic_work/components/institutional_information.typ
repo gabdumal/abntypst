@@ -1,21 +1,39 @@
 // # Informações institucionais
 
 #let print_institutional_information(
-  organization: (
-    name: "Nome da organização",
-  ),
-  institution: none,
-  department: none,
-  program: none,
+  organization: {
+    (
+      name: "Nome da organização",
+      gender: "masculine",
+    )
+  },
+  institution: {
+    // (
+    //   name: "Nome da instituição",
+    //   gender: "masculine",
+    // )
+  },
+  department: {
+    // (
+    //   name: "Nome do departamento",
+    //   gender: "masculine",
+    // )
+  },
+  program: {
+    // (
+    //   name: "Nome do programa",
+    //   gender: "masculine",
+    // )
+  },
 ) = {
   organization.name
   parbreak()
   if institution != none {
-    institution
+    institution.name
     parbreak()
   }
   if department != none {
-    department
+    department.name
     parbreak()
   }
   if program != none {

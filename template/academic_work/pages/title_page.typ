@@ -1,10 +1,11 @@
 // # Folha de rosto
 
 #import "../../style.typ": font_family_sans, font_family_serif, font_size_for_common_text
-#import "../../util/authors.typ": print_authors
-#import "../../util/gender.typ": get_gender_ending
-#import "../../util/page.typ": not_count_next_page
-#import "../../util/title.typ": print_title
+#import "../../components/advisors.typ": get_advisor_title
+#import "../../util/page.typ": not_number_next_page
+#import "../../components/people.typ": print_people, print_person
+#import "../../util/text.typ": capitalize_first_letter
+#import "../../components/title.typ": print_title
 #import "../components/institutional_information.typ": print_institutional_information
 #import "../components/nature.typ": print_nature
 
@@ -14,24 +15,86 @@
 #let font_size_for_tertiary_information = font_size_for_common_text
 
 #let set_title_page(
-  authors: (),
-  title: "Título do trabalho",
-  subtitle: none,
-  organization: "Nome da organização",
-  program: none,
-  institution: none,
-  department: none,
-  type_of_work: none,
-  degree: none,
-  degree_topic: none,
-  area_of_concentration: none,
-  advisors: (),
-  volume_number: none,
-  location: "Local",
-  year: "Ano",
-  custom_nature: none,
+  authors: {
+    (
+      (
+        first_name: "Fulano",
+        middle_name: none,
+        last_name: "Fonseca",
+        gender: "masculine",
+      ),
+    )
+  },
+  title: { "Título do trabalho" },
+  subtitle: {
+    // "Subtítulo do trabalho"
+  },
+  organization: {
+    (
+      name: "Nome da organização",
+      gender: "masculine",
+    )
+  },
+  program: {
+    // (
+    //   name: "Nome do programa",
+    //   gender: "masculine",
+    // )
+  },
+  institution: {
+    // (
+    //   name: "Nome da instituição",
+    //   gender: "masculine",
+    // )
+  },
+  department: {
+    // (
+    //   name: "Nome do departamento",
+    //   gender: "masculine",
+    // )
+  },
+  type_of_work: {
+    // (
+    //   name: "trabalho de conclusão de curso",
+    //   gender: "masculine",
+    // )
+  },
+  degree: {
+    // (
+    //   name: "bacharelado",
+    //   title: (
+    //     masculine: "bacharel",
+    //     feminine: "bacharela",
+    //   ),
+    // )
+  },
+  degree_topic: { "Tema do trabalho" },
+  area_of_concentration: {
+    // "Área de concentração"
+  },
+  advisors: {
+    (
+      (
+        first_name: "Ciclana",
+        middle_name: "de",
+        last_name: "Castro",
+        gender: "feminine",
+        prefix: {
+          // "Profª Drª"
+        },
+      ),
+    )
+  },
+  volume_number: {
+    // "1"
+  },
+  location: { "Local" },
+  year: { "Ano" },
+  custom_nature: {
+    "Natureza do trabalho."
+  },
 ) = {
-  not_count_next_page()
+  not_number_next_page()
   page()[
     #set align(center)
     #set text(
@@ -42,8 +105,8 @@
     #text(
       font: font_family_sans,
     )[
-      #print_authors(
-        authors: authors,
+      #print_people(
+        people: authors,
       )
     ]
 
@@ -101,19 +164,15 @@
     #v(1fr)
 
     // Advisors
-    #let is_first = true
+    #let is_first_advisor = true
     #for advisor in advisors {
       text()[
-        #if is_first [
-          Orientador#get_gender_ending(advisor.gender, masculine_ends_with_vowel: false):
-        ] else [
-          Coorientador#get_gender_ending(advisor.gender, masculine_ends_with_vowel: false):
-        ]
+        #capitalize_first_letter(get_advisor_title(gender: advisor.gender, is_co_advisor: not is_first_advisor)):
         #advisor.prefix
-        #advisor.name
+        #print_person(person: advisor)
         #parbreak()
       ]
-      is_first = false
+      is_first_advisor = false
     }
 
     #v(1fr)

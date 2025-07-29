@@ -1,4 +1,4 @@
-#import "util/page.typ": page_counter, should_count_this_page, update_counted_page
+#import "util/page.typ": get_current_page_number, page_counter, should_number_this_page, step_page_counter
 
 // ## Paper size — NBR 14724:2024 5.1
 #let paper_size = "a4"
@@ -63,18 +63,18 @@
     ),
     header: context {
       if page_numbering {
-        if should_count_this_page.get() {
+        if should_number_this_page.get() {
           align(end)[
             #text(
               font: font_family_serif,
               size: font_size_for_smaller_text,
             )[
-              #numbering("1", page_counter.get())
+              #numbering("1", get_current_page_number())
             ]
           ]
         }
       }
-      update_counted_page()
+      step_page_counter()
     },
   )
 
@@ -88,11 +88,15 @@
   )
 
   // ## Paragraphs
-  #set par(leading: leading_for_common_text, justify: true, first-line-indent: (
-    // Following abnTEX2
-    amount: 1.3cm,
-    all: true,
-  ))
+  #set par(
+    first-line-indent: (
+      // Following abnTEX2
+      amount: 1.3cm,
+      all: true,
+    ),
+    leading: leading_for_common_text,
+    justify: true,
+  )
 
   // ## Headings
 
