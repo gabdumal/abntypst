@@ -4,7 +4,7 @@
 #import "../../components/people.typ": print_people, print_person
 #import "../../components/title.typ": print_title
 #import "../../style.typ": font_family_sans, font_size_for_smaller_text, leading_for_smaller_text
-#import "../../util/heading.typ": not_start_on_new_page
+#import "../../components/heading.typ": not_start_on_new_page
 #import "../../util/page.typ": not_count_page, not_number_page
 #import "../../util/text.typ": capitalize_first_letter
 

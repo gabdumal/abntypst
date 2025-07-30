@@ -1,17 +1,13 @@
 // # Epígrafe
 
-#import "../../util/heading.typ": not_start_on_new_page
+#import "../../components/heading.typ": not_start_on_new_page
+#import "../../components/quote.typ": format_quote
 #import "../../util/page.typ": not_number_page
 
-// NBR 14724:2024 4.2.1.6, NBR 14724:2024 5.2.4
+// NBR 14724:2024 4.2.1.6, NBR 14724:2024 5.2.4, NBR 14724:2024 5.5
+// Epigraph on pre-textual elements can present a quote without following long quote formatting, as determined by NBR 14724:2024 4.2.1.6.
 #let include_epigraph(
-  content: {
-    [
-      Conteúdo da epígrafe.
-      #parbreak()
-      #lorem(50)
-    ]
-  },
+  content,
 ) = {
   not_number_page()[
     #not_start_on_new_page()[
@@ -21,6 +17,10 @@
         #align(end + bottom)[
           #box(width: 50%)[
             #set align(start)
+            #show quote: it => format_quote(
+              indent: false,
+              smaller_text: false,
+            )[#it]
             #content
           ]
         ]

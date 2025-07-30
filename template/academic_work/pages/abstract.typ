@@ -1,7 +1,7 @@
 // # Resumo
 
 #import "../../style.typ": font_size_for_common_text
-#import "../../util/heading.typ": not_start_on_new_page
+#import "../../components/heading.typ": not_start_on_new_page
 #import "../../util/page.typ": not_number_page
 
 // NBR 14724:2024 4.2.1.7, NBR 14724:2024 4.2.1.8

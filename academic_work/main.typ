@@ -73,7 +73,11 @@
 
 // Errata
 #import "/template/academic_work/pages/errata.typ": include_errata
-#include_errata()
+#include_errata()[
+  Conteúdo da errata.
+  #parbreak()
+  #lorem(50)
+]
 
 // Approval page
 #import "/template/academic_work/pages/approval_page.typ": include_approval_page
@@ -98,23 +102,24 @@
 
 // Dedication
 #import "/template/academic_work/pages/dedication.typ": include_dedication
-#include_dedication(content: {
-  [
-    Conteúdo da dedicatória.
-    #parbreak()
-    #lorem(50)
-  ]
-})
+#include_dedication()[
+  Conteúdo da dedicatória.
+  #parbreak()
+  #lorem(50)
+]
 
 // Epigraph
 #import "/template/academic_work/pages/epigraph.typ": include_epigraph
-#include_epigraph(content: {
-  [
+#include_epigraph()[
+  #quote(
+    attribution: [@arbex:2025:data_science_decision_support],
+    block: true,
+  )[
     Conteúdo da epígrafe.
     #parbreak()
     #lorem(50)
   ]
-})
+]
 
 // Abstract
 #include "content/abstract.typ"

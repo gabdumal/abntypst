@@ -3,6 +3,13 @@
 A modelagem analítica é um processo fundamental no campo da ciência de dados e da análise de negócios, que consiste na criação de representações matemáticas e lógicas de sistemas, processos ou problemas do mundo real.
 Seu objetivo principal é compreender as relações entre diferentes variáveis e prever resultados futuros com base em dados históricos e em um conjunto de premissas definidas @arbex:2025:data_science_decision_support.
 
+#quote(
+  block: true,
+  attribution: [@arbex:2025:data_science_decision_support],
+)[
+  #lorem(50)
+]
+
 Nesse sentido, os @sad:pl são sistemas computacionais projetados para auxiliar gestores de organizações a tomar decisões complexas.
 Eles têm o propósito de reunir um conjunto de informações relevantes, provenientes de fontes não necessariamente estruturadas, e apresentá-las com um caráter informativo.
 O método que aplicam parte da modelagem analítica, transformando dados brutos em informações, sintetizadas em relatórios e projeções @gillis:2024:decision_support_system.

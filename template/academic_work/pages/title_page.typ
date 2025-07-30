@@ -6,7 +6,7 @@
 #import "../../components/advisors.typ": get_advisor_role
 #import "../../components/people.typ": print_people, print_person
 #import "../../components/title.typ": print_title
-#import "../../util/heading.typ": not_start_on_new_page
+#import "../../components/heading.typ": not_start_on_new_page
 #import "../../util/page.typ": not_number_page
 #import "../../util/text.typ": capitalize_first_letter
 #import "../components/institutional_information.typ": print_institutional_information

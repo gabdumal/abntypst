@@ -1,17 +1,11 @@
 // # Dedicatória
 
-#import "../../util/heading.typ": not_start_on_new_page
+#import "../../components/heading.typ": not_start_on_new_page
 #import "../../util/page.typ": not_number_page
 
 // NBR 14724:2024 4.2.1.4, NBR 14724:2024 5.2.4
 #let include_dedication(
-  content: {
-    [
-      Conteúdo da dedicatória.
-      #parbreak()
-      #lorem(50)
-    ]
-  },
+  content,
 ) = {
   not_number_page()[
     #not_start_on_new_page()[

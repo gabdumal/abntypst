@@ -1,7 +1,7 @@
 // # Capa
 
 #import "../../style.typ": font_family_sans
-#import "../../util/heading.typ": not_start_on_new_page
+#import "../../components/heading.typ": not_start_on_new_page
 #import "../../util/page.typ": not_count_page, not_number_page
 #import "../../components/people.typ": print_people
 #import "../../components/title.typ": print_title

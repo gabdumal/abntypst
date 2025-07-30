@@ -7,7 +7,7 @@
 #import "../../components/people.typ": print_people, print_person
 #import "../../components/title.typ": print_title
 #import "../../util/gender.typ": get_gender_ending
-#import "../../util/heading.typ": not_start_on_new_page
+#import "../../components/heading.typ": not_start_on_new_page
 #import "../../util/page.typ": not_number_page
 #import "../components/examiner.typ": print_examiner
 #import "../components/institutional_information.typ": print_institutional_information
