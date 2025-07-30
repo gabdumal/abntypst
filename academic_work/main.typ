@@ -98,7 +98,23 @@
 
 // Dedication
 #import "/template/academic_work/pages/dedication.typ": include_dedication
-#include_dedication()
+#include_dedication(content: {
+  [
+    Conteúdo da dedicatória.
+    #parbreak()
+    #lorem(50)
+  ]
+})
+
+// Epigraph
+#import "/template/academic_work/pages/epigraph.typ": include_epigraph
+#include_epigraph(content: {
+  [
+    Conteúdo da epígrafe.
+    #parbreak()
+    #lorem(50)
+  ]
+})
 
 // Abstract
 #include "content/abstract.typ"
