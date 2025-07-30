@@ -71,6 +71,10 @@
   keywords_in_main_language: keywords_in_main_language,
 )
 
+// Errata
+#import "/template/academic_work/pages/errata.typ": include_errata
+#include_errata()
+
 // Approval page
 #import "/template/academic_work/pages/approval_page.typ": include_approval_page
 #include_approval_page(
@@ -92,9 +96,9 @@
   approval_date: approval_date,
 )
 
-// Errata
-#import "/template/academic_work/pages/errata.typ": include_errata
-#include_errata()
+// Dedication
+#import "/template/academic_work/pages/dedication.typ": include_dedication
+#include_dedication()
 
 // Abstract
 #include "content/abstract.typ"

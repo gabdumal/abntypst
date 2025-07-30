@@ -1,5 +1,6 @@
 // # Informações institucionais
 
+// NBR 14724:2024 4.2.1.3
 #let print_institutional_information(
   organization: {
     (

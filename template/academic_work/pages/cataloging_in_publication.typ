@@ -8,6 +8,7 @@
 #import "../../util/page.typ": not_count_page, not_number_page
 #import "../../util/text.typ": capitalize_first_letter
 
+// NBR 14724:2024 4.2.1.1.2
 #let include_cataloging_in_publication(
   authors: {
     (

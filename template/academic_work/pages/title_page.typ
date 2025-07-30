@@ -1,8 +1,7 @@
 // # Folha de rosto
 
 #import "../../style.typ": (
-  font_family_sans, font_family_serif, font_size_for_common_text, font_size_for_smaller_text, leading_for_smaller_text,
-  spacing_for_smaller_text,
+  font_family_sans, font_size_for_smaller_text, leading_for_smaller_text, spacing_for_smaller_text,
 )
 #import "../../components/advisors.typ": get_advisor_role
 #import "../../components/people.typ": print_people, print_person
@@ -13,6 +12,7 @@
 #import "../components/institutional_information.typ": print_institutional_information
 #import "../components/nature.typ": print_nature
 
+// NBR 14724:2024 4.2.1.1.1
 #let include_title_page(
   authors: {
     (

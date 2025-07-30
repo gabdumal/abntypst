@@ -7,6 +7,7 @@
 #import "../../components/title.typ": print_title
 #import "../components/institutional_information.typ": print_institutional_information
 
+// NBR 14724:2024 4.1.1
 #let include_cover(
   organization: {
     (

@@ -1,8 +1,7 @@
 // # Folha de aprovação
 
 #import "../../style.typ": (
-  font_family_sans, font_family_serif, font_size_for_common_text, font_size_for_smaller_text, leading_for_common_text,
-  leading_for_smaller_text, spacing_for_smaller_text,
+  font_family_sans, font_size_for_smaller_text, leading_for_smaller_text, spacing_for_smaller_text,
 )
 #import "../../components/advisors.typ": get_advisor_role
 #import "../../components/people.typ": print_people, print_person
@@ -10,47 +9,11 @@
 #import "../../util/gender.typ": get_gender_ending
 #import "../../util/heading.typ": not_start_on_new_page
 #import "../../util/page.typ": not_number_page
-#import "../../util/text.typ": capitalize_first_letter
+#import "../components/examiner.typ": print_examiner
 #import "../components/institutional_information.typ": print_institutional_information
 #import "../components/nature.typ": print_nature
 
-#let print_examiner(
-  examiner: (
-    first_name: "Ciclana",
-    middle_name: "de",
-    last_name: "Castro",
-    gender: "feminine",
-    prefix: {
-      // "Profª Drª"
-    },
-    organization: (
-      name: "Nome da organização",
-      gender: "feminine",
-    ),
-  ),
-  role: {
-    "orientador"
-  },
-) = {
-  block(
-    above: 1.5cm,
-  )[
-    #block(below: leading_for_common_text)[
-      #line(length: 100%)
-    ]
-    #par()[
-      #examiner.prefix
-      #print_person(person: examiner)
-      #if role != none [
-        #sym.dash.en
-        #capitalize_first_letter(role)
-      ]
-      #linebreak()
-      #examiner.organization.name
-    ]
-  ]
-}
-
+// NBR 14724:2024 4.2.1.3, NBR 14724:2024 5.2.4
 #let include_approval_page(
   authors: {
     (
@@ -150,6 +113,7 @@
   not_number_page()[
     #not_start_on_new_page()[
       #page()[
+        // Approval page should not have title or numbering.
         #set align(center)
         #set text(
           font: font_family_sans,

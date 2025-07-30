@@ -5,6 +5,7 @@
 #import "../../util/page.typ": not_count_page, not_number_page
 #import "../../util/heading.typ": get_styling_for_heading
 
+// NBR 6027:2012, NBR 14724:2024 4.2.1.13
 #let include_outline() = {
   set text(
     font: font_family_sans,
