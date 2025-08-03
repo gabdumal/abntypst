@@ -137,7 +137,7 @@
     - [X] 4.2.1.2. Errata (opcional)
     - [X] 4.2.1.3. Folha de aprovação (obrigatório)
     - [X] 4.2.1.4. Dedicatória (opcional)
-    - [ ] 4.2.1.5. Agradecimentos (opcional)
+    - [X] 4.2.1.5. Agradecimentos (opcional)
     - [X] 4.2.1.6. Epígrafe (opcional)
     - [X] 4.2.1.7. Resumo na língua vernácula (obrigatório) — NBR 6028
     - [X] 4.2.1.8. Resumo em língua estrangeira (obrigatório) — NBR 6028

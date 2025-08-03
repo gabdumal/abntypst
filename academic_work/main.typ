@@ -103,14 +103,22 @@
 // Dedication
 #import "/template/academic_work/pages/dedication.typ": include_dedication
 #include_dedication()[
-  Conteúdo da dedicatória. #lorem(50)
+  Dedicamos este trabalho àqueles que contribuem com a organização e com o compartilhamento da informação, sobretudo àqueles que o fazem de forma livre e cooperativa.
+]
+
+// Acknowledgments
+#import "/template/academic_work/pages/acknowledgments.typ": include_acknowledgments
+#include_acknowledgments()[
+  Agradecemos aos informáticos que construíram as ferramentas utilizadas para desenvolver este projeto, em especial aos contribuidores dos projetos
+  #emph[abnTeX2] @abntex:2023:repository_abntex2 e
+  #emph[Typst] @typst:2025:typst.
 ]
 
 // Epigraph
 #import "/template/academic_work/pages/epigraph.typ": include_epigraph
 #include_epigraph()[
   #quote(
-    attribution: [#cite(<dumont:1918:o_que_eu_vi_o_que_nos_veremos>, supplement: "p. 49")],
+    attribution: [@dumont:1918:o_que_eu_vi_o_que_nos_veremos[p. 49]],
     block: true,
   )[
     Perguntar-me-á o leitor porque não o construí mais cedo, ao mesmo tempo que os meus dirigíveis.
