@@ -5,7 +5,7 @@
 
 // NBR 14724:2024 4.2.1.6
 #let include_acknowledgments(
-  content,
+  body,
 ) = {
   not_number_page()[
     #not_start_on_new_page()[
@@ -16,7 +16,7 @@
         )[
           Agradecimentos
         ]
-        #content
+        #body
       ]
     ]
   ]

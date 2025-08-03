@@ -1,10 +1,19 @@
-#import "components/quote.typ": format_quote
 #import "style.typ": (
   font_family_serif, font_size_for_common_text, font_size_for_smaller_text, leading_for_common_text, margin_bottom,
   margin_end, margin_start, margin_top, paper_size, spacing_for_common_text,
 )
 #import "components/heading.typ": format_heading
+#import "components/quote.typ": format_quote
 #import "util/page.typ": should_count_this_page, should_number_this_page
+
+#let format_caption() = {
+  // The caption of a figure should be on top of the figure
+  // The indicator and numbering of the figure should be separated by a em-dash from the following caption text
+  set figure.caption(
+    position: top,
+    separator: [ #sym.dash.em ],
+  )
+}
 
 #let template(
   doc,
@@ -78,9 +87,18 @@
   #show quote: it => {
     // Long quotes (more than 3 lines) should be blocks.
     if it.block {
-      format_quote()[#it]
+      format_quote(it)
     }
   }
+
+  // ## Figures
+  // NBR 14724:2024 5.8
+  #set figure.caption(
+    // The caption of a figure should be on top of the figure
+    // The indicator and numbering of the figure should be separated by a em-dash from the following caption text
+    position: top,
+    separator: [ #sym.dash.em ],
+  )
 
   #doc
 ]

@@ -1,4 +1,5 @@
-#import "/template/packages.typ": init-glossary
+#import "/template/packages.typ": glossy
+#import "/template/util/source.typ": print_source_for_content_created_by_authors
 
 // Data
 #import "data/main.typ": (
@@ -17,7 +18,7 @@
 
 // Glossary
 #import "data/glossary.typ": glossary_entries
-#show: init-glossary.with(glossary_entries)
+#show: glossy.init-glossary.with(glossary_entries)
 
 // Cover
 #import "/template/academic_work/pages/cover.typ": include_cover
@@ -110,8 +111,8 @@
 #import "/template/academic_work/pages/acknowledgments.typ": include_acknowledgments
 #include_acknowledgments()[
   Agradecemos aos informáticos que construíram as ferramentas utilizadas para desenvolver este projeto, em especial aos contribuidores dos projetos
-  #emph[abnTeX2] @abntex:2023:repository_abntex2 e
-  #emph[Typst] @typst:2025:typst.
+  #emph[abnTeX2] @abntex:2023:repository_abntex2,
+  #emph[Typst] @typst:2025:typst, #emph[glossy] @waits:2025:glossy e #emph[subpar] @tinger:2025:subpar.
 ]
 
 // Epigraph

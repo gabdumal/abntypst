@@ -182,12 +182,12 @@
 - [ ] 5.5. Citações — NBR 10520
 - [ ] 5.6. Siglas
 - [ ] 5.7. Equações e fórmulas
-- [ ] 5.8. Ilustrações
-  - [ ] Numeração
-  - [ ] Legenda
-    - [ ] Título
-    - [ ] Fonte — NBR 10520
-    - [ ] Notas
+- [X] 5.8. Ilustrações
+  - [X] Numeração
+  - [X] Legenda
+    - [X] Título
+    - [X] Fonte — NBR 10520
+    - [X] Notas
 - [ ] 5.9. Tabelas
   - [ ] Numeração
   - [ ] Legenda

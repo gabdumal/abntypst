@@ -3,9 +3,4 @@
 #include "methodology.typ"
 #include "results.typ"
 #include "conclusion.typ"
-
-#heading(numbering: none)[
-  Título Não Numerado
-]
-
-#lorem(100)
+#include "not_numbered.typ"

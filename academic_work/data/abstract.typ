@@ -8,7 +8,7 @@
       "modelagem analítica",
     ),
     title: "Resumo",
-    content: [
+    body: [
       Este trabalho apresenta uma análise de sensibilidade aplicada ao contexto de uma confeitaria fictícia, com o objetivo de investigar o impacto da variação de preços dos insumos na lucratividade de receitas.
       Utilizou-se modelagem analítica com apoio de ferramentas como PlantUML, SQLite, PostgreSQL e Apache Superset para criação, manipulação e visualização de dados.
       Foram escolhidas três receitas representativas — pão francês, brigadeiro e bolo de milho verde —, modeladas em banco de dados e analisadas por meio de simulações de aumento de custos em 5%, 10% e 15% para cada insumo.
@@ -27,7 +27,7 @@
       "analytical modeling",
     ),
     title: "Abstract",
-    content: [
+    body: [
       #text(
         lang: "en",
         region: "us",

@@ -9,7 +9,7 @@
 #let include_epigraph(
   indent: false,
   smaller_text: false,
-  content,
+  body,
 ) = {
   not_number_page()[
     #not_start_on_new_page()[
@@ -23,7 +23,7 @@
               indent: indent,
               smaller_text: smaller_text,
             )[#it]
-            #content
+            #body
           ]
         ]
       ]

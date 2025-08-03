@@ -15,7 +15,7 @@
     )
   },
   title: { "Resumo" },
-  content: { "Conteúdo do resumo." },
+  body: { "Conteúdo do resumo." },
 ) = {
   not_number_page()[
     #not_start_on_new_page()[
@@ -28,7 +28,7 @@
         ]
 
         #align(left)[
-          #content
+          #body
 
           // Following ABNTEX2
           #v(18pt)

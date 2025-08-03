@@ -6,6 +6,6 @@
     keywords_title: abstract.keywords_title,
     keywords: abstract.keywords,
     title: abstract.title,
-    content: abstract.content,
+    body: abstract.body,
   )
 }

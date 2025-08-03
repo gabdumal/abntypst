@@ -2,6 +2,6 @@
   "cSpell.words": ["pagebreak", "typst", "abntex", "abnTeX2", "abntypst"],
   "github.copilot.nextEditSuggestions.enabled": true,
   "latex-workshop.bibtex-fields.sort.enabled": true,
-  "latex-workshop.bibtex-format.sort.enabled": true,
+  "latex-workshop.bibtex-format.sort.enabled": false,
   "latex-workshop.bibtex-format.trailingComma": true
 }

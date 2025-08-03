@@ -5,7 +5,7 @@
 
 // NBR 14724:2024 4.2.1.4, NBR 14724:2024 5.2.4
 #let include_dedication(
-  content,
+  body,
 ) = {
   not_number_page()[
     #not_start_on_new_page()[
@@ -15,7 +15,7 @@
         #align(end + bottom)[
           #box(width: 50%)[
             #set align(start)
-            #content
+            #body
           ]
         ]
       ]
