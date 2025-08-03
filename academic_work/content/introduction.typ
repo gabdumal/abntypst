@@ -5,7 +5,7 @@ Seu objetivo principal é compreender as relações entre diferentes variáveis 
 
 #quote(
   block: true,
-  attribution: [@arbex:2025:data_science_decision_support],
+  attribution: [@tortinhas_quixotescas:2025:repository_dcc166_atv2],
 )[
   #lorem(50)
 ]

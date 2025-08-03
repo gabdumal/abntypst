@@ -7,6 +7,8 @@
 // NBR 14724:2024 4.2.1.6, NBR 14724:2024 5.2.4, NBR 14724:2024 5.5
 // Epigraph on pre-textual elements can present a quote without following long quote formatting, as determined by NBR 14724:2024 4.2.1.6.
 #let include_epigraph(
+  indent: false,
+  smaller_text: false,
   content,
 ) = {
   not_number_page()[
@@ -18,8 +20,8 @@
           #box(width: 50%)[
             #set align(start)
             #show quote: it => format_quote(
-              indent: false,
-              smaller_text: false,
+              indent: indent,
+              smaller_text: smaller_text,
             )[#it]
             #content
           ]

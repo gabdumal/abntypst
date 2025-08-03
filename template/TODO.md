@@ -136,9 +136,9 @@
     - [X] 4.2.1.1. Folha de rosto (obrigatório)
     - [X] 4.2.1.2. Errata (opcional)
     - [X] 4.2.1.3. Folha de aprovação (obrigatório)
-    - [ ] 4.2.1.4. Dedicatória (opcional)
+    - [X] 4.2.1.4. Dedicatória (opcional)
     - [ ] 4.2.1.5. Agradecimentos (opcional)
-    - [ ] 4.2.1.6. Epígrafe (opcional)
+    - [X] 4.2.1.6. Epígrafe (opcional)
     - [X] 4.2.1.7. Resumo na língua vernácula (obrigatório) — NBR 6028
     - [X] 4.2.1.8. Resumo em língua estrangeira (obrigatório) — NBR 6028
     - [ ] 4.2.1.9. Lista de ilustrações (opcional)
@@ -171,14 +171,14 @@
   - [ ] 5.2.2. Indicativos de seção
     - [X] Espaçamento
     - [ ] Verso e anverso
-  - [ ] 5.2.3. Títulos sem indicativo numérico
-  - [ ] 5.2.4. Elementos sem título e sem indicativo numérico
+  - [X] 5.2.3. Títulos sem indicativo numérico
+  - [X] 5.2.4. Elementos sem título e sem indicativo numérico
 - [ ] 5.3. Paginação
-  - [ ] Contagem
-  - [ ] Numeração
+  - [X] Contagem
+  - [X] Numeração
   - [ ] Volumes
   - [ ] Apêndices e anexos
-- [ ] 5.4. Numeração progressiva — NBR 6024
+- [X] 5.4. Numeração progressiva — NBR 6024
 - [ ] 5.5. Citações — NBR 10520
 - [ ] 5.6. Siglas
 - [ ] 5.7. Equações e fórmulas

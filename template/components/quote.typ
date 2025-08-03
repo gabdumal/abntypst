@@ -9,7 +9,7 @@
 #let format_quote(
   indent: true,
   smaller_text: true,
-  it,
+  content,
 ) = {
   let font_size = font_size_for_common_text
   let leading = leading_for_common_text
@@ -35,8 +35,8 @@
     left: if indent { 4cm } else { 0cm },
   )[
     #block()[
-      #it.body
-      #if it.attribution != none [#it.attribution.]
+      #content.body
+      #if content.attribution != none [#content.attribution.]
     ]
   ]
 }
