@@ -11,4 +11,4 @@
 // #include "not_numbered.typ"
 // #include "quotes.typ"
 #include "figures.typ"
-// #include "tables.typ"
+#include "tables.typ"

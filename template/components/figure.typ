@@ -1,94 +1,159 @@
 // # Figures. Figuras.
 // NBR 14724:2024 5.8, NBR 14724:2024 5.9
 
-#import "../style.typ": font_size_for_smaller_text, leading_for_smaller_text, spacing_for_smaller_text
 #import "../components/source.typ": print_source_for_content_created_by_authors
+#import "../style.typ": font_size_for_smaller_text, leading_for_smaller_text, spacing_for_smaller_text
 
 #let get_width_of_figure_body(body) = {
   // NBR 14724:2024 5.8
   // The width of the figure body should be the same as the text width
-  if (body.has("body")) {
-    if (body.body.has("width")) {
-      return body.body.width
-    }
+  if (body.has("width")) {
+    return body.width
+  } else {
+    return measure(body).width
   }
   return auto
 }
 
-#let format_figure(body) = context {
+#let format_caption_of_figure(
+  width: auto,
+  caption,
+) = {
+  // NBR 14724:2024 5.8
+  // The caption of a figure should be in a smaller font size
+  set text(
+    size: font_size_for_smaller_text,
+  )
+  set par(
+    leading: leading_for_smaller_text,
+    spacing: spacing_for_smaller_text,
+  )
+  // The caption of a figure should have a smaller leading and spacing
   block(
-    width: get_width_of_figure_body(body),
+    above: spacing_for_smaller_text,
+    below: spacing_for_smaller_text,
+    width: width,
+  )[#caption]
+}
+
+#let format_figure(
+  figure,
+) = {
+  // NBR 14724:2024 5.8
+  // The caption of a figure should be on top of the figure
+  block(
+    above: spacing_for_smaller_text,
     below: spacing_for_smaller_text,
   )[
-    #block(
-      below: spacing_for_smaller_text,
-    )[
-      #body.caption
-    ]
-    #body.body
+    #format_caption_of_figure(figure.caption)
+    #figure.body
+  ]
+}
+
+#let format_information_of_figure(
+  source: none,
+  note: none,
+) = context {
+  // NBR 14724:2024 5.8
+  // Source and notes should be in a smaller font size
+  set par(
+    first-line-indent: 0em,
+    leading: leading_for_smaller_text,
+    spacing: spacing_for_smaller_text,
+  )
+  set text(
+    size: font_size_for_smaller_text,
+  )
+  // Source and notes should be aligned to the left
+  set align(start)
+
+  block(
+    above: spacing_for_smaller_text,
+    below: spacing_for_smaller_text,
+  )[
+    // Figures must have a source
+    Fonte:
+    #if source == none {
+      [#print_source_for_content_created_by_authors().]
+    } else {
+      source
+    }
+    #if note != none {
+      [Nota: #note]
+    }
+  ]
+}
+
+#let include_description_of_figure(
+  source: none,
+  note: none,
+  width_of_figure_body: auto,
+) = {
+  set align(center)
+  block(
+    above: spacing_for_smaller_text,
+    below: spacing_for_smaller_text,
+    width: width_of_figure_body,
+  )[
+    #format_information_of_figure(
+      source: source,
+      note: note,
+    )
   ]
 }
 
 #let describe_figure(
   source: none,
   note: none,
-  vertical_alignment: none,
+  width: auto,
+  body,
+) = {
+  block(
+    width: 100%,
+  )[
+    #body
+    #include_description_of_figure(
+      note: note,
+      source: source,
+      width_of_figure_body: width,
+    )
+  ]
+}
+
+#let include_figure(
+  kind: auto,
+  supplement: auto,
+  numbering: "1",
+  outlined: false,
+  label: none,
+  caption: "Legenda",
+  source: none,
+  note: none,
   body,
 ) = context {
-  let width_of_body = get_width_of_figure_body(body)
-  let alignment = if (vertical_alignment == bottom) {
-    center + bottom
-  } else if (vertical_alignment == top) {
-    center + top
-  } else {
-    auto
+  place.flush()
+  let width_of_figure_body = get_width_of_figure_body(body)
+
+  show figure.caption: it => {
+    format_caption_of_figure(
+      width: width_of_figure_body,
+      it,
+    )
   }
 
-  place(
-    float: true,
-    alignment,
-  )[
-    #block(
-      width: width_of_body,
-    )[
-      // Content. Conteúdo.
-      #block(
-        clip: true,
-        below: spacing_for_smaller_text,
-      )[
-        #body
-      ]
-      #place.flush()
+  let included_figure = [#figure(
+      caption: caption,
+      kind: kind,
+      supplement: supplement,
+      numbering: numbering,
+      outlined: outlined,
+      body,
+    )#label]
 
-      // NBR 14724:2024 5.8
-      // Source and notes should be in a smaller font size
-      #set par(
-        first-line-indent: 0em,
-        leading: leading_for_smaller_text,
-        spacing: spacing_for_smaller_text / 2,
-      )
-      #set text(
-        size: font_size_for_smaller_text,
-      )
-      // Source and notes should be aligned to the left
-      #set align(start)
-
-      #block(
-        below: spacing_for_smaller_text,
-      )[
-        // NBR 14724:2024 5.8
-        // Figures must have a source
-        Fonte:
-        #if source == none [
-          #print_source_for_content_created_by_authors().
-        ] else [
-          #source
-        ]
-
-        #if note != none [
-          Nota: #note
-        ]
-      ]
-    ]
-  ]
+  describe_figure(
+    source: source,
+    note: note,
+    width: width_of_figure_body,
+    included_figure,
+  )
 }
