@@ -14,7 +14,7 @@ Já o leite condensado, representado como #emph[Sweetened condensed milk], impac
   #figure(
     caption: [Gráfico de linhas mostrando a sensibilidade do lucro bruto da receita de brigadeiro em relação ao aumento de custo dos insumos],
     image(
-      "../assets/images/brigadeiro_ingredient_sensitivity_gross_profit.png",
+      "../../assets/images/brigadeiro_ingredient_sensitivity_gross_profit.png",
       width: 100%,
     ),
   )<brigadeiro_ingredient_sensitivity_gross_profit>
@@ -33,7 +33,7 @@ Em seguida, a lata de milho verde na receita de bolo de milho verde reduz a marg
   #figure(
     caption: [Mapa de calor mostrando a perda de pontos percentuais da margem de lucro de cada receita com o aumento de 15% de custo dos insumos],
     image(
-      "../assets/images/ingredient_impact_matrix_15pct_margin.png",
+      "../../assets/images/ingredient_impact_matrix_15pct_margin.png",
       width: 100%,
     ),
   )<ingredient_impact_matrix_15pct_margin>

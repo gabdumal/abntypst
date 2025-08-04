@@ -1,4 +1,4 @@
-// # Títulos
+// # Headings. Títulos.
 
 #import "../style.typ": (
   font_family_sans, font_size_for_common_text, font_size_for_level_1_headings, font_size_for_level_2_headings,

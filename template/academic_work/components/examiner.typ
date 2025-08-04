@@ -1,7 +1,8 @@
-// # Assinatura do examinador
+// # Examiner Signature. Assinatura do examinador.
+// NBR 14724:2024 4.2.1.3
 
-#import "../../style.typ": leading_for_common_text
 #import "../../components/people.typ": print_person
+#import "../../style.typ": leading_for_common_text
 #import "../../util/text.typ": capitalize_first_letter
 
 #let print_examiner(

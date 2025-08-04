@@ -1,14 +1,14 @@
-// # Ficha catalográfica
-
-#import "../../components/advisors.typ": get_advisor_role
-#import "../../components/people.typ": print_people, print_person
-#import "../../components/title.typ": print_title
-#import "../../style.typ": font_family_sans, font_size_for_smaller_text, leading_for_smaller_text
-#import "../../components/heading.typ": not_start_on_new_page
-#import "../../util/page.typ": not_count_page, not_number_page
-#import "../../util/text.typ": capitalize_first_letter
-
+// # Cataloging-in-publication. Ficha catalográfica.
 // NBR 14724:2024 4.2.1.1.2
+
+#import "../../../components/advisors.typ": get_advisor_role
+#import "../../../components/heading.typ": not_start_on_new_page
+#import "../../../components/people.typ": print_people, print_person
+#import "../../../components/title.typ": print_title
+#import "../../../style.typ": font_family_sans, font_size_for_smaller_text, leading_for_smaller_text
+#import "../../../util/page.typ": not_count_page, not_number_page
+#import "../../../util/text.typ": capitalize_first_letter
+
 #let include_cataloging_in_publication(
   authors: {
     (
@@ -27,7 +27,7 @@
   volume_number: {
     // "1"
   },
-  location: { "Local" },
+  address: { "Local" },
   year: { "Ano" },
   advisors: {
     (
@@ -119,7 +119,7 @@
             #if volume_number != none {
               "v. " + volume_number + sym.space + sym.dash.en
             }
-            #location,
+            #address,
             #year.
 
             // TODO: Check this counter

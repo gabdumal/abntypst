@@ -1,4 +1,4 @@
-// # Gênero
+// # Gender. Gênero.
 
 #let get_gender_ending(
   gender,

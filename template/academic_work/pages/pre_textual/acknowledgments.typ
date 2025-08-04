@@ -1,9 +1,9 @@
-// # Acknowledgments
-
-#import "../../components/heading.typ": not_start_on_new_page
-#import "../../util/page.typ": not_number_page
-
+// # Acknowledgments. Agradecimentos.
 // NBR 14724:2024 4.2.1.6
+
+#import "../../../components/heading.typ": not_start_on_new_page
+#import "../../../util/page.typ": not_number_page
+
 #let include_acknowledgments(
   body,
 ) = {

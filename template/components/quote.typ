@@ -1,11 +1,11 @@
-// # Citações
+// # Quotes. Citações.
+// NBR 14724:2024 5.5, NBR 10520:2023 7.1.1
 
 #import "../style.typ": (
   font_size_for_common_text, font_size_for_smaller_text, leading_for_common_text, leading_for_smaller_text,
   spacing_for_common_text, spacing_for_smaller_text,
 )
 
-// NBR 14724:2024 5.5, NBR 10520:2023 7.1.1
 #let format_quote(
   indent: true,
   smaller_text: true,
@@ -36,7 +36,7 @@
   )[
     #block()[
       #body.body
-      #if body.attribution != none [#body.attribution.]
+      #if body.attribution != none [#body.attribution]
     ]
   ]
 }

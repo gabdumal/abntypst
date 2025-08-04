@@ -1,4 +1,4 @@
-// # Orientadores
+// # Advisors. Orientadores.
 
 #let get_advisor_role(
   gender: "masculine",

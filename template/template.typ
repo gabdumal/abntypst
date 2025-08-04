@@ -1,25 +1,16 @@
+#import "components/heading.typ": format_heading
+#import "components/quote.typ": format_quote
 #import "style.typ": (
   font_family_serif, font_size_for_common_text, font_size_for_smaller_text, leading_for_common_text, margin_bottom,
   margin_end, margin_start, margin_top, paper_size, spacing_for_common_text,
 )
-#import "components/heading.typ": format_heading
-#import "components/quote.typ": format_quote
 #import "util/page.typ": should_count_this_page, should_number_this_page
-
-#let format_caption() = {
-  // The caption of a figure should be on top of the figure
-  // The indicator and numbering of the figure should be separated by a em-dash from the following caption text
-  set figure.caption(
-    position: top,
-    separator: [ #sym.dash.em ],
-  )
-}
 
 #let template(
   doc,
   page_numbering: false,
 ) = [
-  // ## Page
+  // ## Page. Página.
   #set page(
     paper: paper_size,
     margin: (
@@ -50,7 +41,7 @@
     },
   )
 
-  // ## Text
+  // ## Text. Texto.
   #set text(
     lang: "pt",
     region: "br",
@@ -59,7 +50,7 @@
     hyphenate: true,
   )
 
-  // ## Paragraphs
+  // ## Paragraphs. Parágrafos.
   #set par(
     first-line-indent: (
       // Following abnTEX2
@@ -71,19 +62,21 @@
     justify: true,
   )
 
-  // ## Headings
-  // ### Numbering
+  // ## Headings. Títulos.
+
+  // ### Numbering. Numeração.
   // NBR 14724:2024 5.2.2, NBR 6024:2012 4.1
   // Should use arabic numerals
   // Should start at 1
   // Secondary (and following) headings should be separated by a dot after the number
   #set heading(numbering: "1.1")
-  // ### Format
+
+  // ### Format. Formatação.
   #show heading: it => {
     format_heading(it)
   }
 
-  // ## Quotes
+  // ## Quotes. Citações.
   #show quote: it => {
     // Long quotes (more than 3 lines) should be blocks.
     if it.block {
@@ -91,13 +84,21 @@
     }
   }
 
-  // ## Figures
+  // ## Figures. Figuras.
   // NBR 14724:2024 5.8
   #set figure.caption(
     // The caption of a figure should be on top of the figure
     // The indicator and numbering of the figure should be separated by a em-dash from the following caption text
     position: top,
     separator: [ #sym.dash.em ],
+  )
+
+  // ## Bibliography. Referências.
+  // NBR 14724:2024 4.2.3.1
+  #set bibliography(
+    // The bibliography should be formatted according to the ABNT style
+    style: "associacao-brasileira-de-normas-tecnicas",
+    title: "Referências",
   )
 
   #doc

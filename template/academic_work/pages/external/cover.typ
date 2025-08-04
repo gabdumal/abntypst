@@ -1,13 +1,13 @@
-// # Capa
-
-#import "../../style.typ": font_family_sans
-#import "../../components/heading.typ": not_start_on_new_page
-#import "../../util/page.typ": not_count_page, not_number_page
-#import "../../components/people.typ": print_people
-#import "../../components/title.typ": print_title
-#import "../components/institutional_information.typ": print_institutional_information
-
+// # Cover. Capa.
 // NBR 14724:2024 4.1.1
+
+#import "../../../style.typ": font_family_sans
+#import "../../../components/heading.typ": not_start_on_new_page
+#import "../../../util/page.typ": not_count_page, not_number_page
+#import "../../../components/people.typ": print_people
+#import "../../../components/title.typ": print_title
+#import "../../components/institutional_information.typ": print_institutional_information
+
 #let include_cover(
   organization: {
     (
@@ -44,7 +44,7 @@
   volume_number: {
     // "1"
   },
-  location: { "Local" },
+  address: { "Local" },
   year: { "Ano" },
 ) = {
   not_number_page()[
@@ -90,7 +90,7 @@
             Volume #volume_number
             #parbreak()
           ]
-          #location
+          #address
           #linebreak()
           #year
         ]

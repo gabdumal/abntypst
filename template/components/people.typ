@@ -1,4 +1,4 @@
-// # Pessoas
+// # People. Pessoas.
 
 #let print_person(
   person: (

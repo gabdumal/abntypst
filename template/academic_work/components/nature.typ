@@ -1,9 +1,9 @@
-// # Natureza do trabalho
+// # Nature of the work. Natureza do trabalho.
+// NBR 14724:2024 4.2.1.1.1, NBR 14724:2024 4.2.1.3
 
 #import "../../util/gender.typ": get_gender_ending
 #import "../../util/text.typ": capitalize_first_letter
 
-// NBR 14724:2024 4.2.1.1.1, NBR 14724:2024 4.2.1.3
 #let print_nature(
   authors: {
     (

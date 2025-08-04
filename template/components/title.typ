@@ -1,4 +1,4 @@
-// # Título
+// # Title. Título do trabalho.
 
 #let print_title(
   title: "Título do trabalho",

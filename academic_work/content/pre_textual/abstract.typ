@@ -1,3 +1,8 @@
+// # Abstract. Resumo.
+// NBR 14724:2024 4.2.1.7, NBR 14724:2024 4.2.1.8
+
+#import "/template/academic_work/pages/pre_textual/abstract.typ": include_abstract
+
 #let abstract_in_main_language = {
   (
     keywords_title: "Palavras-chave",
@@ -41,7 +46,17 @@
   )
 }
 
+// Include in this list all abstracts in the order they should appear.
 #let abstracts = (
   abstract_in_main_language,
   first_abstract_in_secondary_language,
 )
+
+#for abstract in abstracts {
+  include_abstract(
+    body: abstract.body,
+    keywords_title: abstract.keywords_title,
+    keywords: abstract.keywords,
+    title: abstract.title,
+  )
+}

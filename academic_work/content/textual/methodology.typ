@@ -1,4 +1,4 @@
-#import "../../template/components/figure.typ": describe_figure
+#import "/template/components/figure.typ": describe_figure
 
 = Metodologia
 
@@ -18,7 +18,7 @@ Este modelo, apresentado na @class_diagram, define as entidades a seguir.
   #figure(
     caption: [Diagrama de classes UML representando a estrutura de dados do sistema de confeitaria],
     image(
-      "../assets/images/class_diagram.png",
+      "../../assets/images/class_diagram.png",
       width: 100%,
     ),
   )<class_diagram>

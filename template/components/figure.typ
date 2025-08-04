@@ -1,9 +1,9 @@
-// # Figuras
+// # Figures. Figuras.
+// NBR 14724:2024 5.8
 
 #import "../style.typ": font_size_for_smaller_text, leading_for_smaller_text, spacing_for_smaller_text
-#import "../util/source.typ": print_source_for_content_created_by_authors
+#import "../components/source.typ": print_source_for_content_created_by_authors
 
-// NBR 14724:2024 5.8
 #let describe_figure(
   source: none,
   note: none,

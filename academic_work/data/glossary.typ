@@ -1,3 +1,6 @@
+// # Glossary. Glossário.
+// NBR 14724:2024 4.2.3.2
+
 #let glossary_entries = (
   tic: (
     short: "TIC",

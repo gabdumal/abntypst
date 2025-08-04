@@ -132,7 +132,7 @@
   note: [#lorem(30)],
 )[
   #figure(
-    block(height: 40cm, width: 100%, fill: green),
+    block(height: 40cm, width: 100%, fill: red),
     caption: [#lorem(25)],
   )
 ]

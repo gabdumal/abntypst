@@ -1,11 +1,11 @@
-// # Sumário
-
-#import "../../style.typ": font_family_sans
-#import "../../components/heading.typ": not_start_on_new_page
-#import "../../util/page.typ": not_count_page, not_number_page
-#import "../../components/heading.typ": get_styling_for_heading
-
+// # Outline. Sumário.
 // NBR 6027:2012, NBR 14724:2024 4.2.1.13
+
+#import "../../../components/heading.typ": not_start_on_new_page
+#import "../../../components/heading.typ": get_styling_for_heading
+#import "../../../style.typ": font_family_sans
+#import "../../../util/page.typ": not_count_page, not_number_page
+
 #let include_outline() = {
   set text(
     font: font_family_sans,

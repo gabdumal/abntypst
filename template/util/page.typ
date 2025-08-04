@@ -1,4 +1,4 @@
-// # Página
+// # Page. Página.
 
 #let should_number_this_page = state("should_number_this_page", true)
 #let should_count_this_page = state("should_count_this_page", true)

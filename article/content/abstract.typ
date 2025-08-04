@@ -1,4 +1,7 @@
-#import "/template/academic_work/pages/abstract.typ": include_abstract, keywords_of_all_languages
+// # Abstract. Resumo.
+// NBR 14724:2024 4.2.1.7, NBR 14724:2024 4.2.1.8
+
+#import "/template/academic_work/pages/pre_textual/abstract.typ": include_abstract, keywords_of_all_languages
 
 #include_abstract(
   title: "Resumo",

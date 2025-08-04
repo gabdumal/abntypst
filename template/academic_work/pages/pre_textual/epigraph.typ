@@ -1,8 +1,9 @@
-// # Epígrafe
+// # Epigraph. Epígrafe.
+// NBR 14724:2024 4.2.1.6
 
-#import "../../components/heading.typ": not_start_on_new_page
-#import "../../components/quote.typ": format_quote
-#import "../../util/page.typ": not_number_page
+#import "../../../components/heading.typ": not_start_on_new_page
+#import "../../../components/quote.typ": format_quote
+#import "../../../util/page.typ": not_number_page
 
 // NBR 14724:2024 4.2.1.6, NBR 14724:2024 5.2.4, NBR 14724:2024 5.5
 // Epigraph on pre-textual elements can present a quote without following long quote formatting, as determined by NBR 14724:2024 4.2.1.6.
