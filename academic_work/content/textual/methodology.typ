@@ -1,4 +1,4 @@
-#import "/template/components/figure.typ": describe_figure
+#import "/template/components/figure.typ": include_figure
 
 = Metodologia
 
@@ -14,15 +14,14 @@ Este modelo, apresentado na @class_diagram, define as entidades a seguir.
 (3) #emph[Ingredient_Cost]: armazena o custo de dado insumo em um determinado período de tempo, com informações de data de início e fim do intervalo, e o custo por grama.
 (4) #emph[Usage]: relaciona um insumo a uma receita, especificando a quantidade necessária em gramas.
 
-#describe_figure()[
-  #figure(
-    caption: [Diagrama de classes UML representando a estrutura de dados do sistema de confeitaria],
-    image(
-      "../../assets/images/class_diagram.png",
-      width: 100%,
-    ),
-  )<class_diagram>
-]
+#include_figure(
+  label: <class_diagram>,
+  caption: [Diagrama de classes UML representando a estrutura de dados do sistema de confeitaria],
+  image(
+    "../../assets/images/class_diagram.png",
+    width: 100%,
+  ),
+)
 
 Com o modelo de dados definido, foi utilizado o sistema gerenciador de banco de dados SQLite @sqlite:2025:sqlite para criar a estrutura lógica do banco.
 As tabelas foram criadas de acordo com o diagrama de classes apresentado por meio da linguagem SQL, com o apoio da ferramenta de @ia DeepSeek @deepseek:2025:deepseek para tradução da modelagem UML para SQL.

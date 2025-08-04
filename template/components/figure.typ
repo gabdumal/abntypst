@@ -44,6 +44,7 @@
   block(
     above: spacing_for_smaller_text,
     below: spacing_for_smaller_text,
+    sticky: true,
   )[
     #format_caption_of_figure(figure.caption)
     #figure.body
@@ -108,8 +109,10 @@
   width: auto,
   body,
 ) = {
+  show figure: set block(breakable: true)
   block(
     width: 100%,
+    breakable: true,
   )[
     #body
     #include_description_of_figure(
@@ -131,7 +134,7 @@
   note: none,
   body,
 ) = context {
-  place.flush()
+  show figure: set block(breakable: true)
   let width_of_figure_body = get_width_of_figure_body(body)
 
   show figure.caption: it => {

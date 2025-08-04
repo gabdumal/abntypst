@@ -1,14 +1,14 @@
 // # Textual elements. Elementos textuais.
 // NBR 14724:2024 4.2.2
 
-// #include "introduction.typ"
-// #include "foundation.typ"
-// #include "methodology.typ"
-// #include "results.typ"
-// #include "conclusion.typ"
+#include "introduction.typ"
+#include "foundation.typ"
+#include "methodology.typ"
+#include "results.typ"
+#include "conclusion.typ"
 
 // Tests. Testes.
-// #include "not_numbered.typ"
-// #include "quotes.typ"
+#include "not_numbered.typ"
+#include "quotes.typ"
 #include "figures.typ"
 #include "tables.typ"
