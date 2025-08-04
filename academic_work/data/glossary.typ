@@ -51,4 +51,8 @@
     long: "Business Intelligence",
     description: "Em português, Inteligência de Negócios",
   ),
+  ibge: (
+    short: "IBGE",
+    long: "Instituto Brasileiro de Geografia e Estatística",
+  ),
 )

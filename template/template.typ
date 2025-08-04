@@ -1,5 +1,7 @@
+#import "components/figure.typ": format_figure
 #import "components/heading.typ": format_heading
 #import "components/quote.typ": format_quote
+#import "packages.typ": subpar
 #import "style.typ": (
   font_family_serif, font_size_for_common_text, font_size_for_smaller_text, leading_for_common_text, margin_bottom,
   margin_end, margin_start, margin_top, paper_size, spacing_for_common_text,
@@ -92,6 +94,9 @@
     position: top,
     separator: [ #sym.dash.em ],
   )
+  #show figure: it => {
+    format_figure(it)
+  }
 
   // ## Bibliography. Referências.
   // NBR 14724:2024 4.2.3.1
