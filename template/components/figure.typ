@@ -36,21 +36,6 @@
   )[#caption]
 }
 
-#let format_figure(
-  figure,
-) = {
-  // NBR 14724:2024 5.8
-  // The caption of a figure should be on top of the figure
-  block(
-    above: spacing_for_smaller_text,
-    below: spacing_for_smaller_text,
-    sticky: true,
-  )[
-    #format_caption_of_figure(figure.caption)
-    #figure.body
-  ]
-}
-
 #let format_information_of_figure(
   source: none,
   note: none,
@@ -85,16 +70,31 @@
   ]
 }
 
+#let format_figure(
+  figure,
+) = {
+  // NBR 14724:2024 5.8
+  // The caption of a figure should be on top of the figure
+  block(
+    above: spacing_for_smaller_text,
+    below: spacing_for_smaller_text,
+    sticky: true,
+  )[
+    #format_caption_of_figure(figure.caption)
+    #figure.body
+  ]
+}
+
 #let include_description_of_figure(
   source: none,
   note: none,
-  width_of_figure_body: auto,
+  width: auto,
 ) = {
   set align(center)
   block(
     above: spacing_for_smaller_text,
     below: spacing_for_smaller_text,
-    width: width_of_figure_body,
+    width: width,
   )[
     #format_information_of_figure(
       source: source,
@@ -159,4 +159,70 @@
     width: width_of_figure_body,
     included_figure,
   )
+}
+
+#let banana_format_figure(
+  source: none,
+  note: none,
+  it,
+) = {
+  let width_of_figure_body = measure(it.body).width
+
+  block(
+    above: spacing_for_smaller_text,
+    below: spacing_for_smaller_text,
+    breakable: true,
+    sticky: true,
+    width: 100%,
+    fill: green,
+  )[
+    #block(
+      width: width_of_figure_body,
+      format_caption_of_figure(it.caption),
+    )
+    #it.body
+    #include_description_of_figure(
+      source: source,
+      note: note,
+      width: width_of_figure_body,
+    )
+  ]
+}
+
+#let banana_figure(
+  source: none,
+  note: none,
+  placement: none,
+  body,
+) = {
+  show figure: it => {
+    if placement == none {
+      banana_format_figure(
+        it,
+      )
+    } else {
+      let alignment = if (
+        placement == auto
+      ) {
+        auto
+      } else if (placement == top or placement == bottom) {
+        placement + center
+      } else {
+        panic("Placement should be one of the following options: none, auto, top, bottom")
+      }
+
+      place(
+        clearance: spacing_for_smaller_text,
+        float: true,
+        alignment,
+        banana_format_figure(
+          source: source,
+          note: note,
+          it,
+        ),
+      )
+    }
+  }
+
+  body
 }

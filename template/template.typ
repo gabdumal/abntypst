@@ -94,9 +94,9 @@
     position: top,
     separator: [ #sym.dash.em ],
   )
-  #show figure: it => {
-    format_figure(it)
-  }
+  // #show figure: it => {
+  //   format_figure(it)
+  // }
 
   // ## Bibliography. Referências.
   // NBR 14724:2024 4.2.3.1
