@@ -4,17 +4,6 @@
 #import "../components/source.typ": print_source_for_content_created_by_authors
 #import "../style.typ": font_size_for_smaller_text, leading_for_smaller_text, spacing_for_smaller_text
 
-#let get_width_of_figure_body(body) = {
-  // NBR 14724:2024 5.8
-  // The width of the figure body should be the same as the text width
-  if (body.has("width")) {
-    return body.width
-  } else {
-    return measure(body).width
-  }
-  return auto
-}
-
 #let format_caption_of_figure(
   width: auto,
   caption,
@@ -70,22 +59,7 @@
   ]
 }
 
-#let format_figure(
-  figure,
-) = {
-  // NBR 14724:2024 5.8
-  // The caption of a figure should be on top of the figure
-  block(
-    above: spacing_for_smaller_text,
-    below: spacing_for_smaller_text,
-    sticky: true,
-  )[
-    #format_caption_of_figure(figure.caption)
-    #figure.body
-  ]
-}
-
-#let include_description_of_figure(
+#let include_information_of_figure(
   source: none,
   note: none,
   width: auto,
@@ -103,101 +77,60 @@
   ]
 }
 
-#let describe_figure(
+#let format_figure(
   source: none,
   note: none,
-  width: auto,
-  body,
-) = {
-  show figure: set block(breakable: true)
-  block(
-    width: 100%,
-    breakable: true,
-  )[
-    #body
-    #include_description_of_figure(
-      note: note,
-      source: source,
-      width_of_figure_body: width,
-    )
-  ]
-}
-
-#let include_figure(
-  kind: auto,
-  supplement: auto,
-  numbering: "1",
-  outlined: false,
-  label: none,
-  caption: "Legenda",
-  source: none,
-  note: none,
-  body,
-) = context {
-  show figure: set block(breakable: true)
-  let width_of_figure_body = get_width_of_figure_body(body)
-
-  show figure.caption: it => {
-    format_caption_of_figure(
-      width: width_of_figure_body,
-      it,
-    )
-  }
-
-  let included_figure = [#figure(
-      caption: caption,
-      kind: kind,
-      supplement: supplement,
-      numbering: numbering,
-      outlined: outlined,
-      body,
-    )#label]
-
-  describe_figure(
-    source: source,
-    note: note,
-    width: width_of_figure_body,
-    included_figure,
-  )
-}
-
-#let banana_format_figure(
-  source: none,
-  note: none,
+  include_information: false,
   it,
 ) = {
-  let width_of_figure_body = measure(it.body).width
+  layout(size => {
+    let width_of_figure_body = measure(
+      width: size.width,
+      it.body,
+    ).width
 
-  block(
-    above: spacing_for_smaller_text,
-    below: spacing_for_smaller_text,
-    breakable: true,
-    sticky: true,
-    width: 100%,
-    fill: green,
-  )[
-    #block(
-      width: width_of_figure_body,
-      format_caption_of_figure(it.caption),
-    )
-    #it.body
-    #include_description_of_figure(
-      source: source,
-      note: note,
-      width: width_of_figure_body,
-    )
-  ]
+    block(
+      above: spacing_for_smaller_text,
+      below: spacing_for_smaller_text,
+      breakable: true,
+      width: 100%,
+    )[
+      #block(
+        sticky: true,
+        width: width_of_figure_body,
+        format_caption_of_figure(it.caption),
+      )
+      #show figure: it => {
+        align(
+          bottom,
+          format_figure(it),
+        )
+      }
+      #it.body
+      #if include_information {
+        include_information_of_figure(
+          source: source,
+          note: note,
+          width: width_of_figure_body,
+        )
+      }
+    ]
+  })
 }
 
-#let banana_figure(
+#let describe_figure(
   source: none,
   note: none,
   placement: none,
   body,
 ) = {
+  set block(breakable: true)
+
   show figure: it => {
+    set block(breakable: true)
     if placement == none {
-      banana_format_figure(
+      format_figure(
+        include_information: true,
         it,
       )
     } else {
@@ -211,13 +144,15 @@
         panic("Placement should be one of the following options: none, auto, top, bottom")
       }
 
+      set block(breakable: true)
       place(
         clearance: spacing_for_smaller_text,
         float: true,
         alignment,
-        banana_format_figure(
+        format_figure(
           source: source,
           note: note,
+          include_information: true,
           it,
         ),
       )

@@ -1,4 +1,3 @@
-#import "components/figure.typ": format_figure
 #import "components/heading.typ": format_heading
 #import "components/quote.typ": format_quote
 #import "packages.typ": subpar
@@ -94,9 +93,6 @@
     position: top,
     separator: [ #sym.dash.em ],
   )
-  // #show figure: it => {
-  //   format_figure(it)
-  // }
 
   // ## Bibliography. Referências.
   // NBR 14724:2024 4.2.3.1

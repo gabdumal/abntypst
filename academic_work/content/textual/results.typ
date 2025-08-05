@@ -1,4 +1,4 @@
-#import "/template/components/figure.typ": include_figure
+#import "/template/components/figure.typ": describe_figure
 
 = Resultados
 
@@ -10,13 +10,14 @@ A linha azul no topo do grafo mostra a referência do lucro bruto original, qual
 O ingrediente que menos impacta nos lucros é a manteiga sem sal, representada como #emph[Unsalted butter], que com um aumento de 15% no custo, ainda assim resulta em um lucro bruto de R#sym.dollar 1,97.
 Já o leite condensado, representado como #emph[Sweetened condensed milk], impacta fortemente o lucro, levando-o a R#sym.dollar 1,75, R#sym.dollar 1,45 e R#sym.dollar 1,16 com os aumentos de 5%, 10% e 15%, respectivamente.
 
-#include_figure(
-  label: <brigadeiro_ingredient_sensitivity_gross_profit>,
-  caption: [Gráfico de linhas mostrando a sensibilidade do lucro bruto da receita de brigadeiro em relação ao aumento de custo dos insumos],
-  image(
-    "../../assets/images/brigadeiro_ingredient_sensitivity_gross_profit.png",
-    width: 100%,
-  ),
+#describe_figure(
+  [#figure(
+      caption: [Gráfico de linhas mostrando a sensibilidade do lucro bruto da receita de brigadeiro em relação ao aumento de custo dos insumos],
+      image(
+        "../../assets/images/brigadeiro_ingredient_sensitivity_gross_profit.png",
+        width: 100%,
+      ),
+    )<brigadeiro_ingredient_sensitivity_gross_profit>],
 )
 
 Gráficos análogos foram construídos para as receitas de pão francês e bolo de milho verde.
@@ -28,11 +29,12 @@ Outro gráfico interessante é o mapa de calor que relaciona a perda de pontos p
 Nesse mapa, percebe-se que a célula mais intensamente afetada é a de uso de leite condensado na receita de brigadeiro, que reduz a margem de lucro de 17.04% em 7,4 pontos percentuais.
 Em seguida, a lata de milho verde na receita de bolo de milho verde reduz a margem de lucro de 23,08% em 4,32 pontos percentuais, e o leite de coco a reduz em 3,3 pontos percentuais.
 
-#include_figure(
-  label: <ingredient_impact_matrix_15pct_margin>,
-  caption: [Mapa de calor mostrando a perda de pontos percentuais da margem de lucro de cada receita com o aumento de 15% de custo dos insumos],
-  image(
-    "../../assets/images/ingredient_impact_matrix_15pct_margin.png",
-    width: 100%,
-  ),
+#describe_figure(
+  [#figure(
+      caption: [Mapa de calor mostrando a perda de pontos percentuais da margem de lucro de cada receita com o aumento de 15% de custo dos insumos],
+      image(
+        "../../assets/images/ingredient_impact_matrix_15pct_margin.png",
+        width: 100%,
+      ),
+    )<ingredient_impact_matrix_15pct_margin>],
 )
