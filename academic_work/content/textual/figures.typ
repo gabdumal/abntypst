@@ -4,153 +4,329 @@
 
 = Ilustrações
 
-Ilustrações são
+De acordo com a seção 5.8 da @nbr da @abnt  @abnt:short @nbr:short 14724:2024, uma ilustração se trata da
+#quote(attribution: <abnt:2025:nbr_14724_2024>)[
+  designação genérica de imagem, que ilustra ou elucida um texto
+].
+Inclui-se nessa categoria desenhos, esquemas, fluxogramas,
+fotografias, gráficos, mapas, organogramas, plantas, quadros, retratos, figuras e imagens #cite(<ibge:2023:manual_elaboracao_trabalhos>).
 
-As ilustrações são tratadas na @abnt @nbr 14724:2024 #cite(<abnt:2025:nbr_14724_2024>) em sua seção 5.8.
+Acima de cada ilustração deve constar uma legenda que descreva brevemente seu conteúdo, iniciada em letra maiúscula e sem finalização com ponto final.
+Ela deve ser precedida do termo que melhor a descreve, como "Figura", "Quadro", "Gráfico", etc., seguido de seu número sequencial #cite(<abnt:2025:nbr_14724_2024>).
+Em geral, o Typst é capaz de identificar automaticamente o tipo de ilustração e gerar a legenda correta.
 
-Todas as ilustrações devem ser referenciadas no texto.
+Para inserir uma ilustração, deve-se utilizar o comando `figure()`.
+Ele recebe como parâmetros: (1) `caption`, a legenda da ilustração; (2) `supplement`, o termo descritor, caso o Typst não seja capaz de inferi-lo; e (3) seu conteúdo; além de demais parâmetros opcionais.
 
-Este é um exemplo de ilustração com largura de 5cm e altura de 5cm:
-@example_figure_of_red_rectangle_of_5cm_width_and_5cm_height.
-#lorem(50)
+O bloco de código abaixo ilustra o uso do comando `figure()` com uma legenda e seu conteúdo, que é um parágrafo.
+Em seguida está o resultado da execução desse código.
 
-#describe_figure(
-  [#figure(
-      caption: [#lorem(12)],
-      rect(height: 5cm, width: 5cm, fill: red),
-    )<example_figure_of_red_rectangle_of_5cm_width_and_5cm_height>],
+```typst
+#figure(
+  caption: [Ilustração composta de texto],
+  supplement: "Texto",
+  par()[
+    Essa ilustração se trata de uma sequência de frases.\
+    Sim, uma ilustração pode ser composta de texto.\
+    Ela pode ser utilizada para ilustrar uma ideia ou conceito.
+  ],
+)
+```
+
+#figure(
+  caption: [Ilustração composta de texto],
+  supplement: "Texto",
+  par()[
+    Essa ilustração se trata de uma sequência de frases.\
+    Sim, uma ilustração pode ser composta de texto.\
+    Ela pode ser utilizada para ilustrar uma ideia ou conceito.
+  ],
 )
 
-Este é um exemplo de figura com largura de 50% e altura de 5cm: @example_figure_of_red_rectangle_of_50percent_width_and_5cm_height.
-#lorem(50)
+O conteúdo de uma ilustração pode ser uma imagem, a qual deve ser inserida com o comando `image()`.
+Ele recebe como parâmetro obrigatório o caminho do arquivo.
+Já como opcionais elencam-se: (1) `width`, a largura, que pode ser especificada em centímetros ou em porcentagem em relação à pagina (como `50%`); e (2) `height`, a altura, que pode ser especificada da mesma forma.
 
-#describe_figure(
-  [#figure(
-      caption: [#lorem(12)],
-      rect(height: 5cm, width: 50%, fill: red),
-    )<example_figure_of_red_rectangle_of_50percent_width_and_5cm_height>],
+Abaixo está um exemplo de ilustração composta por uma imagem, com largura de 10cm e altura de 5cm.
+Ela é importada por meio do caminho relativo `../../assets/images/black_square.png`, que deve ser ajustado de acordo com a estrutura do projeto.
+Em seguida está o resultado da execução desse código.
+
+```typst
+#figure(
+  caption: [Retângulo preto],
+  image(
+    width: 10cm,
+    height: 5cm,
+    "../../assets/images/black_square.png",
+  ),
 )
+```
 
-Este é um exemplo de figura com largura de 100% e altura de 5cm com uma fonte de autoria e nota: @example_figure_of_red_rectangle_of_100percent_width_and_5cm_height_with_source_and_note.
-#lorem(50)
-
-#describe_figure(
-  source: [
-    #cite(<tortinhas_quixotescas:2025:repository_dcc166_atv2>, form: "prose").
-    #lorem(15)
-  ],
-  note: [
-    #lorem(30)
-  ],
-  [#figure(
-      caption: [#lorem(25)],
-      rect(height: 5cm, width: 100%, fill: red),
-    )<example_figure_of_red_rectangle_of_100percent_width_and_5cm_height_with_source_and_note>],
-)
-
-Este é um exemplo de figura com largura de 100% e altura de 20cm com uma fonte de autoria e nota: @example_figure_of_red_rectangle_of_100percent_width_and_20cm_height_with_source_and_note.
-#lorem(50)
-
-#describe_figure(
-  source: [
-    #cite(<tortinhas_quixotescas:2025:repository_dcc166_atv2>, form: "prose").
-    #lorem(15)
-  ],
-  note: [#lorem(30)],
-  [#figure(
-      caption: [#lorem(25)],
-      rect(
-        height: 20cm,
-        width: 100%,
-        fill: red,
-      ),
-    )<example_figure_of_red_rectangle_of_100percent_width_and_20cm_height_with_source_and_note>],
-)
-
-Este é um exemplo de figura composta de dois retângulos vermelhos com largura de 100% (em um bloco de 10cm de largura) e altura de 5cm, com uma fonte de autoria e nota: @example_figure_of_two_red_rectangles_of_100percent_width_in_a_block_of_width_of_10cm_and_5cm_height_each_with_source_and_note.
-#lorem(50)
-
-#describe_figure(
-  source: [
-    #cite(<tortinhas_quixotescas:2025:repository_dcc166_atv2>, form: "prose").
-    #lorem(15)
-  ],
-  note: [#lorem(30)],
-  [#figure(
-      caption: [#lorem(25)],
-      block(width: 10cm)[
-        #rect(height: 5cm, width: 100%, fill: red)
-        #rect(height: 5cm, width: 100%, fill: red)
-      ],
-    )<example_figure_of_two_red_rectangles_of_100percent_width_in_a_block_of_width_of_10cm_and_5cm_height_each_with_source_and_note>],
-)
-
-Este é um exemplo de figura composta de três sub-figuras, com uma fonte de autoria e nota: @example_figure_of_three_subfigures.
-Esta é a primeira sub-figura: @first_sub_figure.
-Esta é a segunda sub-figura: @second_sub_figure.
-Esta é a terceira sub-figura: @third_sub_figure.
-#lorem(50)
-
-#describe_figure(
-  source: [
-    #cite(<tortinhas_quixotescas:2025:repository_dcc166_atv2>, form: "prose").
-    #lorem(15)
-  ],
-  note: [#lorem(30)],
-
-  subpar.super(
-    label: <example_figure_of_three_subfigures>,
-    caption: [Uma figura composta de três sub-figuras],
-    grid(
-      columns: (1fr, 1fr),
-      row-gutter: spacing_for_smaller_text,
-      column-gutter: spacing_for_smaller_text,
-
-      grid.cell()[
-        #figure(
-          caption: [#lorem(5)],
-          image("../../assets/images/black_square.png", width: 5cm),
-        )<first_sub_figure>
-      ],
-
-      grid.cell()[
-        #figure(
-          caption: [
-            #lorem(10)
-          ],
-          image(
-            "../../assets/images/black_square.png",
-            width: 5cm,
-          ),
-        )<second_sub_figure>
-      ],
-
-      grid.cell(colspan: 2)[
-        #figure(
-          caption: [
-            #lorem(15)
-          ],
-          image("../../assets/images/black_square.png", width: 10cm),
-        )<third_sub_figure>
-      ],
-    ),
+#figure(
+  caption: [Retângulo preto],
+  image(
+    width: 10cm,
+    height: 5cm,
+    "../../assets/images/black_square.png",
   ),
 )
 
-#lorem(50)
+== Ambiente de descrição
 
-== Imagens
+Todas as ilustrações devem ser citadas no texto e inseridas o mais próximo possível da sua primeira citação #cite(<abnt:2025:nbr_14724_2024>).
+Para isso, deve-se atribuir um rótulo à ilustração.
 
-Esta é a referência para a primeira figura: @example_figure_of_black_square.
+Pode-se fazê-lo abrindo aspas angulares após o comando `figure()`, como `<nome_da_ilustracao>`.
+Para a ilustração abaixo, o rótulo é `quadrado_preto_sem_fonte`.
+Então, para referenciá-la no texto, deve-se utilizar o comando `ref()`, que recebe como parâmetro o rótulo da ilustração.
+Alternativamente, pode-se utilizar o caractere "`@`" seguido do rótulo.
+
+O bloco de código abaixo ilustra o uso do rótulo e da referência no texto.
+Em seguida está o resultado da sua execução.
+
+```typst
+Essa é uma referência para a #ref(<quadrado_preto_sem_fonte>).
+Essa também é uma referência para a @quadrado_preto_sem_fonte.
+#figure(
+  caption: [Quadrado preto],
+  image(
+    "../../assets/images/black_square.png",
+  ),
+)<quadrado_preto_sem_fonte>
+```
+
+Essa é uma referência para a #ref(<quadrado_preto_sem_fonte>).
+Essa também é uma referência para a @quadrado_preto_sem_fonte.
+#figure(
+  caption: [Quadrado preto],
+  image(
+    "../../assets/images/black_square.png",
+  ),
+)<quadrado_preto_sem_fonte>
+
+A @abnt:short @nbr:short 14724:2024 determina que todas as ilustrações apresentem sua fonte.
+Elas também podem contar com uma nota explicativa.
+Ambas as informações devem ser apresentadas após a ilustração alinhadas à sua margem esquerda.
+Além disso, juntamente com a legenda, devem ser apresentadas em fonte menor que a do texto principal e limitadas pela largura da ilustração #cite(<abnt:2025:nbr_14724_2024>).
+
+Para cumprir essa exigência, devemos utilizar o ambiente `describe_figure()` em torno da ilustração.
+Esse comando recebe como parâmetros opcionais: (1) `source`, a fonte da ilustração; e (2) `note`, uma nota sobre a ilustração.
+Caso a fonte não seja informada, ela será automaticamente preenchida com o texto "elaboração própria".
+
+O bloco de código abaixo ilustra o uso do ambiente `describe_figure()` sem preencher os parâmetros de fonte e nota.
+A @red_square_of_5cm_width_and_5cm_height_without_source_and_note mostra o resultado da sua execução.
+
+```typst
+#describe_figure(
+  [#figure(
+    caption: [Quadrado vermelho],
+    rect(height: 5cm, width: 5cm, fill: red),
+  )<red_square_of_5cm_width_and_5cm_height_without_source_and_note>],
+)
+```
 
 #describe_figure(
-  source: lorem(10),
-  note: lorem(20),
   [#figure(
-      caption: [#lorem(12)],
-      image(
-        "../../assets/images/black_square.png",
-        width: 5cm,
+    caption: [Quadrado vermelho],
+    rect(height: 5cm, width: 5cm, fill: red),
+  )<red_square_of_5cm_width_and_5cm_height_without_source_and_note>],
+)
+
+A seguir, temos um exemplo de ilustração com largura de 50% da página e altura de 5cm, sem fonte e sem nota (@red_rectangle_of_50percent_width_and_5cm_height_without_source_and_note) e outra ilustração, com largura de 100% da página e altura de 5cm, sem fonte e sem nota (@red_rectangle_of_100percent_width_and_5cm_height_without_source_and_note).
+
+#describe_figure(
+  [#figure(
+    caption: [Retângulo vermelho],
+    rect(height: 5cm, width: 50%, fill: red),
+  )<red_rectangle_of_50percent_width_and_5cm_height_without_source_and_note>],
+)
+
+#describe_figure(
+  [#figure(
+    caption: [Retângulo vermelho largo],
+    rect(height: 5cm, width: 100%, fill: red),
+  )<red_rectangle_of_100percent_width_and_5cm_height_without_source_and_note>],
+)
+
+O bloco de código abaixo ilustra o uso do ambiente `describe_figure()` preenchendo os parâmetros de fonte e nota.
+A @ismalia_guimaraes_1960 mostra o resultado da sua execução.
+
+```typst
+#describe_figure(
+  source: [
+    #cite(<guimaraes:1960:ismalia>, form: "prose").
+  ],
+  note: [
+    Alphonsus Guimarães foi um poeta brasileiro, conhecido por sua obra lírica e simbolista.
+  ],
+  [#figure(
+    caption: [Ismália],
+    text()[
+      *Ismália*
+      #parbreak()
+      Quando Ismália enlouqueceu,\
+      [...]
+      Seu corpo desceu ao mar...
+    ],
+  )<ismalia_guimaraes_1960>],
+)
+```
+
+#describe_figure(
+  source: [
+    #cite(<guimaraes:1960:ismalia>, form: "prose").
+  ],
+  note: [
+    Alphonsus Guimarães foi um poeta brasileiro, conhecido por sua obra lírica e simbolista.
+  ],
+  [#figure(
+    caption: [Ismália],
+    text()[
+      *Ismália*
+      #parbreak()
+      Quando Ismália enlouqueceu,\
+      Pôs-se na torre a sonhar...\
+      Viu uma lua no céu,\
+      Viu outra lua no mar.\
+      No sonho em que se perdeu,\
+      Banhou-se toda em luar...\
+      Queria subir ao céu,\
+      Queria descer ao mar...\
+      E, no desvario seu,\
+      Na torre pôs-se a cantar...\
+      Estava perto do céu,\
+      Estava longe do mar...\
+      E como um anjo pendeu\
+      As asas para voar...\
+      Queria a lua do céu,\
+      Queria a lua do mar...\
+      As asas que Deus lhe deu\
+      Ruflaram de par em par...\
+      Sua alma subiu ao céu,\
+      Seu corpo desceu ao mar...
+    ],
+  )<ismalia_guimaraes_1960>],
+)
+
+A figura @red_rectangle_of_100percent_width_and_5cm_height_with_source_and_note apresenta um retângulo vermelho com largura de 100% da página e altura de 5cm com fonte de autoria e nota geradas automaticamente para ocupar mais de uma linha.
+
+#describe_figure(
+  source: [
+    #lorem(20)
+  ],
+  note: [
+    #lorem(40)
+  ],
+  [#figure(
+    caption: [#lorem(25)],
+    rect(height: 5cm, width: 100%, fill: red),
+  )<red_rectangle_of_100percent_width_and_5cm_height_with_source_and_note>],
+)
+
+== Posicionamento
+
+Para ilustrações que ficam mal posicionadas na página, como aquelas com altura muito elevada, pode-se utilizar o parâmetro `placement: auto` no ambiente `describe_figure()`, para que o Typst escolha automaticamente a melhor posição para.
+A figura @red_rectangle_of_100percent_width_and_20cm_height_with_source_and_note apresenta um retângulo vermelho com largura de 100% da página e altura de 20cm, com fonte de autoria e nota geradas automaticamente para ocupar mais de uma linha.
+Nela, o parâmetro `placement: auto` foi definido.
+
+#describe_figure(
+  placement: auto,
+  source: [
+    #lorem(20)
+  ],
+  note: [
+    #lorem(40)
+  ],
+  [#figure(
+    caption: [#lorem(25)],
+    rect(
+      height: 20cm,
+      width: 100%,
+      fill: red,
+    ),
+  )<red_rectangle_of_100percent_width_and_20cm_height_with_source_and_note>],
+)
+
+A figura @two_red_rectangles_of_100percent_width_in_a_block_of_width_of_10cm_and_5cm_height_each_with_source_and_note apresenta dois retângulos vermelhos com largura de 100% (em um bloco de 10cm de largura) e altura de 5cm, com uma fonte de autoria e nota.
+Ela tem o parâmetro `placement: auto` definido, o que permite ao Typst escolher a melhor posição para a ilustração.
+
+#describe_figure(
+  placement: auto,
+  source: [
+    #lorem(20)
+  ],
+  note: [
+    #lorem(40)
+  ],
+  [#figure(
+    caption: [#lorem(25)],
+    block(width: 10cm)[
+      #rect(height: 5cm, width: 100%, fill: red)
+      #rect(height: 5cm, width: 100%, fill: red)
+    ],
+  )<two_red_rectangles_of_100percent_width_in_a_block_of_width_of_10cm_and_5cm_height_each_with_source_and_note>],
+)
+
+== Sub-ilustrações
+
+Quando for necessário apresentar várias ilustrações que constituem um conteúdo único, pode-se utilizar o ambiente `subpar.super()`, que permite criar sub-ilustrações.
+Esse ambiente recebe como parâmetros: (1) `label`, o rótulo da ilustração; (2) `caption`, a legenda da ilustração; e (3) `grid`, que define a grade de sub-ilustrações.
+Você pode encapsular o ambiente `subpar.super()` em um `block()` com o parâmetro `sticky: true`, para que as sub-ilustrações sejam dispostas na mesma página.
+
+A @three_subfigures apresenta três sub-ilustrações, cada uma com sua própria legenda.
+Esta é a primeira sub-ilustração: @first_sub_figure;
+esta é a segunda sub-ilustração: @second_sub_figure; e
+esta é a terceira sub-ilustração: @third_sub_figure.
+
+#describe_figure(
+  source: [
+    #lorem(20)
+  ],
+  note: [
+    #lorem(40)
+  ],
+  placement: auto,
+
+  block(
+    sticky: true,
+    subpar.super(
+      label: <three_subfigures>,
+      caption: [Uma figura composta de três sub-figuras],
+      grid(
+        columns: (1fr, 1fr),
+        row-gutter: spacing_for_smaller_text,
+        column-gutter: spacing_for_smaller_text,
+
+        grid.cell()[
+          #figure(
+            caption: [
+              #lorem(5)
+            ],
+            image("../../assets/images/black_square.png", width: 5cm),
+          )<first_sub_figure>
+        ],
+
+        grid.cell()[
+          #figure(
+            caption: [
+              #lorem(10)
+            ],
+            image(
+              "../../assets/images/black_square.png",
+              width: 5cm,
+            ),
+          )<second_sub_figure>
+        ],
+
+        grid.cell(colspan: 2)[
+          #figure(
+            caption: [
+              #lorem(15)
+            ],
+            image("../../assets/images/black_square.png", width: 10cm),
+          )<third_sub_figure>
+        ],
       ),
-    )<example_figure_of_black_square>],
+    ),
+  ),
 )

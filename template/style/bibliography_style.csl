@@ -358,8 +358,8 @@ em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo
       <else-if match="any" type="book chapter">
         <group delimiter=", ">
           <group>
-            <text variable="volume" prefix=" v. "/>
-            <text variable="page" prefix=" p. "/>
+            <text variable="volume" prefix="v. "/>
+            <text variable="page" prefix="p. "/>
           </group>
         </group>
       </else-if>
@@ -431,9 +431,7 @@ em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo
             <!--Titulo-->
             <text variable="references" font-weight="bold"/>
             <!--Historico em negrito-->
-            <text variable="note"/>
-            <!--Campo 'extra' caso queira colocar alguma observacao-->
-            <text macro="locators" suffix=". "/>
+            <text prefix=", " macro="locators" suffix="."/>
             <!--Dados complementares "secao, pagina"-->
           </group>
         </if>
@@ -461,12 +459,13 @@ em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo
             <!--Traducao-->
             <text macro="edition" suffix=". "/>
             <!--Edicao-->
-            <text macro="publisher" suffix=". "/>
+            <text macro="publisher"/>
             <!--Local, data, etc-->
-            <text macro="locators"/>
+            <text prefix=". " macro="locators"/>
             <!--Dados complementares "pagina, volume"-->
-            <text macro="access"/>
+            <text prefix=". " macro="access"/>
             <!--URL, data do acesso-->
+            <text value="." />
           </group>
         </else-if>
         <!--Capitulo-->
@@ -488,10 +487,13 @@ em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo
             <!--Traducao-->
             <text macro="edition" suffix=". "/>
             <!--Edicao-->
-            <text macro="publisher" suffix=". "/>
+            <text macro="publisher"/>
             <!--Local, data, etc-->
-            <text macro="locators" suffix=". "/>
+            <text prefix=". " macro="locators"/>
             <!--Dados complementares "pagina, volume"-->
+            <text prefix=". " macro="access"/>
+            <!--URL, data do acesso-->
+            <text value="." />
           </group>
         </else-if>
         <!--Artigo de revista, jornal, etc-->

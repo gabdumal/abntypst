@@ -47,11 +47,7 @@
     // "Área de concentração"
   },
 ) = {
-  let gender_ending_of_type_of_work = if type_of_work.gender == "masculine" {
-    "o"
-  } else {
-    "a"
-  }
+  let gender_ending_of_type_of_work = get_gender_ending(type_of_work.gender)
 
   let preposition_of_program = "à"
   if program.gender == "masculine" {

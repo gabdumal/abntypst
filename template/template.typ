@@ -82,6 +82,8 @@
     // Long quotes (more than 3 lines) should be blocks.
     if it.block {
       format_quote(it)
+    } else {
+      it
     }
   }
 

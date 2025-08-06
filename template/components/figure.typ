@@ -2,7 +2,9 @@
 // NBR 14724:2024 5.8, NBR 14724:2024 5.9
 
 #import "../components/source.typ": print_source_for_content_created_by_authors
-#import "../style/style.typ": font_size_for_smaller_text, leading_for_smaller_text, spacing_for_smaller_text
+#import "../style/style.typ": (
+  font_size_for_smaller_text, leading_for_smaller_text, simple_spacing_for_smaller_text, spacing_for_smaller_text,
+)
 
 #let format_caption_of_figure(
   width: auto,
@@ -34,7 +36,7 @@
   set par(
     first-line-indent: 0em,
     leading: leading_for_smaller_text,
-    spacing: spacing_for_smaller_text,
+    spacing: simple_spacing_for_smaller_text,
   )
   set text(
     size: font_size_for_smaller_text,
@@ -54,6 +56,7 @@
       source
     }
     #if note != none {
+      parbreak()
       [Nota: #note]
     }
   ]
@@ -98,6 +101,8 @@
       #block(
         sticky: true,
         width: width_of_figure_body,
+        above: spacing_for_smaller_text,
+        below: spacing_for_smaller_text,
         format_caption_of_figure(it.caption),
       )
       #show figure: it => {
@@ -130,6 +135,8 @@
     set block(breakable: true)
     if placement == none {
       format_figure(
+        source: source,
+        note: note,
         include_information: true,
         it,
       )

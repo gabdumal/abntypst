@@ -44,7 +44,7 @@
 #let spacing_for_common_text = font_size_for_common_text * spacing_of_one_and_a_half
 #let spacing_for_smaller_text = font_size_for_smaller_text * spacing_of_one_and_a_half
 // Spacing of 1 must be used for references.
-#let spacing_for_references = font_size_for_common_text * spacing_of_one
+#let simple_spacing_for_smaller_text = font_size_for_common_text * spacing_of_one
 
 // ## Leading. Entrelinha.
 // NBR 14724:2024 5.2
