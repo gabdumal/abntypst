@@ -98,7 +98,7 @@
   // NBR 14724:2024 4.2.3.1
   #set bibliography(
     // The bibliography should be formatted according to the ABNT style
-    style: "associacao-brasileira-de-normas-tecnicas",
+    style: "style/bibliography_style.csl",
     title: "Referências",
   )
 
