@@ -2,7 +2,7 @@
 // NBR 14724:2024 4.2.1.3
 
 #import "../../components/people.typ": print_person
-#import "../../style.typ": leading_for_common_text
+#import "../../style/style.typ": leading_for_common_text
 #import "../../util/text.typ": capitalize_first_letter
 
 #let print_examiner(

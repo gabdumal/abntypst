@@ -1,7 +1,7 @@
 #import "/template/packages.typ": init-glossary
 #import "/template/bibliography.typ": set_bibliography
 
-#import "/template/style.typ": page_template
+#import "/template/style/style.typ": page_template
 #show: page_template
 
 // Glossary

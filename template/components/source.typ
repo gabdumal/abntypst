@@ -4,10 +4,11 @@
 #import "../util/gender.typ": get_gender_ending
 
 #let print_source_for_content_created_by_authors(
+  start_with_uppercase: false,
   gender: "masculine",
   plural: true,
 ) = {
-  [Elaborado
+  [#if start_with_uppercase { "E" } else { "e" }laborado
     pel#get_gender_ending(gender, plural: plural)
     autor#get_gender_ending(gender, plural: plural, masculine_ends_with_vowel: false)]
 }

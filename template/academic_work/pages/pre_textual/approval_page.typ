@@ -5,7 +5,7 @@
 #import "../../../components/heading.typ": not_start_on_new_page
 #import "../../../components/people.typ": print_people, print_person
 #import "../../../components/title.typ": print_title
-#import "../../../style.typ": (
+#import "../../../style/style.typ": (
   font_family_sans, font_size_for_smaller_text, leading_for_smaller_text, spacing_for_smaller_text,
 )
 #import "../../../util/gender.typ": get_gender_ending

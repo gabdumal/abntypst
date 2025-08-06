@@ -33,8 +33,6 @@ Ambas são exemplos de tabela conforme as Normas de apresentação tabular do @i
 
 Já a @monthly_sales_data é um exemplo de tabela longa, com muitas linhas de dados em português, que representa dados sintéticos de vendas mensais por região no Brasil (2023-2024).
 
-// #show figure: set block(breakable: true)
-
 #describe_figure(
   [#figure(
       caption: "Dados de vendas mensais por região no Brasil (2023-2024)",
@@ -85,7 +83,27 @@ Já a @monthly_sales_data é um exemplo de tabela longa, com muitas linhas de da
           [Nordeste], [Nov/2023], [R#sym.dollar 367.234,00], [3.672], [2,9%],
           [Nordeste], [Dez/2023], [R#sym.dollar 389.567,00], [3.896], [6,1%],
           table.footer(
-            table.hline(stroke: 1pt), [Região], [Mês/Ano], [Vendas (R#sym.dollar)], [Unidades], [Crescimento (%)]
+            table.hline(stroke: 1pt),
+            table.cell(
+              align: center,
+              [Região],
+            ),
+            table.cell(
+              align: center,
+              [Mês/Ano],
+            ),
+            table.cell(
+              align: center,
+              [Vendas (R#sym.dollar)],
+            ),
+            table.cell(
+              align: center,
+              [Unidades],
+            ),
+            table.cell(
+              align: center,
+              [Crescimento (%)],
+            ),
           ),
         ),
       ),

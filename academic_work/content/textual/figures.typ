@@ -1,25 +1,16 @@
 #import "/template/components/figure.typ": describe_figure
 #import "/template/packages.typ": subpar
-#import "/template/style.typ": spacing_for_smaller_text
+#import "/template/style/style.typ": spacing_for_smaller_text
 
-= Figuras
+= Ilustrações
 
-Todas as figuras devem ser referenciadas no texto.
-Esta é a referência para a primeira figura: @example_figure_of_black_square.
+Ilustrações são
 
-#describe_figure(
-  source: lorem(10),
-  note: lorem(20),
-  [#figure(
-      caption: [#lorem(12)],
-      image(
-        "../../assets/images/black_square.png",
-        width: 5cm,
-      ),
-    )<example_figure_of_black_square>],
-)
+As ilustrações são tratadas na @abnt @nbr 14724:2024 #cite(<abnt:2025:nbr_14724_2024>) em sua seção 5.8.
 
-Este é um exemplo de figura com largura de 5cm e altura de 5cm:
+Todas as ilustrações devem ser referenciadas no texto.
+
+Este é um exemplo de ilustração com largura de 5cm e altura de 5cm:
 @example_figure_of_red_rectangle_of_5cm_width_and_5cm_height.
 #lorem(50)
 
@@ -107,8 +98,9 @@ Esta é a terceira sub-figura: @third_sub_figure.
   ],
   note: [#lorem(30)],
 
-  subpar.super(label: <example_figure_of_three_subfigures>, caption: [Uma figura composta de três sub-figuras], block(
-    width: 100%,
+  subpar.super(
+    label: <example_figure_of_three_subfigures>,
+    caption: [Uma figura composta de três sub-figuras],
     grid(
       columns: (1fr, 1fr),
       row-gutter: spacing_for_smaller_text,
@@ -142,8 +134,23 @@ Esta é a terceira sub-figura: @third_sub_figure.
         )<third_sub_figure>
       ],
     ),
-  )),
+  ),
 )
 
-
 #lorem(50)
+
+== Imagens
+
+Esta é a referência para a primeira figura: @example_figure_of_black_square.
+
+#describe_figure(
+  source: lorem(10),
+  note: lorem(20),
+  [#figure(
+      caption: [#lorem(12)],
+      image(
+        "../../assets/images/black_square.png",
+        width: 5cm,
+      ),
+    )<example_figure_of_black_square>],
+)

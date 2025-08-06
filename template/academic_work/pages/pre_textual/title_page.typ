@@ -1,7 +1,7 @@
 // # Title page. Folha de rosto.
 // NBR 14724:2024 4.2.1.1.1
 
-#import "../../../style.typ": (
+#import "../../../style/style.typ": (
   font_family_sans, font_size_for_smaller_text, leading_for_smaller_text, spacing_for_smaller_text,
 )
 #import "../../../components/advisors.typ": get_advisor_role

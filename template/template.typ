@@ -1,7 +1,7 @@
 #import "components/heading.typ": format_heading
 #import "components/quote.typ": format_quote
 #import "packages.typ": subpar
-#import "style.typ": (
+#import "style/style.typ": (
   font_family_serif, font_size_for_common_text, font_size_for_smaller_text, leading_for_common_text, margin_bottom,
   margin_end, margin_start, margin_top, paper_size, spacing_for_common_text,
 )

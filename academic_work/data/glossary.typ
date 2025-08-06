@@ -55,4 +55,12 @@
     short: "IBGE",
     long: "Instituto Brasileiro de Geografia e Estatística",
   ),
+  abnt: (
+    short: "ABNT",
+    long: "Associação Brasileira de Normas Técnicas",
+  ),
+  nbr: (
+    short: "NBR",
+    long: "Norma Brasileira",
+  ),
 )
