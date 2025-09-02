@@ -1,5 +1,12 @@
 {
-  "cSpell.words": ["pagebreak", "typst", "abntex", "abnTeX2", "abntypst"],
+  "cSpell.words": [
+    "abntex",
+    "abnTeX2",
+    "abntypst",
+    "glossarium",
+    "pagebreak",
+    "typst"
+  ],
   "github.copilot.nextEditSuggestions.enabled": true,
   "latex-workshop.bibtex-fields.sort.enabled": true,
   "latex-workshop.bibtex-format.sort.enabled": false,

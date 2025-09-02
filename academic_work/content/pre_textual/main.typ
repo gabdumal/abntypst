@@ -9,5 +9,6 @@
 #include "acknowledgments.typ"
 #include "epigraph.typ"
 #include "abstract.typ"
-#include "glossary.typ"
+#include "abbreviations.typ"
+#include "symbols.typ"
 #include "outline.typ"

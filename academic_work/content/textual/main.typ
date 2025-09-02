@@ -12,3 +12,4 @@
 #include "quotes.typ"
 #include "figures.typ"
 #include "tables.typ"
+#include "glossary.typ"

@@ -51,6 +51,9 @@
     hyphenate: true,
   )
 
+  // ## Math. Matemática.
+  #show math.equation: set text(font: "DejaVu Math TeX Gyre")
+
   // ## Paragraphs. Parágrafos.
   #set par(
     first-line-indent: (

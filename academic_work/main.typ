@@ -1,19 +1,22 @@
 // # Academic Work. Trabalho Acadêmico.
 // NBR 14724:2024
 
-#import "/template/packages.typ": glossy
-#import "/template/template.typ": template
+#import "./data/glossary/main.typ": abbreviations_entries, glossary_entries, symbols_entries
 #import "/template/components/source.typ": print_source_for_content_created_by_authors
-#import "data/glossary.typ": glossary_entries
+#import "/template/packages.typ": glossarium
+#import "/template/template.typ": template
+
+// Glossary. Glossário.
+#show: glossarium.make-glossary
+#glossarium.register-glossary(abbreviations_entries)
+#glossarium.register-glossary(symbols_entries)
+#glossarium.register-glossary(glossary_entries)
 
 // Template. Modelo.
 #show: it => template(
   it,
   page_numbering: true,
 )
-
-// Glossary. Glossário.
-#show: glossy.init-glossary.with(glossary_entries)
 
 // External elements. Elementos externos.
 #include "content/external/main.typ"
@@ -23,6 +26,9 @@
 
 // Textual elements. Elementos textuais.
 #include "content/textual/main.typ"
+
+// Post-textual elements. Elementos pós-textuais.
+#include "content/post_textual/main.typ"
 
 // Bibliography. Referências.
 #bibliography(
