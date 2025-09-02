@@ -1,5 +1,68 @@
 = Introdução
 
+Este projeto visa a fornecer um modelo para redação de trabalhos acadêmicos por meio da ferramenta Typst @typst:2025:typst segundo as @nbr:pl da @abnt.
+As normas a seguir são contempladas.
+
+#terms(
+  terms.item[
+    @nbr 6022:2018
+  ][
+    Informação e documentação — Artigo em publicação periódica técnica e/ou científica — Apresentação
+  ],
+  terms.item[
+    @nbr 6023:2025
+  ][
+    Informação e documentação — Referências — Elaboração
+  ],
+  terms.item[
+    @nbr 6024:2012
+  ][
+    Informação e documentação — Numeração progressiva das seções de um documento — Apresentação
+  ],
+  terms.item[
+    @nbr 6027:2012
+  ][
+    Informação e documentação — Sumário — Apresentação
+  ],
+  terms.item[
+    @nbr 6028:2021
+  ][
+    Informação e documentação — Resumo, resenha e recensão — Apresentação
+  ],
+  terms.item[
+    @nbr 6029:2023
+  ][
+    Informação e documentação — Livros e folhetos — Apresentação
+  ],
+  terms.item[
+    @nbr 6034:2004
+  ][
+    Informação e documentação — Índice — Apresentação
+  ],
+  terms.item[
+    @nbr 10520:2023
+  ][
+    Informação e documentação — Citações em documentos — Apresentação
+  ],
+  terms.item[
+    @nbr 10719:2015
+  ][
+    Informação e documentação — Relatório técnico e/ou científico — Apresentação
+  ],
+  terms.item[
+    @nbr 14724:2024
+  ][
+    Informação e documentação — Trabalhos acadêmicos — Apresentação
+  ],
+  terms.item[
+    @nbr 15287:2025
+  ][
+    Informação e documentação — Projeto de pesquisa — Apresentação
+  ],
+)
+
+== Exemplo
+
 A modelagem analítica é um processo fundamental no campo da ciência de dados e da análise de negócios, que consiste na criação de representações matemáticas e lógicas de sistemas, processos ou problemas do mundo real.
 Seu objetivo principal é compreender as relações entre diferentes variáveis e prever resultados futuros com base em dados históricos e em um conjunto de premissas definidas @arbex:2025:data_science_decision_support.
 

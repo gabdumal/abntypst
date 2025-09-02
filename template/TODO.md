@@ -8,7 +8,7 @@
 - [ ] NBR 6029:2023 — Informação e documentação — Livros e folhetos — Apresentação
 - [ ] NBR 6034:2004 — Informação e documentação — Índice — Apresentação
 - [ ] NBR 10520:2023 — Informação e documentação — Citações em documentos — Apresentação
-- [ ] NBR 10719: —
+- [ ] NBR 10719:2015 — Informação e documentação — Relatório técnico e/ou científico — Apresentação
 - [ ] NBR 14724:2024 — Informação e documentação — Trabalhos acadêmicos — Apresentação
 - [ ] NBR 15287: —
 
@@ -124,7 +124,11 @@
 
 ## NBR 10520:2023 — Informação e documentação — Citações em documentos — Apresentação — 2ª edição, 2023-07-19
 
+## NBR 10719:2015 — Informação e documentação — Relatório técnico e/ou científico — Apresentação — 4ª edição, 2015-05-25, válida em 2015-06-25
+
 ## NBR 14724:2024 — Informação e documentação — Trabalhos acadêmicos — Apresentação — 4ª edição, 2025-12-16, corrigida em 2025-04-01
+
+## NBR 15287:2025 — Informação e documentação — Projeto de pesquisa — Apresentação — 3ª edição, 2025-03-18
 
 ### 4. Estrutura
 

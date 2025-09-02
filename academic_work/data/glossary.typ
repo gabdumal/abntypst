@@ -61,6 +61,8 @@
   ),
   nbr: (
     short: "NBR",
+    plural: "NBRs",
     long: "Norma Brasileira",
+    longplural: "Normas Brasileiras",
   ),
 )

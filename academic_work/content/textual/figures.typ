@@ -330,3 +330,113 @@ esta é a terceira sub-ilustração: @third_sub_figure.
     ),
   ),
 )
+
+== Tipos de ilustrações
+
+A seguir estão os tipos de ilustrações mais comuns, com exemplos de cada um.
+
+=== Figura
+
+Uma figura deve ser inserida com o comando `image()`, que recebe como parâmetro obrigatório o caminho do arquivo.
+Ela deve ser inserida dentro do comando `figure()`, que por sua vez deve ser encapsulado no ambiente `describe_figure()`, para que a fonte e a nota sejam apresentadas corretamente.
+
+A @figure_of_an_image_of_a_black_square apresenta uma imagem importada do arquivo `../../assets/images/black_square.png`, com largura de 10cm e altura ajustada proporcionalmente.
+Seu código-fonte também está disposto a seguir.
+
+```typst
+#describe_figure(
+  [#figure(
+    caption: [Quadrado preto],
+    image(
+      width: 10cm,
+      "../../assets/images/black_square.png",
+    ),
+  )<figure_of_an_image_of_a_black_square>],
+)
+```
+
+#describe_figure(
+  [#figure(
+    caption: [Quadrado preto],
+    image(
+      width: 10cm,
+      "../../assets/images/black_square.png",
+    ),
+  )<figure_of_an_image_of_a_black_square>],
+)
+
+=== Quadro
+
+Um quadro se trata de uma tabela fechada nas extremidades.
+Ele deve ter uma legenda iniciada com o termo "Quadro", seguido de seu número sequencial e do título.
+Para tal, deve-se utilizar no comando `figure()` o parâmetro `kind: "board"` e o parâmetro `supplement: [Quadro]`.
+Então, o conteúdo da ilustração deve ser uma tabela, que pode ser criada com o comando `table()`.
+
+O bloco de código abaixo ilustra o uso do comando `figure()` com o parâmetro `supplement` e o comando `table()`.
+Em seguida, o @figure_of_a_board apresenta o resultado da sua execução.
+
+```typst
+#describe_figure(
+  [#figure(
+    kind: "board",
+    supplement: [Quadro],
+    caption: [Exemplo de quadro],
+    table(
+      columns: (1fr, 1fr, 1fr),
+      align: center + horizon,
+
+      table.header(
+        table.cell()[#strong("Cabeçalho 1")],
+        table.cell()[#strong("Cabeçalho 2")],
+        table.cell()[#strong("Cabeçalho 3")],
+      ),
+
+      table.cell(
+        rowspan: 2,
+      )[Linhas 1 e 2, Coluna 1],
+      table.cell()[Linha 1, Coluna 3],
+
+      table.cell()[Linha 2, Coluna 1],
+      table.cell()[Linha 2, Coluna 2],
+      table.cell()[Linha 2, Coluna 3],
+
+      table.cell()[Linha 3, Coluna 1],
+      table.cell(
+        colspan: 2,
+      )[Linha 3, Colunas 2 e 3],
+    ),
+  )<figure_of_a_board>],
+)
+```
+
+#describe_figure(
+  [#figure(
+    kind: "board",
+    supplement: [Quadro],
+    caption: [Exemplo de quadro],
+    table(
+      columns: (1fr, 1fr, 1fr),
+      align: center + horizon,
+
+      table.header(
+        table.cell()[#strong("Cabeçalho 1")],
+        table.cell()[#strong("Cabeçalho 2")],
+        table.cell()[#strong("Cabeçalho 3")],
+      ),
+
+      table.cell(
+        rowspan: 2,
+      )[Linhas 1 e 2, Coluna 1],
+      table.cell()[Linha 1, Coluna 3],
+
+      table.cell()[Linha 2, Coluna 1],
+      table.cell()[Linha 2, Coluna 2],
+      table.cell()[Linha 2, Coluna 3],
+
+      table.cell()[Linha 3, Coluna 1],
+      table.cell(
+        colspan: 2,
+      )[Linha 3, Colunas 2 e 3],
+    ),
+  )<figure_of_a_board>],
+)
