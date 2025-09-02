@@ -4,7 +4,7 @@
 #import "../../../components/heading.typ": not_start_on_new_page
 #import "../../../components/heading.typ": get_styling_for_heading
 #import "../../../style/style.typ": font_family_sans
-#import "../../../util/page.typ": not_count_page, not_number_page
+#import "../../../util/page.typ": not_number_page
 
 #let include_outline() = {
   set text(

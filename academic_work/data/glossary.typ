@@ -49,7 +49,7 @@
   bi: (
     short: "BI",
     long: "Business Intelligence",
-    description: "Em português, Inteligência de Negócios",
+    description: "Em português, Inteligência de Negócios.",
   ),
   ibge: (
     short: "IBGE",
