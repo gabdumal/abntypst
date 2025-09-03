@@ -15,16 +15,12 @@
   set text(
     size: font_size_for_smaller_text,
   )
+  // The caption of a figure should have a smaller leading and spacing
   set par(
     leading: leading_for_smaller_text,
     spacing: spacing_for_smaller_text,
   )
-  // The caption of a figure should have a smaller leading and spacing
-  block(
-    above: spacing_for_smaller_text,
-    below: spacing_for_smaller_text,
-    width: width,
-  )[#caption]
+  caption
 }
 
 #let format_information_of_figure(
@@ -36,7 +32,7 @@
   set par(
     first-line-indent: 0em,
     leading: leading_for_smaller_text,
-    spacing: simple_spacing_for_smaller_text,
+    spacing: spacing_for_smaller_text,
   )
   set text(
     size: font_size_for_smaller_text,
@@ -48,6 +44,10 @@
     above: spacing_for_smaller_text,
     below: spacing_for_smaller_text,
   )[
+    #set par(
+      leading: leading_for_smaller_text,
+      spacing: simple_spacing_for_smaller_text,
+    )
     // Figures must have a source
     Fonte:
     #if source == none {
@@ -55,9 +55,11 @@
     } else {
       source
     }
+    #linebreak()
     #if note != none {
-      parbreak()
-      [Nota: #note]
+      [
+        Nota: #note
+      ]
     }
   ]
 }
@@ -93,15 +95,12 @@
     ).width
 
     block(
-      above: spacing_for_smaller_text,
-      below: spacing_for_smaller_text,
       breakable: true,
       width: 100%,
     )[
       #block(
         sticky: true,
         width: width_of_figure_body,
-        above: spacing_for_smaller_text,
         below: spacing_for_smaller_text,
         format_caption_of_figure(it.caption),
       )

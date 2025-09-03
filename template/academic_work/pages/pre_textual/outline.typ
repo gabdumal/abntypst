@@ -16,7 +16,8 @@
         #show outline.entry: it => {
           let (
             font_size,
-            space_around,
+            leading_around,
+            spacing_around,
             font_weight,
             text_style,
           ) = get_styling_for_heading(it)
@@ -28,7 +29,7 @@
           )
           let prefix = it.prefix()
           block(
-            below: space_around,
+            below: spacing_around,
           )[
             #link(it.element.location(), it.indented(prefix, it.inner()))
           ]

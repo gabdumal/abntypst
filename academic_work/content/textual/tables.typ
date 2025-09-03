@@ -8,6 +8,7 @@ A @amounts_of_ingredients se trata de uma tabela simples, com poucas linhas de d
 Ambas são exemplos de tabela conforme as Normas de apresentação tabular do @ibge #cite(<ibge:1993:normas_apresentacao_tabular>).
 
 #describe_figure(
+  note: [Não testamos essa receita.],
   [#figure(
     caption: "Quantidades dos ingredientes para uma receita de bolo de chocolate",
     block(

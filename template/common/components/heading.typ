@@ -2,7 +2,8 @@
 
 #import "../style/style.typ": (
   font_family_sans, font_size_for_common_text, font_size_for_level_1_headings, font_size_for_level_2_headings,
-  font_size_for_level_3_and_beyond_headings, spacing_for_level_1_headings, spacing_for_level_2_headings,
+  font_size_for_level_3_and_beyond_headings, leading_for_level_1_headings, leading_for_level_2_headings,
+  leading_for_level_3_and_beyond_headings, spacing_for_level_1_headings, spacing_for_level_2_headings,
   spacing_for_level_3_and_beyond_headings,
 )
 
@@ -13,15 +14,18 @@
 
 #let get_styling_for_heading(body) = {
   let font_size = font_size_for_common_text
+  let leading_around = leading_for_level_3_and_beyond_headings
   let spacing_around = spacing_for_level_3_and_beyond_headings
   let font_weight = "bold"
   let text_style = "normal"
 
   if body.level == 1 {
     font_size = font_size_for_level_1_headings
+    leading_around = leading_for_level_1_headings
     spacing_around = spacing_for_level_1_headings
   } else if body.level == 2 {
     font_size = font_size_for_level_2_headings
+    leading_around = leading_for_level_2_headings
     spacing_around = spacing_for_level_2_headings
   } else if body.level == 3 {
     font_size = font_size_for_level_3_and_beyond_headings
@@ -32,7 +36,7 @@
     text_style = "italic"
   }
 
-  return (font_size, spacing_around, font_weight, text_style)
+  return (font_size, leading_around, spacing_around, font_weight, text_style)
 }
 
 #let not_start_on_new_page(
@@ -51,10 +55,17 @@
   // Styling
   let (
     font_size,
+    leading_around,
     spacing_around,
     font_weight,
     text_style,
   ) = get_styling_for_heading(body)
+
+  set par(
+    leading: leading_around,
+    spacing: spacing_around,
+    first-line-indent: 0em,
+  )
   set text(
     font: font_family_sans,
     size: font_size,
@@ -86,20 +97,15 @@
 
   // NBR 14724:2024 5.2.2
   // Headings should have 1.5x of spacing above and below
-  block(
-    above: spacing_around,
-    below: spacing_around,
-  )[
-    #text[
-      // NBR 6024:2012 4.1
-      // For headings with multiple lines, each subsequent line should be aligned with the first one
-      #grid(
-        columns: 2,
-        rows: 1,
-        // Numbering indicator should be separated from the title by a single space
-        column-gutter: measure(sym.dash).width,
-        [#numbering_indicator], [#body.body],
-      )
-    ]
-  ]
+  box(
+    // NBR 6024:2012 4.1
+    // TODO: For headings with multiple lines, each subsequent line should be aligned with the first one
+    grid(
+      columns: 2,
+      rows: 1,
+      // Numbering indicator should be separated from the title by a single space
+      column-gutter: measure(sym.dash).width,
+      [#numbering_indicator], [#body.body],
+    ),
+  )
 }

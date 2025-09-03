@@ -69,7 +69,7 @@
 
   // ### Numbering. Numeração.
   // NBR 14724:2024 5.2.2, NBR 6024:2012 4.1
-  // Should use arabic numerals
+  // Should use Arabic numerals
   // Should start at 1
   // Secondary (and following) headings should be separated by a dot after the number
   #set heading(numbering: "1.1")

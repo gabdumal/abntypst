@@ -30,19 +30,19 @@
   - [ ] 5.2.3. Conclusão (obrigatório)
 - [ ] 5.3. Elementos pós-textuais
   - [ ] 5.3.1. Referências (obrigatório) — NBR 6023
-   [ ] 5.3.2. Glossário (opcional)
+        [ ] 5.3.2. Glossário (opcional)
   - [ ] 5.3.3. Apêndice (opcional) — NBR 6024
-   [ ] 5.3.4. Anexo (opcional) — NBR 6024
-   [ ] 5.3.5. Agradecimentos (opcional)
+        [ ] 5.3.4. Anexo (opcional) — NBR 6024
+        [ ] 5.3.5. Agradecimentos (opcional)
 
 ### 6. Regras gerais
 
-- [X] 6.1. Formato
-  - [X] Tamanho da fonte
-  - [X] Espaçamento
-- [X] 6.2. Seções — NBR 6024
+- [x] 6.1. Formato
+  - [x] Tamanho da fonte
+  - [x] Espaçamento
+- [x] 6.2. Seções — NBR 6024
 - [ ] 6.3. Citações e notas — NBR 10520
-- [X] 6.4. Sigla
+- [x] 6.4. Sigla
 - [ ] 6.5. Equações e fórmulas
 - [ ] 6.6. Ilustrações
   - [ ] Numeração
@@ -68,12 +68,12 @@
 ### 4. Regras gerais
 
 - [ ] 4.1. Seções
-  - [X] Algarismos
-  - [X] Limite
-  - [X] Alinhamento
+  - [x] Algarismos
+  - [x] Limite
+  - [x] Alinhamento
   - [ ] Títulos não numerados
-  - [X] Títulos com mais de uma linha
-  - [X] Destaques da hierarquia
+  - [x] Títulos com mais de uma linha
+  - [x] Destaques da hierarquia
 - [ ] 4.2. Alínea
   - [ ] Pontuação
   - [ ] Numeração
@@ -91,21 +91,21 @@
     - [ ] Considerar toda a obra em volumes
   - [ ] 4.2. Em publicações periódicas
 - [ ] 5. Estrutura
-  - [X] Numeração — NBR 6024
-  - [X] Alinhamento
-  - [X] Grafia
-  - [X] Paginação
+  - [x] Numeração — NBR 6024
+  - [x] Alinhamento
+  - [x] Grafia
+  - [x] Paginação
   - [ ] Outros idiomas
-- [X] 6. Regras gerais
+- [x] 6. Regras gerais
 
 ## NBR 6028:2021 — Informação e documentação — Resumo, resenha e recensão — Apresentação — 2ª edição, 2021-05-18
 
-- [X] 3. Regras gerais
+- [x] 3. Regras gerais
 - [ ] 4. Resumo, resenha e recensão
   - [ ] 4.1. Resumo
-    - [X] Estrutura
-    - [X] Referências
-    - [X] Palavras-chave
+    - [x] Estrutura
+    - [x] Referências
+    - [x] Palavras-chave
   - [ ] 4.2. Resenha e recensão
 
 ## NBR 6029:2023 — Informação e documentação — Livros e folhetos — Apresentação — 3ª edição, 2023-03-22
@@ -128,74 +128,74 @@
 
 ## NBR 14724:2024 — Informação e documentação — Trabalhos acadêmicos — Apresentação — 4ª edição, 2025-12-16, corrigida em 2025-04-01
 
-## NBR 15287:2025 — Informação e documentação — Projeto de pesquisa — Apresentação — 3ª edição, 2025-03-18
-
 ### 4. Estrutura
 
 - [ ] 4.1. Parte externa
-  - [X] 4.1.1. Capa (obrigatório)
+  - [x] 4.1.1. Capa (obrigatório)
   - [ ] 4.1.2. Lombada (opcional) — NBR 12225
 - [ ] 4.2. Parte interna
   - [ ] 4.2.1. Elementos pré-textuais
-    - [X] 4.2.1.1. Folha de rosto (obrigatório)
-    - [X] 4.2.1.2. Errata (opcional)
-    - [X] 4.2.1.3. Folha de aprovação (obrigatório)
-    - [X] 4.2.1.4. Dedicatória (opcional)
-    - [X] 4.2.1.5. Agradecimentos (opcional)
-    - [X] 4.2.1.6. Epígrafe (opcional)
-    - [X] 4.2.1.7. Resumo na língua vernácula (obrigatório) — NBR 6028
-    - [X] 4.2.1.8. Resumo em língua estrangeira (obrigatório) — NBR 6028
+    - [x] 4.2.1.1. Folha de rosto (obrigatório)
+    - [x] 4.2.1.2. Errata (opcional)
+    - [x] 4.2.1.3. Folha de aprovação (obrigatório)
+    - [x] 4.2.1.4. Dedicatória (opcional)
+    - [x] 4.2.1.5. Agradecimentos (opcional)
+    - [x] 4.2.1.6. Epígrafe (opcional)
+    - [x] 4.2.1.7. Resumo na língua vernácula (obrigatório) — NBR 6028
+    - [x] 4.2.1.8. Resumo em língua estrangeira (obrigatório) — NBR 6028
     - [ ] 4.2.1.9. Lista de ilustrações (opcional)
     - [ ] 4.2.1.10. Lista de tabelas (opcional)
-    - [ ] 4.2.1.11. Lista de abreviaturas e siglas (opcional)
-    - [ ] 4.2.1.12. Lista de símbolos (opcional)
+    - [x] 4.2.1.11. Lista de abreviaturas e siglas (opcional)
+    - [x] 4.2.1.12. Lista de símbolos (opcional)
     - [ ] 4.2.1.13. Sumário (obrigatório) — NBR 6027
   - [ ] 4.2.2. Elementos textuais
   - [ ] 4.2.3. Elementos pós-textuais
     - [ ] 4.2.2.1. Referências (obrigatório) — NBR 6023
-     [ ] 4.2.2.2. Glossário (opcional)
+          [x] 4.2.2.2. Glossário (opcional)
     - [ ] 4.2.2.3. Apêndice (opcional)
-     [ ] 4.2.2.4. Anexo (opcional)
-     [ ] 4.2.2.5. Índice (opcional) — NBR 6034
+          [ ] 4.2.2.4. Anexo (opcional)
+          [ ] 4.2.2.5. Índice (opcional) — NBR 6034
 
 ### 5. Regras gerais
 
 - [ ] 5.1. Formato
-  - [X] Formato do papel
-  - [X] Margens
+  - [x] Formato do papel
+  - [x] Margens
   - [ ] Verso e anverso
-  - [X] Tamanho da fonte
+  - [x] Tamanho da fonte
 - [ ] 5.2. Espaçamento
-  - [X] Entre linhas
-    - [X] Entre texto comum
-    - [ ] Entre texto menor
+  - [x] Entre linhas
+    - [x] Entre texto comum
+    - [x] Entre texto menor
     - [ ] Entre referências
-  - [ ] Natureza
+  - [x] Natureza
   - [ ] 5.2.1. Notas de rodapé
   - [ ] 5.2.2. Indicativos de seção
-    - [X] Espaçamento
+    - [x] Espaçamento
     - [ ] Verso e anverso
-  - [X] 5.2.3. Títulos sem indicativo numérico
-  - [X] 5.2.4. Elementos sem título e sem indicativo numérico
+  - [x] 5.2.3. Títulos sem indicativo numérico
+  - [x] 5.2.4. Elementos sem título e sem indicativo numérico
 - [ ] 5.3. Paginação
-  - [X] Contagem
-  - [X] Numeração
+  - [x] Contagem
+  - [x] Numeração
   - [ ] Volumes
   - [ ] Apêndices e anexos
-- [X] 5.4. Numeração progressiva — NBR 6024
+- [x] 5.4. Numeração progressiva — NBR 6024
 - [ ] 5.5. Citações — NBR 10520
-- [ ] 5.6. Siglas
+- [x] 5.6. Siglas
 - [ ] 5.7. Equações e fórmulas
-- [X] 5.8. Ilustrações
-  - [X] Numeração
-  - [X] Legenda
-    - [X] Título
-    - [X] Fonte — NBR 10520
-    - [X] Notas
-- [ ] 5.9. Tabelas
-  - [ ] Numeração
-  - [ ] Legenda
-    - [ ] Título
-    - [ ] Fonte — NBR 10520
-    - [ ] Notas
-  - [ ] Apresentação — IBGE
+- [x] 5.8. Ilustrações
+  - [x] Numeração
+  - [x] Legenda
+    - [x] Título
+    - [x] Fonte — NBR 10520
+    - [x] Notas
+- [x] 5.9. Tabelas
+  - [x] Numeração
+  - [x] Legenda
+    - [x] Título
+    - [x] Fonte — NBR 10520
+    - [x] Notas
+  - [x] Apresentação — IBGE
+
+## NBR 15287:2025 — Informação e documentação — Projeto de pesquisa — Apresentação — 3ª edição, 2025-03-18

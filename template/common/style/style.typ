@@ -55,6 +55,11 @@
 #let leading_of_one = spacing_of_one / 2
 #let leading_of_one_and_a_half = spacing_of_one_and_a_half / 2
 
+// ### Headings. Títulos.
+#let leading_for_level_1_headings = font_size_for_level_1_headings * leading_of_one_and_a_half
+#let leading_for_level_2_headings = font_size_for_level_2_headings * leading_of_one_and_a_half
+#let leading_for_level_3_and_beyond_headings = font_size_for_level_3_and_beyond_headings * leading_of_one_and_a_half
+
 // ### Text. Texto.
 // Leading of 1.5 must be used for common text.
 #let leading_for_common_text = font_size_for_common_text * leading_of_one_and_a_half
