@@ -1,7 +1,6 @@
 // # Headings. Títulos.
 
 #import "../components/page.typ": counting_strategy, not_count_page, should_number_this_page
-
 #import "../style/style.typ": (
   font_family_sans, font_size_for_common_text, font_size_for_level_1_headings, font_size_for_level_2_headings,
   font_size_for_level_3_and_beyond_headings, leading_for_level_1_headings, leading_for_level_2_headings,
@@ -65,6 +64,8 @@
     text_style,
   ) = get_styling_for_heading(body)
 
+  // NBR 14724:2024 5.2.2
+  // Headings should have 1.5x of spacing above and below
   set par(
     leading: leading_around,
     spacing: spacing_around,
@@ -90,31 +91,30 @@
     }
   }
 
-  // Alignment and numbering
-  let alignment = start
-  let numbering_indicator = {}
   if body.numbering == none {
     // NBR 6024:2012 4.1
     // Headings without numbering should be aligned to the center
-    alignment = center
+    align(center)[
+      #block(
+        above: spacing_around,
+        below: spacing_around,
+      )[
+        #body.body
+      ]
+    ]
   } else {
-    numbering_indicator = {
-      counter(heading).display(body.numbering)
-    }
+    block(
+      above: spacing_around,
+      below: spacing_around,
+      // NBR 6024:2012 4.1
+      // For headings with multiple lines, each subsequent line should be aligned with the first one
+      grid(
+        columns: 2,
+        rows: 1,
+        // Numbering indicator should be separated from the title by a single space
+        column-gutter: measure(sym.dash).width,
+        [#counter(heading).display(body.numbering)], [#body.body],
+      ),
+    )
   }
-  set align(alignment)
-
-  // NBR 14724:2024 5.2.2
-  // Headings should have 1.5x of spacing above and below
-  box(
-    // NBR 6024:2012 4.1
-    // TODO: For headings with multiple lines, each subsequent line should be aligned with the first one
-    grid(
-      columns: 2,
-      rows: 1,
-      // Numbering indicator should be separated from the title by a single space
-      column-gutter: measure(sym.dash).width,
-      [#numbering_indicator], [#body.body],
-    ),
-  )
 }

@@ -16,7 +16,7 @@ Ela deve ser precedida do termo que melhor a descreve, como "Figura", "Quadro", 
 Em geral, o Typst é capaz de identificar automaticamente o tipo de ilustração e gerar a legenda correta.
 
 Para inserir uma ilustração, deve-se utilizar o comando `figure()`.
-Ele recebe como parâmetros: (1) `caption`, a legenda da ilustração; (2) `supplement`, o termo descritor, caso o Typst não seja capaz de inferi-lo; e (3) seu conteúdo; além de demais parâmetros opcionais.
+Ele recebe como parâmetros: (1) `caption`, a legenda da ilustração; (2) `supplement`, o termo descritor, caso o Typst não seja capaz de inferi-lo; (3) `kind`, o tipo da ilustração, caso seja não trivial, e (4) seu conteúdo; além de demais parâmetros opcionais.
 
 O bloco de código abaixo ilustra o uso do comando `figure()` com uma legenda e seu conteúdo, que é um parágrafo.
 Em seguida está o resultado da execução desse código.
@@ -25,6 +25,7 @@ Em seguida está o resultado da execução desse código.
 #figure(
   caption: [Ilustração composta de texto],
   supplement: "Texto",
+  kind: "text",
   par()[
     Essa ilustração se trata de uma sequência de frases.\
     Sim, uma ilustração pode ser composta de texto.\
@@ -36,6 +37,7 @@ Em seguida está o resultado da execução desse código.
 #figure(
   caption: [Ilustração composta de texto],
   supplement: "Texto",
+  kind: "text",
   par()[
     Essa ilustração se trata de uma sequência de frases.\
     Sim, uma ilustração pode ser composta de texto.\

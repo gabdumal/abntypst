@@ -141,11 +141,12 @@
     - [x] 4.2.1.3. Folha de aprovação (obrigatório)
     - [x] 4.2.1.4. Dedicatória (opcional)
     - [x] 4.2.1.5. Agradecimentos (opcional)
-    - [x] 4.2.1.6. Epígrafe (opcional)
+    - [ ] 4.2.1.6. Epígrafe (opcional)
+      - [ ] Em início de capítulo
     - [x] 4.2.1.7. Resumo na língua vernácula (obrigatório) — NBR 6028
     - [x] 4.2.1.8. Resumo em língua estrangeira (obrigatório) — NBR 6028
-    - [ ] 4.2.1.9. Lista de ilustrações (opcional)
-    - [ ] 4.2.1.10. Lista de tabelas (opcional)
+    - [x] 4.2.1.9. Lista de ilustrações (opcional)
+    - [x] 4.2.1.10. Lista de tabelas (opcional)
     - [x] 4.2.1.11. Lista de abreviaturas e siglas (opcional)
     - [x] 4.2.1.12. Lista de símbolos (opcional)
     - [x] 4.2.1.13. Sumário (obrigatório) — NBR 6027

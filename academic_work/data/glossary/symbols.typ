@@ -5,6 +5,7 @@
   (
     key: "emptyset",
     short: $#sym.emptyset$,
-    description: "Conjunto vazio",
+    long: "Conjunto vazio",
+    description: "Conjunto que não contém nenhum elemento.",
   ),
 )
