@@ -2,8 +2,8 @@
 #import "components/quote.typ": format_quote
 #import "packages.typ": subpar
 #import "style/style.typ": (
-  font_family_serif, font_size_for_common_text, font_size_for_smaller_text, leading_for_common_text, margin_bottom,
-  margin_end, margin_start, margin_top, paper_size, spacing_for_common_text,
+  font_family_math, font_family_mono, font_family_serif, font_size_for_common_text, font_size_for_smaller_text,
+  leading_for_common_text, margin_bottom, margin_end, margin_start, margin_top, paper_size, spacing_for_common_text,
 )
 #import "util/page.typ": should_count_this_page, should_number_this_page
 
@@ -50,9 +50,8 @@
     size: font_size_for_common_text,
     hyphenate: true,
   )
-
-  // ## Math. Matemática.
-  #show math.equation: set text(font: "DejaVu Math TeX Gyre")
+  #show raw: set text(font: font_family_mono)
+  #show math.equation: set text(font: font_family_math)
 
   // ## Paragraphs. Parágrafos.
   #set par(

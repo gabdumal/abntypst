@@ -14,8 +14,10 @@
 #let margin_end = 2.0cm
 
 // ## Font family. Família tipográfica.
-#let font_family_sans = "Liberation Sans"
-#let font_family_serif = "Liberation Serif"
+#let font_family_sans = "TeX Gyre Heros"
+#let font_family_serif = "TeX Gyre Termes"
+#let font_family_mono = "DejaVu Sans Mono"
+#let font_family_math = "TeX Gyre Termes Math"
 
 // ## Font size. Tamanho da fonte.
 // NBR 14724:2024 5.1, NBR 6022:2018 6.1

@@ -61,6 +61,14 @@ As normas a seguir são contempladas.
   ],
 )
 
+== Requisitos
+
+É necessário instalar as seguintes fontes:
+- DejaVu Sans Mono
+- TeX Gyre Heros
+- TeX Gyre Termes
+- TeX Gyre Termes Math
+
 == Exemplo
 
 A modelagem analítica é um processo fundamental no campo da ciência de dados e da análise de negócios, que consiste na criação de representações matemáticas e lógicas de sistemas, processos ou problemas do mundo real.
