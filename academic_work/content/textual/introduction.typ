@@ -63,11 +63,12 @@ As normas a seguir são contempladas.
 
 == Requisitos
 
-É necessário instalar as seguintes fontes:
-- DejaVu Sans Mono
-- TeX Gyre Heros
-- TeX Gyre Termes
-- TeX Gyre Termes Math
+É necessário instalar as seguintes fontes para que o modelo funcione corretamente.
+Caso utilize a ferramenta Typst via web, elas já estarão disponíveis.
+/ TeX Gyre Heros: para títulos e demais componentes de destaque em fonte sem serifa.
+/ TeX Gyre Termes: para o corpo do texto com fonte serifada.
+/ TeX Gyre Termes Math: para fórmulas e equações matemáticas.
+/ DejaVu Sans Mono: para trechos de código e texto em destaque com fonte monoespaçada.
 
 == Exemplo
 

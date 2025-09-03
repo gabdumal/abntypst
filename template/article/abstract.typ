@@ -1,4 +1,4 @@
-#import "../../style.typ": font_size_for_common_text
+#import "../common/style/style.typ": font_size_for_common_text
 
 #let include_abstract(
   keywords_title: { "Palavras-chave" },

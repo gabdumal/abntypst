@@ -1,9 +1,9 @@
 // # Glossary. Glossário.
 // NBR 14724:2024 4.2.3.2
 
-#import "../../../components/glossary.typ": glossary
-#import "../../../components/heading.typ": not_start_on_new_page
-#import "../../../util/page.typ": not_number_page
+#import "../components/glossary.typ": glossary
+#import "../components/heading.typ": not_start_on_new_page
+#import "../util/page.typ": not_number_page
 
 #let include_glossary(title: "Glossário", entries) = {
   not_number_page()[

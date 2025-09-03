@@ -1,6 +1,6 @@
-#import "/template/components/figure.typ": describe_figure
-#import "/template/packages.typ": subpar
-#import "/template/style/style.typ": spacing_for_smaller_text
+#import "/template/common/components/figure.typ": describe_figure
+#import "/template/common/packages.typ": subpar
+#import "/template/common/style/style.typ": spacing_for_smaller_text
 
 = Ilustrações
 

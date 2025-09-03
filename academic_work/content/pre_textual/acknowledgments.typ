@@ -6,5 +6,5 @@
 #include_acknowledgments()[
   Agradecemos aos informáticos que construíram as ferramentas utilizadas para desenvolver este projeto, em especial aos contribuidores dos projetos
   #emph[abnTeX2] @abntex:2023:repository_abntex2,
-  #emph[Typst] @typst:2025:typst, #emph[glossy] @waits:2025:glossy e #emph[subpar] @tinger:2025:subpar.
+  #emph[Typst] @typst:2025:typst, #emph[glossarium] @typst_community:2025:glossarium e #emph[subpar] @tinger:2025:subpar.
 ]

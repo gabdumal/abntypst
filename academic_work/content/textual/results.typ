@@ -1,4 +1,4 @@
-#import "/template/components/figure.typ": describe_figure
+#import "/template/common/components/figure.typ": describe_figure
 
 = Resultados
 
@@ -12,12 +12,12 @@ Já o leite condensado, representado como #emph[Sweetened condensed milk], impac
 
 #describe_figure(
   [#figure(
-      caption: [Gráfico de linhas mostrando a sensibilidade do lucro bruto da receita de brigadeiro em relação ao aumento de custo dos insumos],
-      image(
-        "../../assets/images/brigadeiro_ingredient_sensitivity_gross_profit.png",
-        width: 100%,
-      ),
-    )<brigadeiro_ingredient_sensitivity_gross_profit>],
+    caption: [Gráfico de linhas mostrando a sensibilidade do lucro bruto da receita de brigadeiro em relação ao aumento de custo dos insumos],
+    image(
+      "../../assets/images/brigadeiro_ingredient_sensitivity_gross_profit.png",
+      width: 100%,
+    ),
+  )<brigadeiro_ingredient_sensitivity_gross_profit>],
 )
 
 Gráficos análogos foram construídos para as receitas de pão francês e bolo de milho verde.
@@ -31,10 +31,10 @@ Em seguida, a lata de milho verde na receita de bolo de milho verde reduz a marg
 
 #describe_figure(
   [#figure(
-      caption: [Mapa de calor mostrando a perda de pontos percentuais da margem de lucro de cada receita com o aumento de 15% de custo dos insumos],
-      image(
-        "../../assets/images/ingredient_impact_matrix_15pct_margin.png",
-        width: 100%,
-      ),
-    )<ingredient_impact_matrix_15pct_margin>],
+    caption: [Mapa de calor mostrando a perda de pontos percentuais da margem de lucro de cada receita com o aumento de 15% de custo dos insumos],
+    image(
+      "../../assets/images/ingredient_impact_matrix_15pct_margin.png",
+      width: 100%,
+    ),
+  )<ingredient_impact_matrix_15pct_margin>],
 )

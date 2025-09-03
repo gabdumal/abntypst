@@ -1,8 +1,8 @@
 // # Dedication. Dedicatória.
 // NBR 14724:2024 4.2.1.4, NBR 14724:2024 5.2.4
 
-#import "../../../components/heading.typ": not_start_on_new_page
-#import "../../../util/page.typ": not_number_page
+#import "../../../common/components/heading.typ": not_start_on_new_page
+#import "../../../common/util/page.typ": not_number_page
 
 #let include_dedication(
   body,

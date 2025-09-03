@@ -1,4 +1,4 @@
-#import "/template/packages.typ": init-glossary
+#import "/template/common/packages.typ": init-glossary
 #import "/template/bibliography.typ": set_bibliography
 
 #import "/template/style/style.typ": page_template

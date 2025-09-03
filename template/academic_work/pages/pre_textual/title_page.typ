@@ -1,15 +1,15 @@
 // # Title page. Folha de rosto.
 // NBR 14724:2024 4.2.1.1.1
 
-#import "../../../style/style.typ": (
+#import "../../../common/components/advisors.typ": get_advisor_role
+#import "../../../common/components/heading.typ": not_start_on_new_page
+#import "../../../common/components/people.typ": print_people, print_person
+#import "../../../common/components/title.typ": print_title
+#import "../../../common/style/style.typ": (
   font_family_sans, font_size_for_smaller_text, leading_for_smaller_text, spacing_for_smaller_text,
 )
-#import "../../../components/advisors.typ": get_advisor_role
-#import "../../../components/people.typ": print_people, print_person
-#import "../../../components/title.typ": print_title
-#import "../../../components/heading.typ": not_start_on_new_page
-#import "../../../util/page.typ": not_number_page
-#import "../../../util/text.typ": capitalize_first_letter
+#import "../../../common/util/page.typ": not_number_page
+#import "../../../common/util/text.typ": capitalize_first_letter
 #import "../../components/institutional_information.typ": print_institutional_information
 #import "../../components/nature.typ": print_nature
 

@@ -1,4 +1,4 @@
-#import "/template/components/figure.typ": describe_figure
+#import "/template/common/components/figure.typ": describe_figure
 
 = Metodologia
 
@@ -16,12 +16,12 @@ Este modelo, apresentado na @class_diagram, define as entidades a seguir.
 
 #describe_figure(
   [#figure(
-      caption: [Diagrama de classes UML representando a estrutura de dados do sistema de confeitaria],
-      image(
-        "../../assets/images/class_diagram.png",
-        width: 100%,
-      ),
-    )<class_diagram>],
+    caption: [Diagrama de classes UML representando a estrutura de dados do sistema de confeitaria],
+    image(
+      "../../assets/images/class_diagram.png",
+      width: 100%,
+    ),
+  )<class_diagram>],
 )
 
 Com o modelo de dados definido, foi utilizado o sistema gerenciador de banco de dados SQLite @sqlite:2025:sqlite para criar a estrutura lógica do banco.

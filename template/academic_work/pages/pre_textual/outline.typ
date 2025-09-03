@@ -1,10 +1,10 @@
 // # Outline. Sumário.
 // NBR 6027:2012, NBR 14724:2024 4.2.1.13
 
-#import "../../../components/heading.typ": not_start_on_new_page
-#import "../../../components/heading.typ": get_styling_for_heading
-#import "../../../style/style.typ": font_family_sans
-#import "../../../util/page.typ": not_number_page
+#import "../../../common/components/heading.typ": not_start_on_new_page
+#import "../../../common/components/heading.typ": get_styling_for_heading
+#import "../../../common/style/style.typ": font_family_sans
+#import "../../../common/util/page.typ": not_number_page
 
 #let include_outline() = {
   set text(

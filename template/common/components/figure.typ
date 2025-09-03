@@ -1,10 +1,10 @@
 // # Figures. Figuras.
 // NBR 14724:2024 5.8, NBR 14724:2024 5.9
 
-#import "../components/source.typ": print_source_for_content_created_by_authors
 #import "../style/style.typ": (
   font_size_for_smaller_text, leading_for_smaller_text, simple_spacing_for_smaller_text, spacing_for_smaller_text,
 )
+#import "./source.typ": print_source_for_content_created_by_authors
 
 #let format_caption_of_figure(
   width: auto,
