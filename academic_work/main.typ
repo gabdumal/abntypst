@@ -15,7 +15,8 @@
 // Template. Modelo.
 #show: it => template(
   it,
-  page_numbering: true,
+  number_pages: true,
+  counting_strategy: "only_odd_pages",
 )
 
 // External elements. Elementos externos.

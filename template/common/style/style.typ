@@ -5,9 +5,7 @@
 #let paper_size = "a4"
 
 // ## Margins. Margens.
-// NBR 14724:2024
-// TODO: Invert start and end margins for back and front pages
-// https://typst.app/docs/guides/page-setup-guide/
+// NBR 14724:2024 5.1
 #let margin_top = 3.0cm
 #let margin_bottom = 2.0cm
 #let margin_start = 3.0cm

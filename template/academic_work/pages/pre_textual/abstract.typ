@@ -2,8 +2,8 @@
 // NBR 14724:2024 4.2.1.7, NBR 14724:2024 4.2.1.8
 
 #import "../../../common/components/heading.typ": not_start_on_new_page
+#import "../../../common/components/page.typ": counting_strategy, not_count_page, not_number_page
 #import "../../../common/style/style.typ": font_size_for_common_text
-#import "../../../common/util/page.typ": not_number_page
 
 #let include_abstract(
   keywords_title: { "Palavras-chave" },
@@ -16,9 +16,9 @@
   },
   title: { "Resumo" },
   body: { "Conteúdo do resumo." },
-) = {
-  not_number_page()[
-    #not_start_on_new_page()[
+) = context {
+  not_number_page(
+    not_start_on_new_page()[
       #page()[
         #heading(
           numbering: none,
@@ -45,6 +45,10 @@
           ]
         ]
       ]
-    ]
-  ]
+
+      #if counting_strategy.get() == "odd_and_even_pages" {
+        pagebreak(weak: true, to: "odd")
+      }
+    ],
+  )
 }

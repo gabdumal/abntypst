@@ -3,7 +3,7 @@
 
 #import "../packages.typ": glossarium
 #import "../style/style.typ": font_family_sans
-#import "../util/page.typ": not_number_page
+#import "../components/page.typ": not_number_page
 #import "./heading.typ": not_start_on_new_page
 
 #let glossary(

@@ -88,14 +88,14 @@
 - [ ] 4. Localização
   - [ ] 4.1. Em monografias
     - [ ] Verso e anverso
-    - [ ] Considerar toda a obra em volumes
+    - [n] Considerar toda a obra em volumes
   - [ ] 4.2. Em publicações periódicas
-- [ ] 5. Estrutura
+- [p] 5. Estrutura
   - [x] Numeração — NBR 6024
   - [x] Alinhamento
   - [x] Grafia
   - [x] Paginação
-  - [ ] Outros idiomas
+  - [n] Outros idiomas
 - [x] 6. Regras gerais
 
 ## NBR 6028:2021 — Informação e documentação — Resumo, resenha e recensão — Apresentação — 2ª edição, 2021-05-18
@@ -106,6 +106,7 @@
     - [x] Estrutura
     - [x] Referências
     - [x] Palavras-chave
+    - [ ] Como documento autônomo
   - [ ] 4.2. Resenha e recensão
 
 ## NBR 6029:2023 — Informação e documentação — Livros e folhetos — Apresentação — 3ª edição, 2023-03-22
@@ -130,9 +131,9 @@
 
 ### 4. Estrutura
 
-- [ ] 4.1. Parte externa
+- [p] 4.1. Parte externa
   - [x] 4.1.1. Capa (obrigatório)
-  - [ ] 4.1.2. Lombada (opcional) — NBR 12225
+  - [n] 4.1.2. Lombada (opcional) — NBR 12225
 - [ ] 4.2. Parte interna
   - [ ] 4.2.1. Elementos pré-textuais
     - [x] 4.2.1.1. Folha de rosto (obrigatório)
@@ -147,7 +148,7 @@
     - [ ] 4.2.1.10. Lista de tabelas (opcional)
     - [x] 4.2.1.11. Lista de abreviaturas e siglas (opcional)
     - [x] 4.2.1.12. Lista de símbolos (opcional)
-    - [ ] 4.2.1.13. Sumário (obrigatório) — NBR 6027
+    - [x] 4.2.1.13. Sumário (obrigatório) — NBR 6027
   - [ ] 4.2.2. Elementos textuais
   - [ ] 4.2.3. Elementos pós-textuais
     - [ ] 4.2.2.1. Referências (obrigatório) — NBR 6023
@@ -158,10 +159,10 @@
 
 ### 5. Regras gerais
 
-- [ ] 5.1. Formato
+- [x] 5.1. Formato
   - [x] Formato do papel
   - [x] Margens
-  - [ ] Verso e anverso
+  - [x] Verso e anverso
   - [x] Tamanho da fonte
 - [ ] 5.2. Espaçamento
   - [x] Entre linhas
@@ -170,15 +171,15 @@
     - [ ] Entre referências
   - [x] Natureza
   - [ ] 5.2.1. Notas de rodapé
-  - [ ] 5.2.2. Indicativos de seção
+  - [x] 5.2.2. Indicativos de seção
     - [x] Espaçamento
-    - [ ] Verso e anverso
+    - [x] Verso e anverso
   - [x] 5.2.3. Títulos sem indicativo numérico
   - [x] 5.2.4. Elementos sem título e sem indicativo numérico
-- [ ] 5.3. Paginação
+- [p] 5.3. Paginação
   - [x] Contagem
   - [x] Numeração
-  - [ ] Volumes
+  - [n] Volumes
   - [ ] Apêndices e anexos
 - [x] 5.4. Numeração progressiva — NBR 6024
 - [ ] 5.5. Citações — NBR 10520

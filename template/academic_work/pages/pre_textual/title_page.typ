@@ -8,7 +8,7 @@
 #import "../../../common/style/style.typ": (
   font_family_sans, font_size_for_smaller_text, leading_for_smaller_text, spacing_for_smaller_text,
 )
-#import "../../../common/util/page.typ": not_number_page
+#import "../../../common/components/page.typ": not_number_page
 #import "../../../common/util/text.typ": capitalize_first_letter
 #import "../../components/institutional_information.typ": print_institutional_information
 #import "../../components/nature.typ": print_nature
@@ -80,28 +80,20 @@
   custom_nature: {
     "Natureza do trabalho."
   },
-) = {
-  not_number_page()[
-    #not_start_on_new_page()[
+) = context {
+  not_number_page(
+    not_start_on_new_page()[
       #page()[
         #set align(center)
-        #set text(
-          font: font_family_sans,
-        )
+        #set text(font: font_family_sans)
 
         // Authors
-        #print_people(
-          people: authors,
-        )
+        #print_people(people: authors)
 
         #v(1fr)
 
         // Title
-        #print_title(
-          title: title,
-          subtitle: subtitle,
-          with_weight: true,
-        )
+        #print_title(title: title, subtitle: subtitle, with_weight: true)
 
         #if volume_number != none [
           Volume #volume_number
@@ -113,13 +105,8 @@
         #align(end)[
           #box(width: 50%)[
             #set align(start)
-            #set text(
-              size: font_size_for_smaller_text,
-            )
-            #set par(
-              leading: leading_for_smaller_text,
-              spacing: spacing_for_smaller_text,
-            )
+            #set text(size: font_size_for_smaller_text)
+            #set par(leading: leading_for_smaller_text, spacing: spacing_for_smaller_text)
             #if custom_nature != none [
               #custom_nature
             ] else [
@@ -156,8 +143,7 @@
         #address
         #linebreak()
         #year
-
       ]
-    ]
-  ]
+    ],
+  )
 }

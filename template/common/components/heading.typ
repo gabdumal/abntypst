@@ -1,5 +1,7 @@
 // # Headings. Títulos.
 
+#import "../components/page.typ": counting_strategy, not_count_page, should_number_this_page
+
 #import "../style/style.typ": (
   font_family_sans, font_size_for_common_text, font_size_for_level_1_headings, font_size_for_level_2_headings,
   font_size_for_level_3_and_beyond_headings, leading_for_level_1_headings, leading_for_level_2_headings,
@@ -47,7 +49,9 @@
   should_start_on_new_page.update(true)
 }
 
-#let format_heading(body) = {
+#let format_heading(
+  body,
+) = {
   // NBR 6024:2012 4.1
   // The format of headings should represent their hierarchical level
   // As done by abnTEX2, we use different font sizes for different heading levels
@@ -76,8 +80,13 @@
   // Level 1 headings should start on a new page
   if body.level == 1 {
     if should_start_on_new_page.get() {
-      pagebreak(weak: true) // NBR 14724:2024 5.2.2
-      // TODO: If considering odd/even pages, sections should start on odd pages
+      // NBR 14724:2024 5.2.2
+      // If considering odd/even pages, sections should start on odd pages
+      let current_counting_strategy = counting_strategy.get()
+      if current_counting_strategy == "odd_and_even_pages" {
+        pagebreak(weak: true, to: "odd")
+      }
+      pagebreak(weak: true)
     }
   }
 

@@ -3,13 +3,13 @@
 
 #import "../../../common/components/advisors.typ": get_advisor_role
 #import "../../../common/components/heading.typ": not_start_on_new_page
+#import "../../../common/components/page.typ": counting_strategy, not_count_page, not_number_page
 #import "../../../common/components/people.typ": print_people, print_person
 #import "../../../common/components/title.typ": print_title
 #import "../../../common/style/style.typ": (
   font_family_sans, font_size_for_smaller_text, leading_for_smaller_text, spacing_for_smaller_text,
 )
 #import "../../../common/util/gender.typ": get_gender_ending
-#import "../../../common/util/page.typ": not_number_page
 #import "../../components/examiner.typ": print_examiner
 #import "../../components/institutional_information.typ": print_institutional_information
 #import "../../components/nature.typ": print_nature
@@ -109,9 +109,9 @@
       year: [ano],
     )
   },
-) = {
-  not_number_page()[
-    #not_start_on_new_page()[
+) = context {
+  not_number_page(
+    not_start_on_new_page()[
       #page()[
         // Approval page should not have title or numbering.
         #set align(center)
@@ -197,6 +197,10 @@
           )
         }
       ]
-    ]
-  ]
+
+      #if counting_strategy.get() == "odd_and_even_pages" {
+        pagebreak(weak: true, to: "odd")
+      }
+    ],
+  )
 }
