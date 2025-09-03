@@ -16,7 +16,7 @@
 #show: it => template(
   it,
   number_pages: true,
-  counting_strategy: "only_odd_pages",
+  consider_only_odd_pages: true,
 )
 
 // External elements. Elementos externos.

@@ -2,12 +2,12 @@
 // NBR 14724:2024 4.1.1
 
 #import "../../../common/components/heading.typ": not_start_on_new_page
+#import "../../../common/components/page.typ": consider_only_odd_pages
+#import "../../../common/components/page.typ": not_count_page, not_number_page, should_count_this_page
 #import "../../../common/components/people.typ": print_people
 #import "../../../common/components/title.typ": print_title
 #import "../../../common/style/style.typ": font_family_sans
-#import "../../../common/components/page.typ": not_count_page, not_number_page, should_count_this_page
 #import "../../components/institutional_information.typ": print_institutional_information
-#import "../../../common/components/page.typ": counting_strategy
 
 #let include_cover(
   organization: {
@@ -96,7 +96,7 @@
           #year
         ]
 
-        #if counting_strategy.get() == "odd_and_even_pages" {
+        #if not consider_only_odd_pages.get() {
           pagebreak(weak: true, to: "odd")
         }
       ],

@@ -3,7 +3,7 @@
 
 #import "../../../common/components/advisors.typ": get_advisor_role
 #import "../../../common/components/heading.typ": not_start_on_new_page
-#import "../../../common/components/page.typ": counting_strategy, not_count_page, not_number_page
+#import "../../../common/components/page.typ": consider_only_odd_pages, not_count_page, not_number_page
 #import "../../../common/components/people.typ": print_people, print_person
 #import "../../../common/components/title.typ": print_title
 #import "../../../common/style/style.typ": (
@@ -198,7 +198,7 @@
         }
       ]
 
-      #if counting_strategy.get() == "odd_and_even_pages" {
+      #if not consider_only_odd_pages.get() {
         pagebreak(weak: true, to: "odd")
       }
     ],

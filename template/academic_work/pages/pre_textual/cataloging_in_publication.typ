@@ -3,7 +3,7 @@
 
 #import "../../../common/components/advisors.typ": get_advisor_role
 #import "../../../common/components/heading.typ": not_start_on_new_page
-#import "../../../common/components/page.typ": counting_strategy, not_count_page, not_number_page
+#import "../../../common/components/page.typ": consider_only_odd_pages, not_count_page, not_number_page
 #import "../../../common/components/people.typ": print_people, print_person
 #import "../../../common/components/title.typ": print_title
 #import "../../../common/style/style.typ": font_family_sans, font_size_for_smaller_text, leading_for_smaller_text
@@ -114,8 +114,7 @@
     #address,
     #year.
 
-    // TODO: Check this counter
-    #context { counter(page).final().at(0) } f.
+    #context { counter(page).final().at(0) } p.
     #parbreak()#linebreak()
 
     #let is_first_advisor = true
@@ -176,11 +175,9 @@
   program: parameters.program,
   keywords_in_main_language: parameters.keywords_in_main_language,
 ) = context {
-  let current_counting_strategy = counting_strategy.get()
-
   not_number_page(
     not_start_on_new_page()[
-      #if current_counting_strategy == "only_odd_pages" {
+      #if consider_only_odd_pages.get() {
         not_count_page(
           page_definitions(
             authors: authors,

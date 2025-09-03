@@ -3,7 +3,7 @@
 
 #import "../components/heading.typ": not_start_on_new_page
 #import "../components/list_of_tables.typ": list_of_tables
-#import "../components/page.typ": counting_strategy, not_count_page, not_number_page
+#import "../components/page.typ": consider_only_odd_pages, not_count_page, not_number_page
 
 #let include_list_of_tables() = context {
   not_number_page(
@@ -12,7 +12,7 @@
         #list_of_tables()
       ]
 
-      #if counting_strategy.get() == "odd_and_even_pages" {
+      #if not consider_only_odd_pages.get() {
         pagebreak(weak: true, to: "odd")
       }
     ],

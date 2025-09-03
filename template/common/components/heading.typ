@@ -1,6 +1,6 @@
 // # Headings. Títulos.
 
-#import "../components/page.typ": counting_strategy, not_count_page, should_number_this_page
+#import "../components/page.typ": consider_only_odd_pages, not_count_page, should_number_this_page
 #import "../style/style.typ": (
   font_family_sans, font_size_for_common_text, font_size_for_level_1_headings, font_size_for_level_2_headings,
   font_size_for_level_3_and_beyond_headings, leading_for_level_1_headings, leading_for_level_2_headings,
@@ -83,8 +83,7 @@
     if should_start_on_new_page.get() {
       // NBR 14724:2024 5.2.2
       // If considering odd/even pages, sections should start on odd pages
-      let current_counting_strategy = counting_strategy.get()
-      if current_counting_strategy == "odd_and_even_pages" {
+      if not consider_only_odd_pages.get() {
         pagebreak(weak: true, to: "odd")
       }
       pagebreak(weak: true)

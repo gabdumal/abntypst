@@ -5,7 +5,7 @@
 #let should_number_this_page = state("should_number_this_page", true)
 #let should_count_this_page = state("should_count_this_page", true)
 
-#let counting_strategy = state("counting_strategy", "only_odd_pages")
+#let consider_only_odd_pages = state("consider_only_odd_pages", true)
 
 #let not_number_page(
   body,
@@ -35,8 +35,9 @@
 
   // NBR 14724:2024 5.3
   // Numbering should be on the right for odd pages and on the left for even pages.
-  let current_counting_strategy = counting_strategy.get()
-  let alignment = if current_counting_strategy == "only_odd_pages" { end } else {
+  let alignment = if consider_only_odd_pages.get() {
+    end
+  } else {
     if calc.rem(actual_page_number, 2) == 1 {
       end
     } else {

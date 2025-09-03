@@ -2,7 +2,7 @@
 // NBR 14724:2024 4.2.1.7, NBR 14724:2024 4.2.1.8
 
 #import "../../../common/components/heading.typ": not_start_on_new_page
-#import "../../../common/components/page.typ": counting_strategy, not_count_page, not_number_page
+#import "../../../common/components/page.typ": consider_only_odd_pages, not_count_page, not_number_page
 #import "../../../common/style/style.typ": font_size_for_common_text
 
 #let include_abstract(
@@ -46,7 +46,7 @@
         ]
       ]
 
-      #if counting_strategy.get() == "odd_and_even_pages" {
+      #if not consider_only_odd_pages.get() {
         pagebreak(weak: true, to: "odd")
       }
     ],
