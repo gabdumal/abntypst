@@ -8,6 +8,7 @@
     font: font_family_sans,
   )
 
+  // TODO: there should be an em-dash between the numbering and the caption
   show outline.entry: it => {
     let kind = it.element.kind
     if kind != table {

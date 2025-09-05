@@ -8,6 +8,8 @@
     font: font_family_sans,
   )
 
+  // TODO: there should be an em-dash between the numbering and the caption
+
   outline(
     title: "Lista de tabelas",
     target: figure.where(kind: table),
