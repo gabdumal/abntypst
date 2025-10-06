@@ -1,3 +1,4 @@
+#import "./common/components/bibliography.typ": format_bibliography
 #import "./common/components/heading.typ": format_heading
 #import "./common/components/page.typ": (
   consider_only_odd_pages as consider_only_odd_pages_state, format_header, should_count_this_page,
@@ -101,12 +102,15 @@
   )
 
   // ## Bibliography. Referências.
-  // NBR 14724:2024 4.2.3.1
+  // NBR 6023:2025 6, NBR 14724:2024 4.2.3.1
   set bibliography(
     // The bibliography should be formatted according to the ABNT style
-    style: "common/style/bibliography_style.csl",
+    style: "/template/common/style/bibliography_style.csl",
     title: "Referências",
   )
+  show bibliography: it => {
+    format_bibliography(it)
+  }
 
   doc
 }

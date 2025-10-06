@@ -43,8 +43,11 @@
 // Spacing of 1.5 must be used for common text.
 #let spacing_for_common_text = font_size_for_common_text * spacing_of_one_and_a_half
 #let spacing_for_smaller_text = font_size_for_smaller_text * spacing_of_one_and_a_half
-// Spacing of 1 must be used for references.
-#let simple_spacing_for_smaller_text = font_size_for_common_text * spacing_of_one
+//
+// Spacing of 1 must be used for bibliography. NBR 6023:2025 6.3.
+#let spacing_for_bibliography = font_size_for_common_text * spacing_of_one
+// Spacing of 1 must be used for: quotations with more than 3 lines, footnotes, nature, references and caption of figures and tables. We interpret that nature should also use this leading.
+#let simple_spacing_for_smaller_text = font_size_for_smaller_text * spacing_of_one
 
 // ## Leading. Entrelinha.
 // NBR 14724:2024 5.2
@@ -61,7 +64,8 @@
 // ### Text. Texto.
 // Leading of 1.5 must be used for common text.
 #let leading_for_common_text = font_size_for_common_text * leading_of_one_and_a_half
+//
+// Leading of 1 must be used for bibliography. NBR 6023:2025 6.3.
+#let leading_for_bibliography = font_size_for_common_text * leading_of_one
 // Leading of 1 must be used for: quotations with more than 3 lines, footnotes, nature, references and caption of figures and tables. We interpret that nature should also use this leading.
-#let leading_for_smaller_text = font_size_for_smaller_text * leading_of_one
-// Leading of 1 must be used for references.
-#let leading_for_references = font_size_for_common_text * leading_of_one
+#let simple_leading_for_smaller_text = font_size_for_smaller_text * leading_of_one

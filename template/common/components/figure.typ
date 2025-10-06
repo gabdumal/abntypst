@@ -2,7 +2,8 @@
 // NBR 14724:2024 5.8, NBR 14724:2024 5.9
 
 #import "../style/style.typ": (
-  font_size_for_smaller_text, leading_for_smaller_text, simple_spacing_for_smaller_text, spacing_for_smaller_text,
+  font_size_for_smaller_text, simple_leading_for_smaller_text, simple_spacing_for_smaller_text,
+  spacing_for_smaller_text,
 )
 #import "./source.typ": print_source_for_content_created_by_authors
 
@@ -17,7 +18,7 @@
   )
   // The caption of a figure should have a smaller leading and spacing
   set par(
-    leading: leading_for_smaller_text,
+    leading: simple_leading_for_smaller_text,
     spacing: spacing_for_smaller_text,
   )
   caption
@@ -31,7 +32,7 @@
   // Source and notes should be in a smaller font size
   set par(
     first-line-indent: 0em,
-    leading: leading_for_smaller_text,
+    leading: simple_leading_for_smaller_text,
     spacing: spacing_for_smaller_text,
   )
   set text(
@@ -45,7 +46,7 @@
     below: spacing_for_smaller_text,
   )[
     #set par(
-      leading: leading_for_smaller_text,
+      leading: simple_leading_for_smaller_text,
       spacing: simple_spacing_for_smaller_text,
     )
     // Figures must have a source

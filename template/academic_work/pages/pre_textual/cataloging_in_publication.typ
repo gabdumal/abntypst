@@ -6,7 +6,7 @@
 #import "../../../common/components/page.typ": consider_only_odd_pages, not_count_page, not_number_page
 #import "../../../common/components/people.typ": print_people, print_person
 #import "../../../common/components/title.typ": print_title
-#import "../../../common/style/style.typ": font_family_sans, font_size_for_smaller_text, leading_for_smaller_text
+#import "../../../common/style/style.typ": font_family_sans, font_size_for_smaller_text, simple_leading_for_smaller_text
 #import "../../../common/util/text.typ": capitalize_first_letter
 
 #let parameters = (
@@ -98,7 +98,7 @@
 ) = page()[
   #set align(center + bottom)
   #set text(font: font_family_sans, size: font_size_for_smaller_text)
-  #set par(first-line-indent: 0.5cm, leading: leading_for_smaller_text, spacing: leading_for_smaller_text)
+  #set par(first-line-indent: 0.5cm, leading: simple_leading_for_smaller_text, spacing: simple_leading_for_smaller_text)
 
   #box(stroke: (thickness: auto), width: 13.5cm, height: 10cm, inset: 0.5em)[
     #set align(start + horizon)

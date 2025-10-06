@@ -2,7 +2,7 @@
 // NBR 14724:2024 5.5, NBR 10520:2023 7.1.1
 
 #import "../style/style.typ": (
-  font_size_for_common_text, font_size_for_smaller_text, leading_for_common_text, leading_for_smaller_text,
+  font_size_for_common_text, font_size_for_smaller_text, leading_for_common_text, simple_leading_for_smaller_text,
   spacing_for_common_text, spacing_for_smaller_text,
 )
 
@@ -18,7 +18,7 @@
   // Long quotes should have a smaller font size than the main text.
   if smaller_text {
     font_size = font_size_for_smaller_text
-    leading = leading_for_smaller_text
+    leading = simple_leading_for_smaller_text
     spacing = spacing_for_smaller_text
   }
 

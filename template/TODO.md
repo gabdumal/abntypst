@@ -1,16 +1,16 @@
 # Roadmap
 
 - [ ] NBR 6022:2018 — Informação e documentação — Artigo em publicação periódica técnica e/ou científica — Apresentação
-- [ ] NBR 6023:2025 — Informação e documentação — Referências — Elaboração
+- [p] NBR 6023:2025 — Informação e documentação — Referências — Elaboração
 - [ ] NBR 6024:2012 — Informação e documentação — Numeração progressiva das seções de um documento — Apresentação
 - [ ] NBR 6027:2012 — Informação e documentação — Sumário — Apresentação
 - [ ] NBR 6028:2021 — Informação e documentação — Resumo, resenha e recensão — Apresentação
-- [ ] NBR 6029:2023 — Informação e documentação — Livros e folhetos — Apresentação
+- [n] NBR 6029:2023 — Informação e documentação — Livros e folhetos — Apresentação
 - [ ] NBR 6034:2004 — Informação e documentação — Índice — Apresentação
 - [ ] NBR 10520:2023 — Informação e documentação — Citações em documentos — Apresentação
 - [ ] NBR 10719:2015 — Informação e documentação — Relatório técnico e/ou científico — Apresentação
 - [ ] NBR 14724:2024 — Informação e documentação — Trabalhos acadêmicos — Apresentação
-- [ ] NBR 15287: —
+- [ ] NBR 15287:2025 — Informação e documentação — Projeto de pesquisa — Apresentação
 
 ## NBR 6022:2018 — Informação e documentação — Artigo em publicação periódica técnica e/ou científica — Apresentação — 2ª edição, 2018-05-16
 
@@ -54,14 +54,14 @@
 
 ## NBR 6023:2025 — Informação e documentação — Referências — Elaboração — 3ª edição, 2025-05-21
 
-- [ ] 4. Elementos da referência
-- [ ] 5. Localização
-- [ ] 6. Regras gerais de apresentação
-- [ ] 7. Modelos de referências
-- [ ] 8. Transcrição dos elementos
-- [ ] 9. Ordenação das referências
-  - [ ] 9.1. Sistema alfabético
-  - [ ] 9.2. Sistema numérico
+- [x] 4. Elementos da referência
+- [x] 5. Localização
+- [x] 6. Regras gerais de apresentação
+- [x] 7. Modelos de referências
+- [x] 8. Transcrição dos elementos
+- [x] 9. Ordenação das referências
+  - [x] 9.1. Sistema alfabético
+  - [n] 9.2. Sistema numérico
 
 ## NBR 6024 — Informação e documentação — Numeração progressiva das seções de um documento — Apresentação — 2ª edição, 2012-02-01
 
@@ -86,8 +86,8 @@
 ## NBR 6027:2012 — Informação e documentação — Sumário — Apresentação — 2ª edição, 2012-12-11
 
 - [ ] 4. Localização
-  - [ ] 4.1. Em monografias
-    - [ ] Verso e anverso
+  - [p] 4.1. Em monografias
+    - [x] Verso e anverso
     - [n] Considerar toda a obra em volumes
   - [ ] 4.2. Em publicações periódicas
 - [p] 5. Estrutura
@@ -141,8 +141,8 @@
     - [x] 4.2.1.3. Folha de aprovação (obrigatório)
     - [x] 4.2.1.4. Dedicatória (opcional)
     - [x] 4.2.1.5. Agradecimentos (opcional)
-    - [ ] 4.2.1.6. Epígrafe (opcional)
-      - [ ] Em início de capítulo
+    - [x] 4.2.1.6. Epígrafe (opcional)
+      - [x] Em início de capítulo
     - [x] 4.2.1.7. Resumo na língua vernácula (obrigatório) — NBR 6028
     - [x] 4.2.1.8. Resumo em língua estrangeira (obrigatório) — NBR 6028
     - [p] 4.2.1.9. Lista de ilustrações (opcional)
@@ -154,8 +154,8 @@
     - [x] 4.2.1.13. Sumário (obrigatório) — NBR 6027
   - [ ] 4.2.2. Elementos textuais
   - [ ] 4.2.3. Elementos pós-textuais
-    - [ ] 4.2.2.1. Referências (obrigatório) — NBR 6023
-          [x] 4.2.2.2. Glossário (opcional)
+    - [x] 4.2.2.1. Referências (obrigatório) — NBR 6023
+    - [x] 4.2.2.2. Glossário (opcional)
     - [ ] 4.2.2.3. Apêndice (opcional)
           [ ] 4.2.2.4. Anexo (opcional)
           [ ] 4.2.2.5. Índice (opcional) — NBR 6034
@@ -167,11 +167,11 @@
   - [x] Margens
   - [x] Verso e anverso
   - [x] Tamanho da fonte
-- [ ] 5.2. Espaçamento
+- [x] 5.2. Espaçamento
   - [x] Entre linhas
     - [x] Entre texto comum
     - [x] Entre texto menor
-    - [ ] Entre referências
+    - [x] Entre referências
   - [x] Natureza
   - [ ] 5.2.1. Notas de rodapé
   - [x] 5.2.2. Indicativos de seção
