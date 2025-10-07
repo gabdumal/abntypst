@@ -9,8 +9,9 @@
 
 // Tests. Testes.
 #include "not_numbered.typ"
-#include "headings.typ"
 #include "quotes.typ"
+#include "footnotes.typ"
 #include "figures.typ"
 #include "tables.typ"
 #include "glossary.typ"
+#include "headings.typ"
