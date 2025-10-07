@@ -135,7 +135,7 @@
   - [x] 4.1.1. Capa (obrigatório)
   - [n] 4.1.2. Lombada (opcional) — NBR 12225
 - [ ] 4.2. Parte interna
-  - [ ] 4.2.1. Elementos pré-textuais
+  - [p] 4.2.1. Elementos pré-textuais
     - [x] 4.2.1.1. Folha de rosto (obrigatório)
     - [x] 4.2.1.2. Errata (opcional)
     - [x] 4.2.1.3. Folha de aprovação (obrigatório)
@@ -152,7 +152,7 @@
     - [x] 4.2.1.11. Lista de abreviaturas e siglas (opcional)
     - [x] 4.2.1.12. Lista de símbolos (opcional)
     - [x] 4.2.1.13. Sumário (obrigatório) — NBR 6027
-  - [ ] 4.2.2. Elementos textuais
+  - [p] 4.2.2. Elementos textuais
   - [ ] 4.2.3. Elementos pós-textuais
     - [x] 4.2.2.1. Referências (obrigatório) — NBR 6023
     - [x] 4.2.2.2. Glossário (opcional)

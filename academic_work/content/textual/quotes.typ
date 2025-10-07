@@ -4,7 +4,7 @@
 
 #quote(
   block: true,
-  attribution: [@tortinhas_quixotescas:2025:repository_dcc166_atv2],
+  attribution: [@guimaraes:1960:ismalia],
 )[
   #lorem(50)
 ]
