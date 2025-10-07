@@ -4,7 +4,6 @@
 #import "./data/glossary/main.typ": abbreviations_entries, glossary_entries, symbols_entries
 #import "/template/common/components/source.typ": print_source_for_content_created_by_authors
 #import "/template/common/packages.typ": glossarium
-#import "/template/common/pages/bibliography.typ": include_bibliography
 #import "/template/template.typ": template
 
 // Glossary. Glossário.
