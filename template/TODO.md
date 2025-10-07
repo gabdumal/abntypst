@@ -59,7 +59,7 @@
 - [x] 6. Regras gerais de apresentação
 - [x] 7. Modelos de referências
 - [x] 8. Transcrição dos elementos
-- [x] 9. Ordenação das referências
+- [p] 9. Ordenação das referências
   - [x] 9.1. Sistema alfabético
   - [n] 9.2. Sistema numérico
 
@@ -173,7 +173,7 @@
     - [x] Entre texto menor
     - [x] Entre referências
   - [x] Natureza
-  - [ ] 5.2.1. Notas de rodapé
+  - [x] 5.2.1. Notas de rodapé
   - [x] 5.2.2. Indicativos de seção
     - [x] Espaçamento
     - [x] Verso e anverso

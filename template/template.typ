@@ -1,4 +1,5 @@
 #import "./common/components/bibliography.typ": format_bibliography
+#import "./common/components/footnote.typ": format_footnote_entry
 #import "./common/components/heading.typ": format_heading
 #import "./common/components/page.typ": (
   consider_only_odd_pages as consider_only_odd_pages_state, format_header, should_count_this_page,
@@ -8,7 +9,8 @@
 #import "./common/packages.typ": subpar
 #import "./common/style/style.typ": (
   font_family_math, font_family_mono, font_family_serif, font_size_for_common_text, font_size_for_smaller_text,
-  leading_for_common_text, margin_bottom, margin_end, margin_start, margin_top, paper_size, spacing_for_common_text,
+  leading_for_common_text, margin_bottom, margin_end, margin_start, margin_top, paper_size,
+  simple_leading_for_smaller_text, simple_spacing_for_smaller_text, spacing_for_common_text,
 )
 
 #let template(
@@ -83,6 +85,7 @@
   }
 
   // ## Quotes. Citações.
+  // NBR 10520:2023 7.1.1
   show quote: it => {
     // Long quotes (more than 3 lines) should be blocks.
     if it.block {
@@ -90,6 +93,18 @@
     } else {
       it
     }
+  }
+
+  // ## Footnotes. Notas de rodapé.
+  // NBR 14724:2024 5.2.1
+  set footnote.entry(
+    gap: simple_leading_for_smaller_text,
+    clearance: simple_spacing_for_smaller_text,
+    separator: line(length: 5cm),
+    indent: 0em,
+  )
+  show footnote.entry: it => {
+    format_footnote_entry(it)
   }
 
   // ## Figures. Figuras.

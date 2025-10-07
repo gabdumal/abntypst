@@ -7,7 +7,7 @@
 #include "results.typ"
 #include "conclusion.typ"
 
-// Tests. Testes.
+// Tutorial. Tutoriais.
 #include "not_numbered.typ"
 #include "quotes.typ"
 #include "footnotes.typ"
