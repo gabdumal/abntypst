@@ -100,7 +100,15 @@
   #set text(font: font_family_sans, size: font_size_for_smaller_text)
   #set par(first-line-indent: 0.5cm, leading: simple_leading_for_smaller_text, spacing: simple_leading_for_smaller_text)
 
-  #box(stroke: (thickness: auto), width: 13.5cm, height: 10cm, inset: 0.5em)[
+  #box(
+    stroke: (thickness: auto),
+    width: 14.5cm,
+    height: 10.2cm,
+    inset: (
+      x: 1.1cm,
+      y: 0.5cm,
+    ),
+  )[
     #set align(start + horizon)
 
     #print_person(person: authors.at(0), last_name_first: true).
@@ -108,13 +116,15 @@
 
     #print_title(title: title, subtitle: subtitle, with_weight: false)
     #sym.slash
-    #print_people(people: authors)
+    #print_people(people: authors).
     #sym.dash.en
     #if volume_number != none { "v. " + volume_number + sym.space + sym.dash.en }
     #address,
     #year.
 
-    #context { counter(page).final().at(0) } p.
+    #context { counter(page).final().at(0) }
+    #if consider_only_odd_pages.get() [f.] else [p.]
+    #if (counter(figure.where(kind: image)).final().first() > 0) [: il.]
     #parbreak()#linebreak()
 
     #let is_first_advisor = true
@@ -127,8 +137,10 @@
       is_first_advisor = false
     }
 
-    #capitalize_first_letter(type_of_work.name)
-    (#capitalize_first_letter(degree.name))
+    #if (
+      type_of_work.name == "trabalho de conclusão de curso"
+    ) [Trabalho de Conclusão de Curso] else [#capitalize_first_letter(type_of_work.name)]
+    (#degree.name)
     #sym.dash.en
     #organization.name#if institution != none { [, #institution.name] }.
     #if program != none { [#program.name,] }

@@ -65,7 +65,18 @@ As normas a seguir são contempladas.
 
 É necessário instalar as seguintes fontes para que o modelo funcione corretamente.
 Caso utilize a ferramenta Typst via web, elas já estarão disponíveis.
-/ TeX Gyre Heros: para títulos e demais componentes de destaque em fonte sem serifa.
-/ TeX Gyre Termes: para o corpo do texto com fonte serifada.
-/ TeX Gyre Termes Math: para fórmulas e equações matemáticas.
-/ DejaVu Sans Mono: para trechos de código e texto em destaque com fonte mono-espaçada.
+/ Liberation Sans: para títulos e demais componentes de destaque em fonte sem serifa.
+/ Liberation Serif: para o corpo do texto com fonte serifada.
+/ Liberation Mono: para trechos de código e texto em destaque com fonte mono-espaçada.
+/ New Computer Modern Math: para fórmulas e equações matemáticas.
+
+== Ficha catalográfica
+
+A ficha catalográfica gerada por esse modelo é apenas um exemplo.
+Sua instituição provavelmente fornecerá uma página para ser anexada ao projeto.
+Caso esse seja um arquivo PDF, você deve convertê-lo para o formato SVG.
+Para isso, recomendo o programa #link("https://inkscape.org/release", "Inkscape").
+Certifique-se de que você tem instaladas as fontes usadas no arquivo fornecido.
+
+Então, coloque a página no formato SVG dentro da pasta `/academic_work/assets/documents`.
+Em seguida, edite o arquivo `/academic_work/content/pre_textual/cataloging_in_publication.typ`, de forma a não usar o comando `include_cataloging_in_publication`, mas sim o comando `include_custom_cataloging_in_publication` com a imagem referente à página a incluir.
