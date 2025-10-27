@@ -9,7 +9,7 @@
 - [ ] NBR 6034:2004 — Informação e documentação — Índice — Apresentação
 - [ ] NBR 10520:2023 — Informação e documentação — Citações em documentos — Apresentação
 - [ ] NBR 10719:2015 — Informação e documentação — Relatório técnico e/ou científico — Apresentação
-- [ ] NBR 14724:2024 — Informação e documentação — Trabalhos acadêmicos — Apresentação
+- [x] NBR 14724:2024 — Informação e documentação — Trabalhos acadêmicos — Apresentação
 - [ ] NBR 15287:2025 — Informação e documentação — Projeto de pesquisa — Apresentação
 
 ## NBR 6022:2018 — Informação e documentação — Artigo em publicação periódica técnica e/ou científica — Apresentação — 2ª edição, 2018-05-16
@@ -153,12 +153,12 @@
     - [x] 4.2.1.12. Lista de símbolos (opcional)
     - [x] 4.2.1.13. Sumário (obrigatório) — NBR 6027
   - [p] 4.2.2. Elementos textuais
-  - [ ] 4.2.3. Elementos pós-textuais
+  - [p] 4.2.3. Elementos pós-textuais
     - [x] 4.2.2.1. Referências (obrigatório) — NBR 6023
     - [x] 4.2.2.2. Glossário (opcional)
-    - [ ] 4.2.2.3. Apêndice (opcional)
-          [ ] 4.2.2.4. Anexo (opcional)
-          [ ] 4.2.2.5. Índice (opcional) — NBR 6034
+    - [x] 4.2.2.3. Apêndice (opcional)
+    - [x] 4.2.2.4. Anexo (opcional)
+    - [n] 4.2.2.5. Índice (opcional) — NBR 6034
 
 ### 5. Regras gerais
 
@@ -179,11 +179,11 @@
     - [x] Verso e anverso
   - [x] 5.2.3. Títulos sem indicativo numérico
   - [x] 5.2.4. Elementos sem título e sem indicativo numérico
-- [ ] 5.3. Paginação
+- [p] 5.3. Paginação
   - [x] Contagem
   - [x] Numeração
   - [n] Volumes
-  - [ ] Apêndices e anexos
+  - [x] Apêndices e anexos
 - [x] 5.4. Numeração progressiva — NBR 6024
 - [x] 5.5. Citações — NBR 10520
 - [x] 5.6. Siglas

@@ -20,17 +20,26 @@
             font_weight,
             text_style,
           ) = get_styling_for_heading(it)
+
           set text(
             font: font_family_sans,
             size: font_size,
             weight: font_weight,
             style: text_style,
           )
+
           let prefix = it.prefix()
+          if it.element.supplement == [Apêndice] {
+            prefix = [APÊNDICE #prefix ---]
+          }
+          if it.element.supplement == [Anexo] {
+            prefix = [ANEXO #prefix ---]
+          }
+
           block(
             below: spacing_around,
           )[
-            #link(it.element.location(), it.indented(prefix, it.inner()))
+            #link(it.element.location(), it.indented([#prefix], it.inner()))
           ]
         }
 

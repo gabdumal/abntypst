@@ -55,6 +55,7 @@
   // The format of headings should represent their hierarchical level
   // As done by abnTEX2, we use different font sizes for different heading levels
 
+
   // Styling
   let (
     font_size,
@@ -63,6 +64,9 @@
     font_weight,
     text_style,
   ) = get_styling_for_heading(body)
+  let text_before_numbering = none
+  let text_after_numbering = none
+  let column_gutter = measure(sym.dash).width
 
   // NBR 14724:2024 5.2.2
   // Headings should have 1.5x of spacing above and below
@@ -88,6 +92,20 @@
       }
       pagebreak(weak: true)
     }
+    if body.supplement == [Apêndice] {
+      // NBR 14724:2024 4.2.3.3
+      // Appendixes must have the supplement "APÊNDICE" before its numbering and an em-dash after it
+      text_before_numbering = "APÊNDICE"
+      text_after_numbering = sym.dash.em
+      column_gutter = measure(sym.space).width
+    }
+    if body.supplement == [Anexo] {
+      // NBR 14724:2024 4.2.3.4
+      // Annexes must have the supplement "ANEXO" before its numbering and an em-dash after it
+      text_before_numbering = "ANEXO"
+      text_after_numbering = sym.dash.em
+      column_gutter = measure(sym.space).width
+    }
   }
 
   if body.numbering == none {
@@ -97,9 +115,7 @@
       #block(
         above: spacing_around,
         below: spacing_around,
-      )[
-        #body.body
-      ]
+      )[#body.body]
     ]
   } else {
     block(
@@ -111,8 +127,12 @@
         columns: 2,
         rows: 1,
         // Numbering indicator should be separated from the title by a single space
-        column-gutter: measure(sym.dash).width,
-        [#counter(heading).display(body.numbering)], [#body.body],
+        column-gutter: column_gutter,
+        [
+          #text_before_numbering
+          #counter(heading).display(body.numbering)       #text_after_numbering
+        ],
+        [#body.body],
       ),
     )
   }

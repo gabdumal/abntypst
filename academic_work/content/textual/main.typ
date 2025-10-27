@@ -15,4 +15,5 @@
 #include "tables.typ"
 #include "equations.typ"
 #include "glossary.typ"
+#include "appendixes_and_annexes.typ"
 #include "headings.typ"
