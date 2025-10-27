@@ -16,6 +16,7 @@
 #let font_family_serif = "Liberation Serif"
 #let font_family_mono = "Liberation Mono"
 #let font_family_math = "New Computer Modern Math"
+#let font_family_math_text = "New Computer Modern"
 
 // ## Font size. Tamanho da fonte.
 // NBR 14724:2024 5.1, NBR 6022:2018 6.1

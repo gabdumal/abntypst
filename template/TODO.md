@@ -187,7 +187,7 @@
 - [x] 5.4. Numeração progressiva — NBR 6024
 - [x] 5.5. Citações — NBR 10520
 - [x] 5.6. Siglas
-- [ ] 5.7. Equações e fórmulas
+- [x] 5.7. Equações e fórmulas
 - [x] 5.8. Ilustrações
   - [x] Numeração
   - [x] Legenda

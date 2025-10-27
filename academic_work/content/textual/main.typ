@@ -13,5 +13,6 @@
 #include "footnotes.typ"
 #include "figures.typ"
 #include "tables.typ"
+#include "equations.typ"
 #include "glossary.typ"
 #include "headings.typ"

@@ -8,14 +8,22 @@ A terceira é a lista de termos e definições, que deve constar nos elementos p
 
 == Lista de abreviaturas e siglas
 
-@abnt
-@bi
-@ibge
+#list(
+  [@abnt],
+  [@bi],
+  [@ibge],
+)
 
 == Lista de símbolos
 
-@emptyset
+#list(
+  [@emptyset],
+)
+
 
 == Lista de termos e definições
 
-@firewall
+
+#list(
+  [@firewall],
+)

@@ -68,6 +68,7 @@ Caso utilize a ferramenta Typst via web, elas já estarão disponíveis.
 / Liberation Sans: para títulos e demais componentes de destaque em fonte sem serifa.
 / Liberation Serif: para o corpo do texto com fonte serifada.
 / Liberation Mono: para trechos de código e texto em destaque com fonte mono-espaçada.
+/ New Computer Modern: para texto em blocos de equações matemáticas.
 / New Computer Modern Math: para fórmulas e equações matemáticas.
 
 == Ficha catalográfica

@@ -3,7 +3,7 @@
 
 = Tabelas
 
-A @amounts_of_ingredients se trata de uma tabela simples, com poucas linhas de dados em português, que representa quantidades de ingredientes para uma receita de bolo de chocolate.
+A @table:amounts_of_ingredients se trata de uma tabela simples, com poucas linhas de dados em português, que representa quantidades de ingredientes para uma receita de bolo de chocolate.
 
 Ambas são exemplos de tabela conforme as Normas de apresentação tabular do @ibge #cite(<ibge:1993:normas_apresentacao_tabular>).
 
@@ -27,12 +27,12 @@ Ambas são exemplos de tabela conforme as Normas de apresentação tabular do @i
         ),
       ),
     ),
-  )<amounts_of_ingredients>],
+  )<table:amounts_of_ingredients>],
 )
 
 #lorem(100)
 
-Já a @monthly_sales_data é um exemplo de tabela longa, com muitas linhas de dados em português, que representa dados sintéticos de vendas mensais por região no Brasil (2023-2024).
+Já a @table:monthly_sales_data é um exemplo de tabela longa, com muitas linhas de dados em português, que representa dados sintéticos de vendas mensais por região no Brasil (2023-2024).
 
 #describe_figure(
   [#figure(
@@ -108,7 +108,7 @@ Já a @monthly_sales_data é um exemplo de tabela longa, com muitas linhas de da
         ),
       ),
     ),
-  )<monthly_sales_data>],
+  )<table:monthly_sales_data>],
 )
 
 #lorem(75)
