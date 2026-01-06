@@ -5,5 +5,5 @@
 }
 
 #let capitalize_every_word = text => {
-  text.split().map(word => capitalize_first_letter(word)).join(" ")
+  text.split().map(word => capitalize_first_letter(word)).join(sym.space)
 }
