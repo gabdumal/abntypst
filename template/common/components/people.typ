@@ -14,8 +14,8 @@
     person.first_name
     if person.middle_name != none { " " + person.middle_name }
   } else {
-    person.first_name + " "
-    if person.middle_name != none { person.middle_name + " " }
+    person.first_name + sym.space
+    if person.middle_name != none { person.middle_name + sym.space }
     person.last_name
   }
 }
