@@ -167,8 +167,10 @@
       [#institution.name.]
       notes_counter += 1
     }
-    #numbering("I. ", notes_counter)
-    Título.
+    #{
+      numbering("I. ", notes_counter)
+      [Título.]
+    }
   ]
 ]
 
