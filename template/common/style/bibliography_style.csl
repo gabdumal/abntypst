@@ -298,6 +298,21 @@
         </choose>
     </macro>
 
+    <!--A
+    macro 'issued-year' exibe somente o ano para uso em citacao; cai para [S.d.] quando vazio. -->
+    <macro name="issued-year">
+        <choose>
+            <if variable="issued" match="any">
+                <date variable="issued">
+                    <date-part name="year" />
+                </date>
+            </if>
+            <else>
+                <text value="[S.d.]" font-style="italic" />
+            </else>
+        </choose>
+    </macro>
+
     <!-- Identificacao e complementos -->
     <!--A
     macro 'access' mostra a URL ("Disponivel em:") e a data de acesso ("Acesso em:") com mes
@@ -492,7 +507,7 @@
         <layout prefix="(" suffix=")" delimiter="; ">
             <group>
                 <text macro="author-short" suffix=", " />
-                <text macro="issued" />
+                <text macro="issued-year" />
                 <text macro="citation-locator" prefix=", " />
             </group>
         </layout>

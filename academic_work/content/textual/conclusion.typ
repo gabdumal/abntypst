@@ -1,6 +1,6 @@
 #import "/template/common/components/epigraph.typ": epigraph
 
-= Conclusão
+= Conclusão <cap:conclusion>
 
 #epigraph(
   quote(

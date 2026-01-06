@@ -1,5 +1,3 @@
-#import "/template/common/components/figure.typ": describe_figure
-
-= Resultados
+= Resultados <cap:results>
 
 #lorem(50)

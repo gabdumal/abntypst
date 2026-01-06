@@ -31,6 +31,5 @@
 // Post-textual elements. Elementos pós-textuais.
 #include "content/post_textual/main.typ"
 
-
 // Bibliography. Referências.
 #bibliography("data/bibliography.bib")

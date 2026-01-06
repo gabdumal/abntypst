@@ -1,4 +1,4 @@
-= Introdução
+= Introdução <cap:introduction>
 
 Este projeto visa a fornecer um modelo para redação de trabalhos acadêmicos por meio da ferramenta Typst @typst:2025:typst segundo as @nbr:pl da @abnt.
 As normas a seguir são contempladas.
@@ -81,3 +81,10 @@ Certifique-se de que você tem instaladas as fontes usadas no arquivo fornecido.
 
 Então, coloque a página no formato SVG dentro da pasta `/academic_work/assets/documents`.
 Em seguida, edite o arquivo `/academic_work/content/pre_textual/cataloging_in_publication.typ`, de forma a não usar o comando `include_cataloging_in_publication`, mas sim o comando `include_custom_cataloging_in_publication` com a imagem referente à página a incluir.
+
+== Referências a outros capítulos
+
+É comum encerrar a introdução fazendo uma descrição da estrutura do projeto.
+Para isso, você pode chamar as #emph[labels] dos capítulos.
+Por exemplo, este capítulo de introdução é o @cap:introduction.
+Já o capítulo de Fundamentação teórica é o @cap:foundation.

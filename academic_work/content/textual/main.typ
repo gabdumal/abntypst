@@ -3,7 +3,7 @@
 
 #include "introduction.typ"
 #include "foundation.typ"
-#include "methodology.typ"
+#include "method.typ"
 #include "results.typ"
 #include "conclusion.typ"
 
