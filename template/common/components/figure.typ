@@ -84,9 +84,10 @@
 }
 
 #let format_figure(
-  source: none,
-  note: none,
   include_information: false,
+  note: none,
+  source: none,
+  sticky: false,
   it,
 ) = {
   layout(size => {
@@ -97,6 +98,7 @@
 
     block(
       breakable: true,
+      sticky: sticky,
       width: 100%,
     )[
       #block(
@@ -124,9 +126,10 @@
 }
 
 #let describe_figure(
-  source: none,
   note: none,
   placement: none,
+  source: none,
+  sticky: false,
   body,
 ) = {
   set block(breakable: true)
@@ -135,9 +138,10 @@
     set block(breakable: true)
     if placement == none {
       format_figure(
-        source: source,
-        note: note,
         include_information: true,
+        note: note,
+        source: source,
+        sticky: sticky,
         it,
       )
     } else {
@@ -157,9 +161,9 @@
         float: true,
         alignment,
         format_figure(
-          source: source,
-          note: note,
           include_information: true,
+          note: note,
+          source: source,
           it,
         ),
       )

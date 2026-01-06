@@ -1,3 +1,3 @@
-= Fundamentação teórica <cap:foundation>
+= Fundamentação teórica <chapter:foundation>
 
 #lorem(50)

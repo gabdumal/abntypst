@@ -1,3 +1,3 @@
-= Resultados <cap:results>
+= Resultados <chapter:results>
 
 #lorem(50)
