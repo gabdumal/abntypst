@@ -1,6 +1,8 @@
 // # Abbreviations. Abreviaturas.
 // NBR 14724:2024 4.2.1.11
 
+#import "/template/common/util/text_in_english.typ": text_in_english
+
 #let abbreviations_entries = (
   (
     key: "tic",
@@ -14,7 +16,7 @@
     key: "sdg",
     short: "SGD",
     long: "Gradiente Descendente Estocástico",
-    description: "Em inglês, Stochastic Gradient Descent",
+    description: [Em inglês, #text_in_english[Stochastic Gradient Descent]],
     group: "Computação",
   ),
   (key: "ia", short: "IA", long: "Inteligência Artificial", group: "Computação"),
@@ -29,7 +31,7 @@
   (
     key: "bi",
     short: "BI",
-    long: "Business Intelligence",
+    long: [#text_in_english[Business Intelligence]],
     description: "Em português, Inteligência de Negócios.",
     group: "Computação",
   ),
