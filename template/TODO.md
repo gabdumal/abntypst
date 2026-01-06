@@ -134,7 +134,7 @@
 - [p] 4.1. Parte externa
   - [x] 4.1.1. Capa (obrigatório)
   - [n] 4.1.2. Lombada (opcional) — NBR 12225
-- [ ] 4.2. Parte interna
+- [p] 4.2. Parte interna
   - [p] 4.2.1. Elementos pré-textuais
     - [x] 4.2.1.1. Folha de rosto (obrigatório)
     - [x] 4.2.1.2. Errata (opcional)
