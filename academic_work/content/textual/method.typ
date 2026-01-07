@@ -1,3 +1,3 @@
-= Material e métodos <chapter:method>
+= Material e métodos <chapter:metodos>
 
 #lorem(50)

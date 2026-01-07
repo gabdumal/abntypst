@@ -1,4 +1,4 @@
-= Introdução <chapter:introduction>
+= Introdução <chapter:introducao>
 
 Este projeto visa a fornecer um modelo para redação de trabalhos acadêmicos por meio da ferramenta Typst @typst:2025:typst segundo as @nbr:pl da @abnt.
 As normas a seguir são contempladas.
@@ -86,5 +86,5 @@ Em seguida, edite o arquivo `/academic_work/content/pre_textual/cataloging_in_pu
 
 É comum encerrar a introdução fazendo uma descrição da estrutura do projeto.
 Para isso, você pode chamar as #emph[labels] dos capítulos.
-Por exemplo, este capítulo de introdução é o @chapter:introduction.
-Já o capítulo de Fundamentação teórica é o @chapter:foundation.
+Por exemplo, este capítulo de introdução é o @chapter:introducao.
+Já o capítulo de Fundamentação teórica é o @chapter:fundamentacao.
