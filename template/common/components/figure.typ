@@ -5,7 +5,7 @@
   font_size_for_smaller_text, simple_leading_for_smaller_text, simple_spacing_for_smaller_text,
   spacing_for_smaller_text,
 )
-#import "./source.typ": print_source_for_content_created_by_authors
+#import "./information_footer.typ": information_footer
 
 #let format_caption_of_figure(
   width: auto,
@@ -25,8 +25,8 @@
 }
 
 #let format_information_of_figure(
-  source: none,
   note: none,
+  source: none,
 ) = context {
   // NBR 14724:2024 5.8
   // Source and notes should be in a smaller font size
@@ -49,25 +49,13 @@
       leading: simple_leading_for_smaller_text,
       spacing: simple_spacing_for_smaller_text,
     )
-    // Figures must have a source
-    Fonte:
-    #if source == none {
-      [#print_source_for_content_created_by_authors().]
-    } else {
-      source
-    }
-    #linebreak()
-    #if note != none {
-      [
-        Nota: #note
-      ]
-    }
+    #information_footer(note: note, source: source)
   ]
 }
 
 #let include_information_of_figure(
-  source: none,
   note: none,
+  source: none,
   width: auto,
 ) = {
   set align(center)

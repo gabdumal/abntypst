@@ -4,6 +4,7 @@
 #import "../style/style.typ": font_family_math_text
 
 #let equation(
+  placement: none,
   width: auto,
   body,
 ) = {
@@ -12,9 +13,10 @@
   )
   set math.equation(numbering: "(1.1)")
 
-  align(
+  let equation_block = align(
     center,
     block(
+      sticky: true,
       width: width,
       align(
         start,
@@ -22,4 +24,23 @@
       ),
     ),
   )
+
+  if placement == none {
+    equation_block
+  } else {
+    let alignment = if (
+      placement == auto
+    ) {
+      auto
+    } else if (placement == top or placement == bottom) {
+      placement + center
+    } else {
+      panic("Placement should be one of the following options: none, auto, top, bottom")
+    }
+    place(
+      alignment,
+      float: true,
+      equation_block,
+    )
+  }
 }
