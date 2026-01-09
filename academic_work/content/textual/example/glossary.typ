@@ -10,7 +10,6 @@ A terceira é a lista de termos e definições, que deve constar nos elementos p
 
 #list(
   [@abnt],
-  [@bi],
   [@ibge],
 )
 
@@ -22,8 +21,3 @@ A terceira é a lista de termos e definições, que deve constar nos elementos p
 
 
 == Lista de termos e definições
-
-
-#list(
-  [@firewall],
-)

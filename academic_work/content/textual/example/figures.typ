@@ -36,7 +36,7 @@ Ele recebe como parâmetro obrigatório o caminho do arquivo.
 Já como opcionais elencam-se: (1) `width`, a largura, que pode ser especificada em centímetros ou em porcentagem em relação à pagina (como `50%`); e (2) `height`, a altura, que pode ser especificada da mesma forma.
 
 Abaixo está um exemplo de ilustração composta por uma imagem, com largura de 10cm e altura de 5cm.
-Ela é importada por meio do caminho relativo `../../assets/images/black_square.png`, que deve ser ajustado de acordo com a estrutura do projeto.
+Ela é importada por meio do caminho relativo `/academic_work/assets/images/black_square.png`, que deve ser ajustado de acordo com a estrutura do projeto.
 Em seguida está o resultado da execução desse código.
 
 #figure(
@@ -44,7 +44,7 @@ Em seguida está o resultado da execução desse código.
   image(
     width: 10cm,
     height: 5cm,
-    "../../assets/images/black_square.png",
+    "/academic_work/assets/images/black_square.png",
   ),
 )
 
@@ -63,7 +63,7 @@ Essa também é uma referência para a @figure:quadrado_preto_sem_fonte.
 #figure(
   caption: [Quadrado preto],
   image(
-    "../../assets/images/black_square.png",
+    "/academic_work/assets/images/black_square.png",
   ),
 )<figure:quadrado_preto_sem_fonte>
 
@@ -235,7 +235,7 @@ esta é a terceira sub-ilustração: @figure:third_sub_figure.
             caption: [
               #lorem(5)
             ],
-            image("../../assets/images/black_square.png", width: 5cm),
+            image("/academic_work/assets/images/black_square.png", width: 5cm),
           )<figure:first_sub_figure>
         ],
 
@@ -245,7 +245,7 @@ esta é a terceira sub-ilustração: @figure:third_sub_figure.
               #lorem(10)
             ],
             image(
-              "../../assets/images/black_square.png",
+              "/academic_work/assets/images/black_square.png",
               width: 5cm,
             ),
           )<figure:second_sub_figure>
@@ -256,7 +256,7 @@ esta é a terceira sub-ilustração: @figure:third_sub_figure.
             caption: [
               #lorem(15)
             ],
-            image("../../assets/images/black_square.png", width: 10cm),
+            image("/academic_work/assets/images/black_square.png", width: 10cm),
           )<figure:third_sub_figure>
         ],
       ),
@@ -273,14 +273,14 @@ A seguir estão os tipos de ilustrações mais comuns, com exemplos de cada um.
 Uma figura deve ser inserida com o comando `image()`, que recebe como parâmetro obrigatório o caminho do arquivo.
 Ela deve ser inserida dentro do comando `figure()`, que por sua vez deve ser encapsulado no ambiente `describe_figure()`, para que a fonte e a nota sejam apresentadas corretamente.
 
-A @figure:figure_of_an_image_of_a_black_square apresenta uma imagem importada do arquivo `../../assets/images/black_square.png`, com largura de 10cm e altura ajustada proporcionalmente.
+A @figure:figure_of_an_image_of_a_black_square apresenta uma imagem importada do arquivo `/academic_work/assets/images/black_square.png`, com largura de 10cm e altura ajustada proporcionalmente.
 
 #describe_figure(
   [#figure(
     caption: [Quadrado preto],
     image(
       width: 10cm,
-      "../../assets/images/black_square.png",
+      "/academic_work/assets/images/black_square.png",
     ),
   )<figure:figure_of_an_image_of_a_black_square>],
 )

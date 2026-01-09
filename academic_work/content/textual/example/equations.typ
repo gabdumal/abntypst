@@ -1,4 +1,3 @@
-#import "/template/common/style/style.typ": font_family_math_text
 #import "/template/common/components/equation.typ": equation
 
 = Equações

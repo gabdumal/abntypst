@@ -114,7 +114,7 @@
   it,
 )
 
-#let finished_note = it => note_with_prefix(
+#let done_note = it => note_with_prefix(
   color: oklch(74.73%, 0.136, 248.74deg),
   prefix: "DONE",
   it,

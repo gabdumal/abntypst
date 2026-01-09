@@ -743,7 +743,7 @@
                         <text variable="publisher" />
                         <text macro="issued" />
                     </group>
-                    <text macro="access" />
+                    <text macro="access" suffix=". " />
                 </else>
             </choose>
             <text variable="note" prefix=" " suffix="." />

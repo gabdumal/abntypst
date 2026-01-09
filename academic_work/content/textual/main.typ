@@ -5,15 +5,7 @@
 #include "foundation.typ"
 #include "method.typ"
 #include "results.typ"
-#include "conclusion.typ"
+#include "considerations.typ"
 
 // Tutorial. Tutoriais.
-#include "not_numbered.typ"
-#include "quotes.typ"
-#include "footnotes.typ"
-#include "figures.typ"
-#include "tables.typ"
-#include "equations.typ"
-#include "glossary.typ"
-#include "appendixes_and_annexes.typ"
-#include "headings.typ"
+#include "./example/main.typ"
