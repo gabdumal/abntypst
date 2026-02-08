@@ -88,7 +88,9 @@
         #set text(font: font_family_sans)
 
         // Authors
-        #print_people(people: authors)
+        #strong[
+          #print_people(people: authors)
+        ]
 
         #v(1fr)
 
@@ -126,16 +128,10 @@
         #v(1fr)
 
         // Advisors
-        #let is_first_advisor = true
-        #for advisor in advisors {
-          [
-            #capitalize_first_letter(get_advisor_role(gender: advisor.gender, is_co_advisor: not is_first_advisor)):
-            #advisor.prefix
-            #print_person(person: advisor)
-            #linebreak()
-          ]
-          is_first_advisor = false
-        }
+        #align(start)[
+          #set par(first-line-indent: 0pt)
+          #print_advisors(advisors: advisors)
+        ]
 
         #v(1fr)
 

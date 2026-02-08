@@ -6,3 +6,6 @@ authors = ["Gabriel Malosto <professional@gabdumal.com>"]
 license = "AGPL-3.0"
 description = "A template for creating documents accordingly to ABNT."
 repository = "https://github.com/gabdumal/abntypst"
+
+[tool.utpm]
+exclude = [".git", ".vscode", "scripts"]

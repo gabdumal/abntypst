@@ -31,18 +31,19 @@
   },
 ) = {
   [
-    #organization.name
+    // CDC UFJF 2023 recommends to use uppercase
+    #upper(organization.name)
     #if institution != none [
       #joiner
-      #institution.name
+      #upper(institution.name)
     ]
     #if department != none [
       #joiner
-      #department.name
+      #upper(department.name)
     ]
     #if program != none [
       #joiner
-      #program.name
+      #upper(program.name)
     ]
   ]
 }

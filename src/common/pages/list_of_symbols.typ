@@ -7,6 +7,7 @@
   symbols_entries,
 ) = {
   include_glossary(
+    disable_back_references: true,
     title: "Lista de símbolos",
     symbols_entries,
   )

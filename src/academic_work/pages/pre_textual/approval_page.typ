@@ -120,9 +120,11 @@
         )
 
         // Authors
-        #print_people(
-          people: authors,
-        )
+        #strong[
+          #print_people(
+            people: authors,
+          )
+        ]
 
         #v(0.25fr)
 
@@ -169,6 +171,7 @@
         #v(0.25fr)
 
         #align(start)[
+          #set par(first-line-indent: 0pt)
           Aprovad#get_gender_ending(type_of_work.gender) em
           #approval_date.day
           de #approval_date.month

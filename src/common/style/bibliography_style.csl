@@ -238,10 +238,11 @@
         </names>
     </macro>
 
-    <!-- Titulo e container -->
+    <!-- Título -->
     <!--A
-    macro 'title' exibe o titulo principal; usa negrito, exceto para capitulo, bill, artigo de
-    jornal/revista/periodico e trabalho em evento, nos quais permanece em fonte normal. -->
+    macro 'title' exibe o titulo principal. Ela usa negrito, exceto para tipos contidos em outros,
+    como: capitulo, projeto de lei, artigo de
+    jornal/revista/periódico e trabalho em evento, nos quais permanece em fonte normal. -->
     <macro name="title">
         <choose>
             <if
@@ -255,29 +256,21 @@
         </choose>
     </macro>
 
+    <!-- Título da obra contenedora -->
     <macro name="container-title">
-        <choose>
-            <if type="paper-conference" match="any" />
-            <else>
-                <text variable="container-title" font-weight="bold" />
-            </else>
-        </choose>
+        <text variable="container-title" font-weight="bold" />
     </macro>
 
+    <!-- Indicação da obra contenedora e seus responsáveis -->
     <macro name="container-part">
         <choose>
             <if variable="container-title">
-                <choose>
-                    <if type="book broadcast motion_picture report song speech webpage"
-                        match="any">
-                        <group>
-                            <text term="in" font-style="italic" text-case="capitalize-first"
-                                suffix=": " />
-                            <text macro="container-contributors" suffix=". " />
-                            <text macro="container-title" suffix=". " />
-                        </group>
-                    </if>
-                </choose>
+                <group>
+                    <text term="in" font-style="italic" text-case="capitalize-first"
+                        suffix=":" />
+                    <text prefix=" " macro="container-contributors" suffix="." />
+                    <text prefix=" " macro="container-title" suffix="." />
+                </group>
             </if>
         </choose>
     </macro>
@@ -299,7 +292,7 @@
     </macro>
 
     <!--A
-    macro 'issued-year' exibe somente o ano para uso em citacao; cai para [S.d.] quando vazio. -->
+    macro 'issued-year' exibe somente o ano para uso em citação; cai para [S.d.] quando vazio. -->
     <macro name="issued-year">
         <choose>
             <if variable="issued" match="any">
@@ -313,9 +306,9 @@
         </choose>
     </macro>
 
-    <!-- Identificacao e complementos -->
+    <!-- Identificação e complementos -->
     <!--A
-    macro 'access' mostra a URL ("Disponivel em:") e a data de acesso ("Acesso em:") com mes
+    macro 'access' mostra a URL ("Disponível em:") e a data de acesso ("Acesso em:") com mes
     abreviado; usada para referencias online. -->
     <macro name="access">
         <text variable="URL" prefix="Disponível em: " suffix=". " />
@@ -329,7 +322,7 @@
     <macro name="doi">
         <choose>
             <if variable="DOI">
-                <text variable="DOI" prefix="DOI: " suffix=". " />
+                <text variable="DOI" prefix="DOI: " />
             </if>
         </choose>
     </macro>
@@ -465,39 +458,34 @@
     </macro>
 
     <!--A
-    macro 'publisher' mostra local e editora; se um deles faltar, cai para [S.l.] ou [S.n.], e
-    sem ambos exibe [S.l.: S.n.]. Inclui a data (issued) apos a editora quando presente. -->
+    macro 'publisher' mostra local, editora e data; substitui valores ausentes por [S.l.],
+    [S.n.] ou [S.d.] conforme necessário. Formato: Local: Editora, Data -->
     <macro name="publisher">
+        <!-- 1. Local ou [S.l.] + dois pontos -->
         <choose>
-            <if match="any" variable="publisher-place publisher">
-                <choose>
-                    <if variable="publisher-place">
-                        <text variable="publisher-place" suffix=": " />
-                    </if>
-                    <else-if type="entry-encyclopedia" />
-                    <else>
-                        <text value="[S.l.]" suffix=": " font-style="italic" />
-                    </else>
-                </choose>
-                <choose>
-                    <if variable="publisher">
-                        <text variable="publisher" suffix=", " />
-                        <text macro="issued" />
-                    </if>
-                    <else>
-                        <text value="[S.n.]" font-style="italic" />
-                    </else>
-                </choose>
+            <if variable="publisher-place">
+                <text variable="publisher-place" suffix=": " />
             </if>
             <else>
-                <text value="[S.l.: S.n.]" font-style="italic" />
+                <text value="[S.l.]" suffix=": " font-style="italic" />
             </else>
         </choose>
+        <!-- 2. Editora ou [S.n.] + vírgula -->
+        <choose>
+            <if variable="publisher">
+                <text variable="publisher" suffix=", " />
+            </if>
+            <else>
+                <text value="[S.n.]" suffix=", " font-style="italic" />
+            </else>
+        </choose>
+        <!-- 3. Data ou [S.d.] -->
+        <text macro="issued" />
     </macro>
 
-    <!-- Citacao -->
+    <!-- Citação -->
     <!--A
-    Citacao usa 'et al.' a partir de 4 autores, exibindo apenas o primeiro; mesma regra aplicada
+    Citação usa 'et al.' a partir de 4 autores, exibindo apenas o primeiro; mesma regra aplicada
     na bibliografia. -->
     <citation et-al-min="4" et-al-use-first="1" collapse="year" disambiguate-add-year-suffix="true">
         <sort>
@@ -521,27 +509,30 @@
         </sort>
         <layout>
             <choose>
+                <!-- Projetos de lei -->
                 <if type="bill">
                     <group>
                         <text macro="author" suffix=". " />
                         <text variable="number" suffix=". " />
                         <text macro="title" suffix=". " />
                         <text variable="references" font-weight="bold" />
-                        <text macro="locators" prefix=", " suffix="." />
-                        <text macro="access" prefix=" " suffix=". " />
+                        <text macro="locators" prefix=", " suffix=". " />
+                        <text macro="access" prefix=" " suffix="." />
                     </group>
                 </if>
 
+                <!-- Mapas -->
                 <else-if type="map">
                     <group>
                         <text macro="author" suffix=". " />
                         <text macro="title" suffix=", " />
-                        <text macro="issued" suffix=". " />
-                        <text macro="access" suffix=". " />
-                        <text variable="note" suffix=". " />
+                        <text macro="issued" suffix="." />
+                        <text macro="access" prefix=" " suffix="." />
+                        <text variable="note" prefix=" " suffix="." />
                     </group>
                 </else-if>
 
+                <!-- Livros -->
                 <else-if type="book">
                     <group>
                         <text macro="author" suffix=". " />
@@ -552,11 +543,11 @@
                         <text macro="event-core" />
                         <text macro="publisher" />
                         <text macro="locators" prefix=". " />
-                        <text macro="access" prefix=". " />
-                        <text value="." />
+                        <text macro="access" prefix=". " suffix="." />
                     </group>
                 </else-if>
 
+                <!-- Capítulos de livro -->
                 <else-if type="chapter">
                     <group>
                         <text macro="author" suffix=". " />
@@ -570,11 +561,48 @@
                         <text macro="edition" suffix=". " />
                         <text macro="publisher" />
                         <text macro="locators" prefix=". " />
-                        <text macro="access" prefix=". " />
-                        <text value="." />
+                        <text macro="access" prefix=" " suffix="." />
                     </group>
                 </else-if>
 
+                <!-- Palestras e discursos -->
+                <else-if type="speech">
+                    <group>
+                        <text macro="author" suffix=". " />
+                        <text macro="title" suffix=". " />
+                        <text macro="event-core" />
+                        <text macro="container-title" />
+                        <text macro="publisher" prefix=". " suffix="." />
+                        <text macro="access" prefix=" " suffix="." />
+                    </group>
+                </else-if>
+
+                <!-- Eventos -->
+                <else-if type="event">
+                    <group>
+                        <text macro="author" suffix=". " />
+                        <text macro="event-core" />
+                        <text macro="publisher" suffix="." />
+                        <text macro="access" prefix=" " suffix="." />
+                    </group>
+                </else-if>
+
+                <!-- Trabalhos apresentados em eventos -->
+                <else-if type="paper-conference">
+                    <text macro="author" suffix=". " />
+                    <text macro="title" suffix=". " />
+                    <text macro="container-part" />
+                    <text prefix=" " macro="secondary-contributors" suffix=". " />
+                    <text prefix=" " variable="collection-title" suffix=". " />
+                    <text macro="locators" />
+                    <group delimiter=". ">
+                        <text macro="event-proceedings" />
+                    </group>
+                    <text prefix=" " macro="publisher" suffix="." />
+                    <text macro="access" prefix=" " suffix="." />
+                </else-if>
+
+                <!-- Artigos de jornal, revista ou periódico -->
                 <else-if type="article-newspaper article-magazine article-journal" match="any">
                     <group>
                         <text macro="author" suffix=". " />
@@ -583,35 +611,38 @@
                         <text variable="collection-title" suffix=". " />
                         <text macro="edition" suffix=", " />
                         <text macro="locators" suffix=", " />
-                        <text macro="issued" suffix=". " />
-                        <text macro="doi" />
-                        <text macro="access" suffix=". " />
-                        <text macro="archive" suffix=". " />
+                        <text macro="issued" suffix="." />
+                        <text prefix=" " macro="doi" suffix="." />
+                        <text macro="access" prefix=" " suffix="." />
+                        <text macro="archive" suffix="." />
                     </group>
                 </else-if>
 
+                <!-- Teses e dissertações -->
                 <else-if type="thesis">
                     <group>
                         <text macro="author" suffix=". " />
                         <text macro="title" suffix=". " />
                         <text macro="genre" suffix="&#8212;" />
                         <text macro="publisher" suffix="." />
-                        <text macro="access" suffix=". " />
+                        <text macro="access" prefix=" " suffix="." />
                     </group>
                 </else-if>
 
+                <!-- Manuscritos -->
                 <else-if type="manuscript">
                     <group>
                         <text macro="author" suffix=". " />
                         <text macro="title" suffix=". " />
                         <text macro="edition" suffix=". " />
                         <text macro="place" suffix=", " />
-                        <text macro="issued" suffix=". " />
-                        <text macro="access" suffix=". " />
-                        <text macro="archive" suffix=". " />
+                        <text macro="issued" suffix="." />
+                        <text macro="access" prefix=" " suffix="." />
+                        <text macro="archive" prefix=" " suffix="." />
                     </group>
                 </else-if>
 
+                <!-- Páginas web -->
                 <else-if type="webpage">
                     <group>
                         <text macro="author" suffix=". " />
@@ -620,13 +651,14 @@
                         <text macro="genre" suffix=". " />
                         <choose>
                             <if match="any" variable="publisher-place publisher">
-                                <text macro="publisher" suffix=". " />
+                                <text macro="publisher" suffix="." />
                             </if>
                         </choose>
-                        <text macro="access" suffix=". " />
+                        <text macro="access" prefix=" " suffix="." />
                     </group>
                 </else-if>
 
+                <!-- Relatórios -->
                 <else-if type="report">
                     <group>
                         <text macro="author" suffix=". " />
@@ -634,12 +666,13 @@
                         <text macro="container-part" />
                         <text variable="collection-title" prefix=": " suffix=". " />
                         <text macro="locators" suffix=". " />
-                        <text macro="event-core" />
-                        <text macro="publisher" prefix=". " suffix=". " />
-                        <text macro="access" suffix="." />
+                        <text macro="event-core" suffix=". " />
+                        <text macro="publisher" suffix="." />
+                        <text macro="access" prefix=" " suffix="." />
                     </group>
                 </else-if>
 
+                <!-- Verbetes de dicionário -->
                 <else-if type="entry-dictionary">
                     <group>
                         <text macro="author" suffix=". " />
@@ -652,63 +685,21 @@
                         <text macro="publisher" prefix=". " suffix=". " />
                         <text macro="collection-title" prefix="(Texto para discussao, n. "
                             suffix=")." />
-                        <text macro="access" />
+                        <text macro="access" prefix=" " suffix="." />
                     </group>
                 </else-if>
 
+                <!-- Verbetes de enciclopédia -->
                 <else-if type="entry-encyclopedia">
                     <group>
                         <text macro="author" suffix=". " />
                         <text macro="title" />
-                        <text variable="publisher-place" prefix=". " suffix=": " />
-                        <text variable="publisher" suffix=", " />
-                        <text macro="issued" prefix=", " suffix=". (Nota técnica)." />
-                        <text macro="access" prefix=" " suffix=". " />
+                        <text macro="publisher" prefix=". " suffix=". (Nota técnica)." />
+                        <text macro="access" prefix=" " suffix="." />
                     </group>
                 </else-if>
 
-                <else-if type="speech">
-                    <group>
-                        <text macro="author" suffix=". " />
-                        <text macro="title" suffix=". " />
-                        <text macro="event-core" />
-                        <text macro="container-title" />
-                        <text variable="publisher-place" prefix=". " suffix=": " />
-                        <text variable="publisher" suffix=", " />
-                        <text macro="issued" suffix=". " />
-                        <text macro="access" />
-                    </group>
-                </else-if>
-
-                <else-if type="event">
-                    <group>
-                        <text macro="author" suffix=". " />
-                        <text macro="event-core" />
-                        <text variable="publisher-place" suffix=": " />
-                        <text variable="publisher" suffix=", " />
-                        <text macro="issued" suffix=". " />
-                        <text macro="access" />
-                    </group>
-                </else-if>
-
-                <else-if type="paper-conference">
-                    <text macro="author" suffix=". " />
-                    <text macro="title" suffix=". " />
-                    <text term="in" font-style="italic" text-case="capitalize-first" suffix=": " />
-                    <text macro="container-contributors" />
-                    <text macro="secondary-contributors" suffix=". " />
-                    <text macro="container-title" />
-                    <text variable="collection-title" prefix=": " suffix="." />
-                    <text macro="locators" />
-                    <group delimiter=". ">
-                        <text macro="event-proceedings" />
-                    </group>
-                    <text variable="publisher-place" suffix=": " />
-                    <text variable="publisher" suffix=", " />
-                    <text macro="issued" suffix=". " />
-                    <text macro="access" />
-                </else-if>
-
+                <!-- Outros tipos de referência -->
                 <else>
                     <text macro="author" suffix=". " />
                     <text macro="title" suffix=". " />
@@ -738,12 +729,8 @@
                     <group delimiter=". " prefix=". " suffix=". ">
                         <text macro="event-core" />
                     </group>
-                    <group delimiter=", " suffix=". ">
-                        <text variable="publisher-place" />
-                        <text variable="publisher" />
-                        <text macro="issued" />
-                    </group>
-                    <text macro="access" suffix=". " />
+                    <text macro="publisher" suffix="." />
+                    <text macro="access" prefix=" " suffix="." />
                 </else>
             </choose>
             <text variable="note" prefix=" " suffix="." />

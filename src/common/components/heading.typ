@@ -17,27 +17,36 @@
   let font_size = font_size_for_common_text
   let leading_around = leading_for_level_3_and_beyond_headings
   let spacing_around = spacing_for_level_3_and_beyond_headings
-  let font_weight = "bold"
+  let font_weight = "regular"
   let text_style = "normal"
+  let capitalize = false
 
   if body.level == 1 {
+    capitalize = true
     font_size = font_size_for_level_1_headings
+    font_weight = "bold"
     leading_around = leading_for_level_1_headings
     spacing_around = spacing_for_level_1_headings
   } else if body.level == 2 {
+    capitalize = true
     font_size = font_size_for_level_2_headings
     leading_around = leading_for_level_2_headings
     spacing_around = spacing_for_level_2_headings
   } else if body.level == 3 {
+    font_weight = "bold"
     font_size = font_size_for_level_3_and_beyond_headings
-  } else if body.level == 4 {
-    font_weight = "regular"
-  } else if body.level == 5 {
-    font_weight = "regular"
+  } else if body.level == 4 {} else if body.level == 5 {
     text_style = "italic"
   }
 
-  return (font_size, leading_around, spacing_around, font_weight, text_style)
+  return (
+    capitalize,
+    font_size,
+    font_weight,
+    leading_around,
+    spacing_around,
+    text_style,
+  )
 }
 
 #let not_start_on_new_page(
@@ -53,15 +62,14 @@
 ) = {
   // NBR 6024:2012 4.1
   // The format of headings should represent their hierarchical level
-  // As done by abnTEX2, we use different font sizes for different heading levels
-
 
   // Styling
   let (
+    capitalize,
     font_size,
+    font_weight,
     leading_around,
     spacing_around,
-    font_weight,
     text_style,
   ) = get_styling_for_heading(body)
   let text_before_numbering = none
@@ -108,6 +116,14 @@
     }
   }
 
+  let heading_text = [
+    #if capitalize {
+      upper(body.body)
+    } else {
+      body.body
+    }
+  ]
+
   if body.numbering == none {
     // NBR 6024:2012 4.1
     // Headings without numbering should be aligned to the center
@@ -115,7 +131,7 @@
       #block(
         above: spacing_around,
         below: spacing_around,
-      )[#body.body]
+      )[#heading_text]
     ]
   } else {
     block(
@@ -130,9 +146,9 @@
         column-gutter: column_gutter,
         [
           #text_before_numbering
-          #counter(heading).display(body.numbering)       #text_after_numbering
+          #counter(heading).display(body.numbering) #text_after_numbering
         ],
-        [#body.body],
+        [#heading_text],
       ),
     )
   }

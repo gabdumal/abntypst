@@ -7,7 +7,7 @@
   should_number_this_page,
 )
 #import "./common/components/quote.typ": format_quote
-#import "./common/packages.typ": drafting, subpar
+#import "common/packages.typ": drafting, subpar
 #import "./common/style/style.typ": (
   font_family_math, font_family_mono, font_family_sans, font_family_serif, font_size_for_common_text,
   font_size_for_smaller_text, leading_for_common_text, margin_bottom, margin_end, margin_start, margin_top, paper_size,
@@ -78,11 +78,12 @@
   // Secondary (and following) headings should be separated by a dot after the number
   set heading(numbering: "1.1")
 
-  show heading.where(level: 1): set heading(supplement: [capítulo])
-  show heading.where(level: 2): set heading(supplement: [seção])
-  show heading.where(level: 3): set heading(supplement: [subseção])
-  show heading.where(level: 4): set heading(supplement: [subsubseção])
-  show heading.where(level: 5): set heading(supplement: [subsubsubseção])
+  // CDC UFJF 2023
+  show heading.where(level: 1): set heading(supplement: [Capítulo])
+  show heading.where(level: 2): set heading(supplement: [Seção])
+  show heading.where(level: 3): set heading(supplement: [Subseção])
+  show heading.where(level: 4): set heading(supplement: [Subsubseção])
+  show heading.where(level: 5): set heading(supplement: [Subsubsubseção])
 
   // ### Format. Formatação.
   show heading: it => {
@@ -127,7 +128,7 @@
   // NBR 6023:2025 6, NBR 14724:2024 4.2.3.1
   set bibliography(
     // The bibliography should be formatted according to the ABNT style
-    style: "/template/common/style/bibliography_style.csl",
+    style: "./common/style/bibliography_style.csl",
     title: "Referências",
   )
   show bibliography: it => {

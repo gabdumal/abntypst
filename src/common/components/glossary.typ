@@ -3,24 +3,61 @@
 
 #import "../packages.typ": glossarium
 #import "../style/style.typ": font_family_sans
-#import "../components/page.typ": not_number_page
-#import "./heading.typ": not_start_on_new_page
 
 #let glossary(
+  disable_back_references: false,
+  invisible: false,
+  print_description: none,
+  print_title: none,
   title: "Glossário",
   entries,
 ) = {
-  set text(
-    font: font_family_sans,
-  )
-  set heading(
-    numbering: none,
-    outlined: false,
-  )
-  heading(level: 1, title)
-  glossarium.print-glossary(
-    entries,
+  let arguments = (
     deduplicate-back-references: true,
     description-separator: ". ",
+    disable-back-references: disable_back_references,
+    invisible: invisible,
   )
+
+  let print_glossary = if print_title != none {
+    if print_description != none {
+      () => glossarium.print-glossary(
+        ..arguments,
+        user-print-description: print_description,
+        user-print-title: print_title,
+        entries,
+      )
+    } else {
+      () => glossarium.print-glossary(
+        ..arguments,
+        user-print-title: print_title,
+        entries,
+      )
+    }
+  } else if print_description != none {
+    () => glossarium.print-glossary(
+      ..arguments,
+      user-print-description: print_description,
+      entries,
+    )
+  } else {
+    () => glossarium.print-glossary(
+      ..arguments,
+      entries,
+    )
+  }
+
+  if invisible == false {
+    set text(
+      font: font_family_sans,
+    )
+    set heading(
+      numbering: none,
+      outlined: false,
+    )
+    heading(level: 1, title)
+    print_glossary()
+  } else {
+    print_glossary()
+  }
 }

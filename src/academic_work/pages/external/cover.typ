@@ -71,9 +71,11 @@
           #v(0.5fr)
 
           // Authors
-          #print_people(
-            people: authors,
-          )
+          #strong[
+            #print_people(
+              people: authors,
+            )
+          ]
 
           #v(0.5fr)
 

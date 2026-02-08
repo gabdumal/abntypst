@@ -13,13 +13,19 @@
 ) = {
   // NBR 14724:2024 5.8
   // The caption of a figure should be in a smaller font size
+  //
+  // CDC UFJF 2023
+  // The caption of a figure should be in the same font size as the common text
   set text(
-    size: font_size_for_smaller_text,
+    size: font_size_for_common_text,
   )
+  // NBR 14724:2024 5.8
   // The caption of a figure should have a smaller leading and spacing
+  // CDC UFJF 2023
+  // The caption of a figure should have the same leading and spacing as the common text
   set par(
-    leading: simple_leading_for_smaller_text,
-    spacing: spacing_for_smaller_text,
+    leading: simple_leading_for_common_text,
+    spacing: spacing_for_common_text,
   )
   caption
 }

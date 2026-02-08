@@ -3,7 +3,7 @@
 
 #import "../components/heading.typ": not_start_on_new_page
 #import "../components/list_of_figures.typ": list_of_figures
-#import "../components/page.typ": consider_only_odd_pages, not_count_page, not_number_page
+#import "../components/page.typ": consider_only_odd_pages, not_number_page
 
 #let include_list_of_figures() = context {
   not_number_page(

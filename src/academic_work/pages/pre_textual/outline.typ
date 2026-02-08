@@ -14,10 +14,11 @@
       #page()[
         #show outline.entry: it => {
           let (
+            capitalize,
             font_size,
+            font_weight,
             leading_around,
             spacing_around,
-            font_weight,
             text_style,
           ) = get_styling_for_heading(it)
 
@@ -36,10 +37,18 @@
             prefix = [ANEXO #prefix ---]
           }
 
+          let inner = if capitalize { upper(it.inner()) } else { it.inner() }
+
           block(
             below: spacing_around,
           )[
-            #link(it.element.location(), it.indented([#prefix], it.inner()))
+            #link(
+              it.element.location(),
+              it.indented(
+                [#prefix],
+                inner,
+              ),
+            )
           ]
         }
 
