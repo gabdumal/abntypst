@@ -1,3 +1,0 @@
-= Metodologia
-
-#lorem(50)

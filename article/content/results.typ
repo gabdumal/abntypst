@@ -1,3 +1,0 @@
-= Resultados
-
-#lorem(50)
