@@ -7,7 +7,7 @@
 #import "../../../common/components/people.typ": print_people, print_person
 #import "../../../common/components/title.typ": print_title
 #import "../../../common/style/style.typ": (
-  font_family_sans, font_size_for_smaller_text, simple_leading_for_smaller_text, spacing_for_smaller_text,
+  font_family_sans, font_size_for_smaller_text, simple_leading_for_smaller_text, simple_spacing_for_smaller_text,
 )
 #import "../../../common/util/gender.typ": get_gender_ending
 #import "../../components/examiner.typ": print_examiner
@@ -150,7 +150,7 @@
             )
             #set par(
               leading: simple_leading_for_smaller_text,
-              spacing: spacing_for_smaller_text,
+              spacing: simple_spacing_for_smaller_text,
             )
             #if custom_nature != none [
               #custom_nature

@@ -2,13 +2,14 @@
 // NBR 14724:2024 4.2.1.10
 
 #import "../style/style.typ": font_family_sans
+#import "./outline_entry.typ": format_outline_entry
 
 #let list_of_tables() = {
   set text(
     font: font_family_sans,
   )
 
-  // TODO: there should be an em-dash between the numbering and the caption
+  show outline.entry: format_outline_entry
 
   outline(
     title: "Lista de tabelas",

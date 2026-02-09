@@ -2,8 +2,8 @@
 // NBR 14724:2024 5.8, NBR 14724:2024 5.9
 
 #import "../style/style.typ": (
-  font_size_for_smaller_text, simple_leading_for_smaller_text, simple_spacing_for_smaller_text,
-  spacing_for_smaller_text,
+  font_size_for_common_text, font_size_for_smaller_text, leading_for_common_text, simple_leading_for_smaller_text,
+  simple_spacing_for_smaller_text, spacing_for_common_text,
 )
 #import "./information_footer.typ": information_footer
 
@@ -12,19 +12,14 @@
   caption,
 ) = {
   // NBR 14724:2024 5.8
-  // The caption of a figure should be in a smaller font size
-  //
-  // CDC UFJF 2023
   // The caption of a figure should be in the same font size as the common text
   set text(
     size: font_size_for_common_text,
   )
   // NBR 14724:2024 5.8
-  // The caption of a figure should have a smaller leading and spacing
-  // CDC UFJF 2023
   // The caption of a figure should have the same leading and spacing as the common text
   set par(
-    leading: simple_leading_for_common_text,
+    leading: leading_for_common_text,
     spacing: spacing_for_common_text,
   )
   caption
@@ -39,7 +34,7 @@
   set par(
     first-line-indent: 0em,
     leading: simple_leading_for_smaller_text,
-    spacing: spacing_for_smaller_text,
+    spacing: simple_spacing_for_smaller_text,
   )
   set text(
     size: font_size_for_smaller_text,
@@ -48,8 +43,8 @@
   set align(start)
 
   block(
-    above: spacing_for_smaller_text,
-    below: spacing_for_smaller_text,
+    above: simple_spacing_for_smaller_text,
+    below: simple_spacing_for_smaller_text,
   )[
     #set par(
       leading: simple_leading_for_smaller_text,
@@ -66,8 +61,8 @@
 ) = {
   set align(center)
   block(
-    above: spacing_for_smaller_text,
-    below: spacing_for_smaller_text,
+    above: spacing_for_common_text,
+    below: spacing_for_common_text,
     width: width,
   )[
     #format_information_of_figure(
@@ -98,7 +93,7 @@
       #block(
         sticky: true,
         width: width_of_figure_body,
-        below: spacing_for_smaller_text,
+        below: spacing_for_common_text,
         format_caption_of_figure(it.caption),
       )
       #show figure: it => {
@@ -127,6 +122,7 @@
   body,
 ) = {
   set block(breakable: true)
+  set grid(gutter: spacing_for_common_text)
 
   show figure: it => {
     set block(breakable: true)
@@ -151,7 +147,7 @@
 
       set block(breakable: true)
       place(
-        clearance: spacing_for_smaller_text,
+        clearance: spacing_for_common_text,
         float: true,
         alignment,
         format_figure(

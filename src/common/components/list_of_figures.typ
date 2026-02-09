@@ -2,6 +2,7 @@
 // NBR 14724:2024 4.2.1.9
 
 #import "../style/style.typ": font_family_sans
+#import "./outline_entry.typ": format_outline_entry
 
 #let list_of_figures() = {
   set text(
@@ -12,7 +13,7 @@
   show outline.entry: it => {
     let kind = it.element.kind
     if kind != table {
-      it
+      format_outline_entry(it)
     }
   }
 

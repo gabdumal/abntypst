@@ -3,7 +3,7 @@
 
 #import "../style/style.typ": (
   font_size_for_common_text, font_size_for_smaller_text, leading_for_common_text, simple_leading_for_smaller_text,
-  spacing_for_common_text, spacing_for_smaller_text,
+  simple_spacing_for_smaller_text, spacing_for_common_text,
 )
 
 #let format_quote(
@@ -19,7 +19,7 @@
   if smaller_text {
     font_size = font_size_for_smaller_text
     leading = simple_leading_for_smaller_text
-    spacing = spacing_for_smaller_text
+    spacing = simple_spacing_for_smaller_text
   }
 
   set text(
