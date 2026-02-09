@@ -1,4 +1,4 @@
-// List of figures. Lista de ilustrações.
+// # List of figures. Lista de ilustrações.
 // NBR 14724:2024 4.2.1.9
 
 #import "../style/style.typ": font_family_sans
@@ -9,7 +9,6 @@
     font: font_family_sans,
   )
 
-  // TODO: there should be an em-dash between the numbering and the caption
   show outline.entry: it => {
     let kind = it.element.kind
     if kind != table {

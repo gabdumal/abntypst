@@ -1,4 +1,4 @@
-// Annex. Anexo.
+// # Annex. Anexo.
 // NBR 14724:2024 4.2.3.4
 
 #let annex(body, title: "", label: none) = {

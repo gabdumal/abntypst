@@ -1,4 +1,4 @@
-// Equation. Equação.
+// # Equation. Equação.
 // NBR 14724:2024 5.7
 
 #import "../style/style.typ": font_family_math_text

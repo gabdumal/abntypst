@@ -1,4 +1,4 @@
-// Note. Nota.
+// # Note. Nota.
 
 #import "../packages.typ": drafting
 #import "../style/style.typ": font_family_sans
