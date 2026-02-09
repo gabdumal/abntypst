@@ -1,18 +1,8 @@
 // # List of abbreviations. Lista de abreviaturas e siglas.
 // NBR 14724:2024 4.2.1.11
 
+#import "../components/list_entry.typ": print_gloss
 #import "./glossary.typ": include_glossary
-
-#let print_title = entry => {
-  (
-    box(
-      width: 3cm,
-      strong(entry.short),
-    )
-      + entry.long
-  )
-}
-#let print_description = entry => {}
 
 #let include_list_of_abbreviations(
   invisible: false,
@@ -21,8 +11,7 @@
   include_glossary(
     disable_back_references: true,
     invisible: invisible,
-    print_title: print_title,
-    print_description: print_description,
+    print_gloss: print_gloss,
     title: "Lista de abreviaturas e siglas",
     abbreviations_entries,
   )

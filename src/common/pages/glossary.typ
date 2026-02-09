@@ -8,16 +8,14 @@
 #let include_glossary(
   disable_back_references: true,
   invisible: false,
-  print_description: none,
-  print_title: none,
+  print_gloss: none,
   title: "Glossário",
   entries,
 ) = context {
   let arguments = (
     disable_back_references: disable_back_references,
     invisible: invisible,
-    print_description: print_description,
-    print_title: print_title,
+    print_gloss: print_gloss,
     title: title,
   )
 

@@ -7,8 +7,7 @@
 #let glossary(
   disable_back_references: false,
   invisible: false,
-  print_description: none,
-  print_title: none,
+  print_gloss: none,
   title: "Glossário",
   entries,
 ) = {
@@ -19,35 +18,20 @@
     invisible: invisible,
   )
 
-  let print_glossary = if print_title != none {
-    if print_description != none {
-      () => glossarium.print-glossary(
-        ..arguments,
-        user-print-description: print_description,
-        user-print-title: print_title,
-        entries,
-      )
-    } else {
-      () => glossarium.print-glossary(
-        ..arguments,
-        user-print-title: print_title,
-        entries,
-      )
-    }
-  } else if print_description != none {
+  let print_glossary = if (print_gloss == none) {
     () => glossarium.print-glossary(
       ..arguments,
-      user-print-description: print_description,
       entries,
     )
   } else {
     () => glossarium.print-glossary(
       ..arguments,
+      user-print-gloss: print_gloss,
       entries,
     )
   }
 
-  if invisible == false {
+  if (invisible == false) {
     set text(
       font: font_family_sans,
     )
