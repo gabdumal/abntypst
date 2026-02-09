@@ -182,7 +182,7 @@
 
         // Examination committee
         #text(weight: "bold")[
-          Banca examinadora
+          #upper[Banca examinadora]
         ]
 
         #let is_first_advisor = true

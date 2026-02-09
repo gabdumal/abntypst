@@ -31,19 +31,19 @@
   },
 ) = {
   [
-    // CDC UFJF 2023 recommends to use uppercase
-    #upper(organization.name)
+    // CDC UFJF 2023 recommends to use uppercase, although it is optional
+    #organization.name
     #if institution != none [
       #joiner
-      #upper(institution.name)
+      #institution.name
     ]
     #if department != none [
       #joiner
-      #upper(department.name)
+      #department.name
     ]
     #if program != none [
       #joiner
-      #upper(program.name)
+      #program.name
     ]
   ]
 }

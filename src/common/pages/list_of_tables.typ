@@ -1,4 +1,4 @@
-// List of tables. Lista de tabelas.
+// # List of tables. Lista de tabelas.
 // NBR 14724:2024 4.2.1.10
 
 #import "../components/heading.typ": not_start_on_new_page

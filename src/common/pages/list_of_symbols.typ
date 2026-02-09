@@ -1,13 +1,15 @@
-// # Symbols. Lista de símbolos.
+// # List of symbols. Lista de símbolos.
 // NBR 14724:2024 4.2.1.12
 
-#import "/template/common/pages/glossary.typ": include_glossary
+#import "./glossary.typ": include_glossary
 
 #let include_list_of_symbols(
+  invisible: false,
   symbols_entries,
 ) = {
   include_glossary(
     disable_back_references: true,
+    invisible: invisible,
     title: "Lista de símbolos",
     symbols_entries,
   )

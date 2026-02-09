@@ -10,3 +10,4 @@
 #import "./pre_textual/outline.typ": include_outline
 #import "./pre_textual/errata.typ": include_errata
 #import "./pre_textual/title_page.typ": include_title_page
+#import "./post_textual/bibliography.typ": include_bibliography

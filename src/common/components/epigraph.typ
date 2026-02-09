@@ -10,8 +10,6 @@
   smaller_text: true,
   body,
 ) = context {
-  // Align text to the right
-  set align(end)
   show quote: it => format_quote(
     indent: indent,
     smaller_text: smaller_text,

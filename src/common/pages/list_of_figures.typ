@@ -1,4 +1,4 @@
-// List of figures. Lista de ilustrações.
+// # List of figures. Lista de ilustrações.
 // NBR 14724:2024 4.2.1.9
 
 #import "../components/heading.typ": not_start_on_new_page

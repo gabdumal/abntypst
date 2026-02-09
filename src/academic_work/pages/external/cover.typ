@@ -3,7 +3,7 @@
 
 #import "../../../common/components/heading.typ": not_start_on_new_page
 #import "../../../common/components/page.typ": consider_only_odd_pages
-#import "../../../common/components/page.typ": not_count_page, not_number_page, should_count_this_page
+#import "../../../common/components/page.typ": not_count_page, not_number_page
 #import "../../../common/components/people.typ": print_people
 #import "../../../common/components/title.typ": print_title
 #import "../../../common/style/style.typ": font_family_sans
